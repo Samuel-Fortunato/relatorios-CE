@@ -1,0 +1,21 @@
+\documentclass{article}
+\input{preamble}
+
+\begin{document}
+
+\input{title/title}
+
+\pagenumbering{gobble} % Turns off page numbering globally
+
+\include{sumario}
+
+\tableofcontents
+\clearpage % Essential: finishes the TOC page before changing settings
+
+\pagenumbering{arabic} % Turns numbering back on and resets counter to 1
+\setcounter{page}{1}    % Explicitly tells LaTeX to start at 1
+
+\include{chaps/introducao}
+\include{chaps/realiz-exper}
+
+\end{document}
