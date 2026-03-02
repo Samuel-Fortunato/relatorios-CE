@@ -5,19 +5,16 @@
 
 \input{title/title}
 
-\pagenumbering{gobble} % Turns off page numbering globally
-
-\include{sumario}
+% \include{sumario}
 
 \tableofcontents
-\clearpage % Essential: finishes the TOC page before changing settings
+% \clearpage
 
-\pagenumbering{arabic} % Turns numbering back on and resets counter to 1
-\setcounter{page}{1}    % Explicitly tells LaTeX to start at 1
+% \pagenumbering{arabic}
+% \setcounter{page}{1}
 
 \include{chaps/introducao}
-\include{chaps/realiz-exper}
-\include{chaps/result-discuss}
+\include{chaps/montag-analis-resul}
 \include{chaps/conclusoes}
 \include{chaps/contribuic}
 \include{chaps/bibliogr}
