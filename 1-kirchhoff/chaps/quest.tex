@@ -1,0 +1,63 @@
+\section{Dedução das expressões de associação de resistências}
+
+Outro objetivo do trabalho incide sobre a dedução das seguintes expressões, relativas a associações de resistências:
+\[
+\begin{cases}
+R_{\text{Total}} = R_1 + R_2 + \cdots = \sum R_i \\[6pt]
+\dfrac{1}{R_{\text{Total}}} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \cdots = \sum \dfrac{1}{R_i}
+\end{cases}
+\]\\
+
+Para tal, recorremos às leis de Kirchhoff, enunciadas e verificadas anteriormente e à lei de Ohm. 
+
+
+\paragraph{1) Associação em série}
+
+Partimos de um conjunto de resistências $R_1, R_2, \dots, R_n$ ligadas em série, percorridas pela mesma corrente $I$.
+Pela lei dos nós (LCK), num circuito com elementos ligados unicamente em série, a corrente é igual em todos os elementos, pelo que:
+\begin{equation*}
+I_1 = I_2 = \cdots = I_n = I.
+\end{equation*}
+
+Por outro lado, pela lei das malhas (LTK), a tensão total é a soma algébrica das quedas de tensão em cada resistência:
+\begin{equation*}
+V_{\text{total}} = V_1 + V_2 + \cdots + V_n.
+\end{equation*}
+
+Pela lei de Ohm, $V_i = R_i I$:
+\begin{align*}
+&V_{\text{total}} = R_1 I + R_2 I + \cdots + R_n I \\\Leftrightarrow \quad &V_{\text{total}} = (R_1 + R_2 + \cdots + R_n) I 
+\\\Leftrightarrow \quad &R_{\text{total}} I = (R_1 + R_2 + \cdots + R_n) I
+\end{align*}
+
+Para $I \neq 0$, divide-se ambos os membros por $I$:
+\begin{equation*}
+R_{\text{total}} = R_1 + R_2 + \cdots + R_n = \sum_{i=1}^{n} R_i.
+\end{equation*}
+
+\paragraph{2) Associação em paralelo}
+
+Consideremos agora o mesmo conjunto de resistências $R_1, R_2, \dots, R_n$ porém associadas em paralelo, entre os mesmos dois nós.
+Sabemos que a diferença de potencial $V_i$ é a mesma nos terminais de cada resistência
+\begin{equation*}
+V_1 = V_2 = \cdots = V_n = V.
+\end{equation*}
+
+Pela lei das malhas (LCK):
+\begin{equation*}
+I_{\text{total}} = I_1 + I_2 + \cdots + I_n.
+\end{equation*}
+
+
+Aplicando a lei de Ohm a cada ramo ($I_i = \frac{V}{R_i}$):
+\begin{align*}
+I_{\text{total}} &= \frac{V}{R_1} + \frac{V}{R_2} + \cdots + \frac{V}{R_n}.
+\\\Leftrightarrow \quad \frac{V}{R_{\text{total}}} &=  V\left(\frac{1}{R_1} + \frac{1}{R_2}+ \cdots + \frac{1}{R_n}\right)
+\end{align*}
+
+
+Para $V \neq 0$, divide-se ambos os membros por $V$:
+\begin{equation*}
+\frac{1}{R_{\text{total}}} = \frac{1}{R_1} + \frac{1}{R_2} + \cdots + \frac{1}{R_n}
+= \sum_{i=1}^{n}\frac{1}{R_i}.
+\end{equation*}

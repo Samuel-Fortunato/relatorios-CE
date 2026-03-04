@@ -1,54 +1,25 @@
 \section{Análise de Resultados}
 
 % Secção de gráficos e todos os cálculos, incluindo a análise dos erros, e resultado final com número correto de algarismos significativos
-\section{Montagem 1}
-
-\begin{table}[h!]
-\centering
-\caption{Resultados da Montagem 1.}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Medição} &
-\textbf{Valor experimental (mA)} &
-\textbf{Valor teórico (mA)} &
-\textbf{Desvio (mA)} &
-\textbf{Erro (\%)} \\
-\hline
-$AB$ & $44.70 \pm 0.01$ & $45.00$ &$+0.30$ & $+0.67$ \\
-\hline
-$BC$ & $15.06 \pm 0.01$& 15.00 & $-0.06$ &$-0.4$ \\
-\hline
-$BD$ & $30.00 \pm 0.01$ & 30.00 & $ \pm 0.00$&$\pm0.00$ \\
-\hline
-\end{tabular}
-\end{table}
-
-\subsection{Montagem 2}
+\subsection{Montagem 1}
 
 \begin{table}[h!]
 	\centering
 	\caption{Resultados da Montagem 1.}
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
-		\textbf{Medição}            &
-		\textbf{Valor experimental} &
-		\textbf{Valor teórico}      &
-		\textbf{Desvio}             &
-		\textbf{Erro (\%)}                                                                  \\
+		\textbf{Medição} & \textbf{Valor experimental (mA)} & \textbf{Valor teórico (mA)} & \textbf{Desvio (mA)} & \textbf{Erro (\%)} \\
 		\hline
-		$I$                         & $29,4 \pm 0.01$ mA & $10,00$ mA & $+19,4$ mA & $194?$ \\
+		$I_{AB}$             & $44.70 \pm 0.01$                 & $45.00$                     & $-0.30$              & $0.67$             \\
 		\hline
-		$V_0$                       & $15,18 \pm 0.01$ V & 15,00 V    & $+0,18$ V  & $1,20$ \\
+		$I_{BC}$             & $15.06 \pm 0.01$                 & 15.00                       & $+0.06$              & $0.4$              \\
 		\hline
-		$V_1$                       & $10,10 \pm 0.01$ V & 10,00 V    & $ +0,10$ V & $1,00$ \\
-		\hline
-		$V_2$                       & $5,06 \pm 0.01$ V  & 5,00 V     & $ +0,06$ V & $1,20$ \\
+		$I_{BD}$             & $30.00 \pm 0.01$                 & 30.00                       & $ \pm 0.00$          & $0.00$             \\
 		\hline
 	\end{tabular}
 \end{table}
 
-
-\subsubsection{Verificação:}
+\subsubsection{Verificação da lei dos nós:}
 De acordo com a secção (1.1), temos que:
 \begin{equation}
 	\Sigma V = 0
@@ -60,3 +31,46 @@ Recorrendo aos valores da Tabela 1:
 \end{equation*}
 
 Visto que o valor experimental $(0,00)$ V está inserido na gama de valores determinados pelas medições e pela incerteza experimental associada, conclui-se que a lei das malhas de $Kirchhoff$ foi verificada.
+
+
+\subsection{Montagem 2-A}
+\begin{table}[h!]
+	\centering
+	\caption{Resultados da Montagem 1.}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{Medição} & \textbf{Valor experimental} & \textbf{Valor teórico} & \textbf{Desvio} & \textbf{Erro (\%)} \\
+		\hline
+		$I$              & $29,4 \pm 0.01$ mA          & $10,00$ mA             & $+19,4$ mA      & $194$              \\
+		\hline
+		$V_0$            & $15,18 \pm 0.01$ V          & 15,00 V                & $+0,18$ V       & $1,20$             \\
+		\hline
+		$V_1$            & $10,10 \pm 0.01$ V          & 10,00 V                & $ +0,10$ V      & $1,00$             \\
+		\hline
+		$V_2$            & $5,06 \pm 0.01$ V           & 5,00 V                 & $ +0,06$ V      & $1,20$             \\
+		\hline
+	\end{tabular}
+\end{table}
+
+
+\subsubsection{Verificação da lei das malhas:}
+De acordo com a secção (1.1), considerando a malha definida pelo circuito, temos que:
+\begin{equation}
+	\Sigma V = 0
+\end{equation}
+
+Recorrendo aos valores da Tabela 1:
+\begin{equation*}
+	(15,18\pm0,01) - (10,10\pm0,01) - (5,06\pm0,01) = (0,02\pm0,03)
+\end{equation*}
+
+Visto que o valor experimental $(0,00)$ V está inserido na gama de valores determinados pelas medições e pela incerteza experimental associada, conclui-se que a lei das malhas de $Kirchhoff$ foi verificada.
+
+\subsection{Montagem 2-B}
+
+
+\subsection{Montagem 3}
+
+
+\subsubsection{Verificação do príncipio da sobreposição:}
+
