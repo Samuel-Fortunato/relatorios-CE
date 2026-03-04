@@ -1,6 +1,22 @@
 \section{Resultados}
 
-Resultados: Registo dos dados obtidos em tabela (exceto medidas isoladas).
+% Resultados: Registo dos dados obtidos em tabela (exceto medidas isoladas).
+
+\begin{table}[h!]
+	\centering
+	\caption{Resultados da Montagem 1.}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{Medição} & \textbf{Valor experimental (mA)} \\
+		\hline
+		$AB$             & $44.70 \pm 0.01$                 \\
+		\hline
+		$BC$             & $15.06 \pm 0.01$                 \\
+		\hline
+		$BD$             & $30.00 \pm 0.01$                 \\
+		\hline
+	\end{tabular}
+\end{table}
 
 
 \subsection{Primeira montagem: Lei dos nós}
@@ -12,38 +28,19 @@ Com o intuito de verificar a lei dos nós, montou-se o circuito representado na 
 Procedeu-se à segunda montagem, através da qual se procurou verificar a lei das malhas. A montagem é constituída pelas mesmas resistências da montagem anterior, $R_1 = 1$ k$\Omega$ e $R_2 = 500$ $\Omega$, associadas em série. A tabela seguinte engloba as medições obtidas, os valores teóricos esperados, assim como o desvio e o erro associados às medições.
 
 \begin{table}[h!]
-\centering
-\caption{Resultados da Montagem 1.}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Medição} &
-\textbf{Valor experimental} &
-\textbf{Valor teórico} &
-\textbf{Desvio} &
-\textbf{Erro (\%)} \\
-\hline
-$I$ & $29,4 \pm 0.01$ mA & $10,00$ mA &$+19,4$ mA & $194?$ \\
-\hline
-$V_0$ & $15,18 \pm 0.01$ V & 15,00 V & $+0,18$ V &$1,20$ \\
-\hline
-$V_1$ & $10,10 \pm 0.01$ V & 10,00 V & $ +0,10$ V &$1,00$ \\
-\hline
-$V_2$ & $5,06 \pm 0.01$ V & 5,00 V & $ +0,06$ V &$1,20$ \\
-\hline
-\end{tabular}
+	\centering
+	\caption{Resultados da Montagem 1.}
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Medição} & \textbf{Valor experimental} \\
+		\hline
+		$I$              & $29,4 \pm 0.01$ mA          \\
+		\hline
+		$V_0$            & $15,18 \pm 0.01$ V          \\
+		\hline
+		$V_1$            & $10,10 \pm 0.01$ V          \\
+		\hline
+		$V_2$            & $5,06 \pm 0.01$ V           \\
+		\hline
+	\end{tabular}
 \end{table}
-
-\subsubsection{Verificação:}
-De acordo com a secção (1.1), temos que:
-\begin{equation} 
-\Sigma V = 0
-\end{equation}
-
-Recorrendo aos valores da Tabela 1:
-\begin{equation*} 
-(15,18\pm0,01) - (10,10\pm0,01) - (5,06\pm0,01) = (0,02\pm0,03)
-\end{equation*}
-
-Visto que o valor experimental $(0,00)$ V está inserido na gama de valores determinados pelas medições e pela incerteza experimental associada, conclui-se que a lei das malhas de $Kirchhoff$ foi verificada.
-
-
