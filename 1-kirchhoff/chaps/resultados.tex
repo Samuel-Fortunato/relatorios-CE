@@ -5,14 +5,14 @@
 \subsection{Lei dos Nós: 1ª Montagem}
 Com o intuito de verificar a lei dos nós, montou-se o circuito representado na \cref{cir:mont1}. Este é constítuido por duas resistências, $ R_1 = 1$ k$\Omega$ e $ R_2 = 500$ $\Omega$, associadas em paralelo.
 
-\begin{figure}[ht!]
+\begin{figure}[!ht]
 	\centering
 	\begin{circuitikz}[american voltages]
 		\draw (0,0) -- (2,0) node[label=above:A] (A) {} to [battery1={$V_0 = \qty{15}{V}$}, *-] (4,0)
 		-- (6,0) -- (6,-3) to [short, -*] (5,-3) node[label=left:E] (E) {} -- (5,-2)
-		to [R, a={$R_1=\qty{1}{\kilo\ohm}$}, -*] (1,-2) node[label=above:C] (C) {}
+		to [R, l_={$R_1=\qty{1}{\kilo\ohm}$}, -*] (1,-2) node[label=above:C] (C) {}
 		to [short, -*] (1,-3) node[label=right:B] (B) {}
-		-- (0,-3) -- (0,0-- (0,0);
+		-- (0,-3) -- (0,0);
 
 		\draw (E) -- ++(0,-1)
 		to [R={$R_2 = \qty{500}{\ohm}$}, -*] (1,-4) node[label=below:D] (D) {}
@@ -22,7 +22,7 @@ Com o intuito de verificar a lei dos nós, montou-se o circuito representado na 
 	\label{cir:mont1}
 \end{figure}
 
-\begin{table}[h!]
+\begin{table}[ht!]
 	\centering
 	\caption{Resultados da Montagem 1.}
 	\begin{tabular}{|c|c|c|c|c|}
@@ -44,7 +44,20 @@ Procedeu-se à montagem de mais duas configurações (montagens 2-A e 2-B), com 
 \subsubsection{Montagem 2-A}
 A montagem 2-A é constituída pelas mesmas resistências da montagem anterior, $R_1 = 1$ k$\Omega$ e $R_2 = 500$ $\Omega$, associadas em série. A tabela 2 contém as medições associadas a este circuito.
 
-\begin{table}[h!]
+\begin{figure}[!ht]
+	\centering
+	\begin{circuitikz}[american voltages]
+		\draw (0,0) to [battery1={$V=???\qty{}{V}$}] ++(4,0)
+		-- ++(0,-1)
+		to [R=digam me pls] ++(-2,0)
+		to [R=n sei] ++(-2,0)
+		-- (0,0);
+	\end{circuitikz}
+	\caption{Montagem 2a}
+	\label{cir:mont2a}
+\end{figure}
+
+\begin{table}[ht!]
 	\centering
 	\caption{Resultados da Montagem 2-A.}
 	\begin{tabular}{|c|c|}
@@ -63,7 +76,24 @@ A montagem 2-A é constituída pelas mesmas resistências da montagem anterior, 
 \end{table}
 
 \subsubsection{Montagem 2-B}
-Como se pode constatar no esquema (...), acrescentou-se ao circuito anterior uma resistência $R_3$ de $100$ $\Omega$, em paralelo com a resistência $R_2$. Face a esta alteração, a análise foi repetida.
+Como se pode constatar na \cref{cir:mont2b}, acrescentou-se ao circuito anterior uma resistência $R_3$ de $100$ $\Omega$, em paralelo com a resistência $R_2$. Face a esta alteração, a análise foi repetida.
+
+\begin{figure}[!ht]
+	\centering
+	\begin{circuitikz}[american voltages]
+		\draw (0,0) to [battery1={$V=???\qty{}{V}$}] ++(6,0)
+		-- ++(0,-2) -- ++(-1,0)
+		to [R, l_=digam me pls] ++(-2,0) node (meio) {}
+		to [R, l_=n sei] ++(-2,0) node (fim) {}
+		-- ++(-1,0) -- (0,0);
+
+		\draw (meio) -- ++(0,-1)
+		to [R=nao faço ideia] ++(-2,0)
+		-- (fim);
+	\end{circuitikz}
+	\caption{Montagem 2b}
+	\label{cir:mont2b}
+\end{figure}
 
 TABELA PWEAAAAAAAAAASE
 
@@ -72,18 +102,81 @@ TABELA PWEAAAAAAAAAASE
 
 Para verificar experimentalmente o príncipio da sobreposição, começámos com a configuração da montagem anterior (ver Figura 3). Com esta, medimos os valores da corrente e da tensão na $R_3$:
 
+\begin{figure}[!ht]
+	\centering
+	\begin{circuitikz}[american voltages]
+		\draw (0,0) to [battery1={$V=???\qty{}{V}$}] ++(7,0)
+		-- ++(0,-2)
+		to [R, l_=digam me pls] ++(-3,0) node (meio) {}
+		-- ++(0,0.5) -- ++(-1,0) node[label=below:\textbf{X}] (X) {}
+		to [R, l_=n sei, *-] ++(-2,0)
+		-- ++(0,-0.5) node (fim) {}
+		-- ++(-1,0) -- (0,0);
+
+		\draw (meio) -- ++(0,-0.5)
+		to [R=nao faço ideia] ++(-3,0)
+		-- (fim);
+	\end{circuitikz}
+	\caption{Montagem 3}
+	\label{cir:mont3}
+\end{figure}
+
+
+
 \begin{equation*}
-    I_3 = I = bananas \qquad V_3 = apples
+	I_3 = I = bananas \qquad V_3 = apples
 \end{equation*}
 
 De seguida, desconectou-se a fonte e foi colocada uma pilha de $9$ V na posição \textbf{x}. Repetiram-se as medidas para a mesma resistência $R_3$:
 
+
+\begin{figure}[!ht]
+	\centering
+	\begin{circuitikz}[american voltages]
+		\draw (0,0) -- ++(7,0)
+		-- ++(0,-2)
+		to [R, l_=digam me pls] ++(-3,0) node (meio) {}
+		-- ++(0,0.5) to[battery1, l_={howmanyvoltsnaputadabateria?}] ++(-1,0) %node[label=below:\textbf{X}] (X) {}
+		to [R, l_=n sei, -] ++(-2,0)
+		-- ++(0,-0.5) node (fim) {}
+		-- ++(-1,0) -- (0,0);
+
+		\draw (meio) -- ++(0,-0.5)
+		to [R=nao faço ideia] ++(-3,0)
+		-- (fim);
+	\end{circuitikz}
+	\caption{Montagem 3b}
+	\label{cir:mont3b}
+\end{figure}
+
+
 \begin{equation*}
-    I_3 = bananas \qquad V_3 = apples
+	I_3 = bananas \qquad V_3 = apples
 \end{equation*}
 
-Por último, a fonte de tensão de 15 V foi ligada ao círcuito, onde se encontrava previamente nesta montagem e manteve-se a pilha na posição \textbf{x}. A corrente e a tensão na resistência $R_3$ foram medidas novamente: 
+Por último, a fonte de tensão de 15 V foi ligada ao círcuito, onde se encontrava previamente nesta montagem e manteve-se a pilha na posição \textbf{x}. A corrente e a tensão na resistência $R_3$ foram medidas novamente:
+
+
+\begin{figure}[!ht]
+	\centering
+	\begin{circuitikz}[american voltages]
+		\draw (0,0) to [battery1={$V=???\qty{}{V}$}] ++(7,0)
+		-- ++(0,-2)
+		to [R, l_=digam me pls] ++(-3,0) node (meio) {}
+		-- ++(0,0.5) to[battery1, l_={voltsnaputadabateria?}] ++(-1,0) %node[label=below:\textbf{X}] (X) {}
+		to [R, l_=n sei, -] ++(-2,0)
+		-- ++(0,-0.5) node (fim) {}
+		-- ++(-1,0) -- (0,0);
+
+		\draw (meio) -- ++(0,-0.5)
+		to [R=nao faço ideia] ++(-3,0)
+		-- (fim);
+	\end{circuitikz}
+	\caption{Montagem 3c}
+	\label{cir:mont3c}
+\end{figure}
+
 
 \begin{equation*}
-    I_3 = bananas \qquad V_3 = apples
+	I_3 = bananas \qquad V_3 = apples
 \end{equation*}
