@@ -15,7 +15,7 @@ Com o intuito de verificar a lei dos nós, montou-se o circuito representado na 
 		-- (0,-3) -- (0,0);
 
 		\draw (E) -- ++(0,-1)
-		to [R={$R_2 = \qty{500}{\ohm}$}, -*] (1,-4) node[label=below:D] (D) {}
+		to [R={$R_2 = \qty{500}{\kilo\ohm}$}, -*] (1,-4) node[label=below:D] (D) {}
 		-- (B);
 	\end{circuitikz}
 	\caption{Montagem 1}
@@ -83,9 +83,9 @@ Como se pode constatar na \cref{cir:mont2b}, acrescentou-se ao circuito anterior
 	\begin{circuitikz}[american voltages]
 		\draw (0,0) to [battery1={$V=\qty{15}{V}$}] ++(6,0)
 		-- ++(0,-2)
-		to [R, l_={$R_2=\qty{500}{\ohm}$}] ++(-3,0) node (meio) {}
+		to [R, l_={$R_2=\qty{1}{\kilo\ohm}$}] ++(-3,0) node (meio) {}
 		-- ++(0,0.5)
-		to [R, l_={$R_1=\qty{1}{k\ohm}$}] ++(-2,0)
+		to [R, l_={$R_1=\qty{500}{\ohm}$}] ++(-2,0)
 		-- ++(0,-0.5) node (fim) {}
 		-- ++(-1,0) -- (0,0);
 
