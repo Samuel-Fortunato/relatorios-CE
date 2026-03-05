@@ -12,42 +12,13 @@
 		\hline
 		$I_{AB}$         & $44,70 \pm 0.01$                 & $45,00$                     & $-0,30$              & $0,67$             \\
 		\hline
-		$I_{BC}$         & $15,06 \pm 0.01$                 & 15,00                       & $+0,06$              & $0,40$              \\
+		$I_{BC}$         & $15,06 \pm 0.01$                 & 15,00                       & $+0,06$              & $0,4$              \\
 		\hline
 		$I_{BD}$         & $30,00 \pm 0.01$                 & 30,00                       & $ \pm 0,00$          & $0,00$             \\
 		\hline
 	\end{tabular}
 \end{table}
 
-\subsubsection{Cálculos:}
-\[
-\begin{aligned}
-V_{CE}&=V_{DE}=V_0=15\,\mathrm{V} \\
-I_{BC}&=\frac{V_{CE}}{R_1}=\frac{15}{1\,\mathrm{k}\Omega}=0.015\,\mathrm{A}=15\,\mathrm{mA} \\
-I_{BD}&=\frac{V_{DE}}{R_2}=\frac{15}{500\,\Omega}=0.030\,\mathrm{A}=30\,\mathrm{mA} \\
-I_{AB}&=I_{BC}+I_{BD}=15\,\mathrm{mA}+30\,\mathrm{mA}=45\,\mathrm{mA}
-\end{aligned}
-\]
-
-\[
-\begin{aligned}
-d_{AB}&=I_{AB,\mathrm{exp}}-I_{AB,\mathrm{teo}}
-=44.70-45.00=-0.30\,\mathrm{mA}
-\qquad
-Er_{AB}(\%)=\frac{|d_{AB}|}{I_{AB,\mathrm{teo}}}\times100
-=\frac{|-0.30|}{45.00}\times100=0.67\% \\[6pt]
-d_{BC}&=I_{BC,\mathrm{exp}}-I_{BC,\mathrm{teo}}
-=15.06-15.00=+0.06\,\mathrm{mA}
-\qquad
-Er_{BC}(\%)=\frac{|d_{BC}|}{I_{BC,\mathrm{teo}}}\times100
-=\frac{|0.06|}{15.00}\times100=0.40\% \\[6pt]
-d_{BD}&=I_{BD,\mathrm{exp}}-I_{BD,\mathrm{teo}}
-=30.00-30.00=0.00\,\mathrm{mA}
-\qquad
-Er_{BD}(\%)=\frac{|d_{BD}|}{I_{BD,\mathrm{teo}}}\times100
-=\frac{|0.00|}{30.00}\times100=0.00\%
-\end{aligned}
-\]
 \subsubsection{Verificação da lei dos nós:}
 
 De acordo com a secção \ref{sec:fundam_teorica}, considerando o nó $B$ (ponto de junção dos ramos $AB$, $BC$ e $BD$) e adotando a convenção de sinais em que a corrente entra no nó pelo ramo $AB$ e sai pelos ramos $BC$ e $BD$, tem-se:
@@ -73,9 +44,9 @@ Visto que o valor previsto pela lei dos nós $(0,00\ \text{mA})$ não se encontr
 
 
 \subsection{Montagem 2-A}
-\begin{table}[H]
+\begin{table}[ht!]
 	\centering
-	\caption{Resultados da Montagem 2-A.}
+	\caption{Resultados da Montagem 1.}
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
 		\textbf{Medição} & \textbf{Valor experimental} & \textbf{Valor teórico} & \textbf{Desvio} & \textbf{Erro (\%)} \\
@@ -90,43 +61,7 @@ Visto que o valor previsto pela lei dos nós $(0,00\ \text{mA})$ não se encontr
 		\hline
 	\end{tabular}
 \end{table}
-\subsubsection{Cálculos:}
 
-\[
-\begin{aligned}
-R_{\mathrm{eq}}&=R_1+R_2=1,0\,\mathrm{k}\Omega+500\,\Omega=1,5\,\mathrm{k}\Omega \\
-I&=\frac{V}{R_{\mathrm{eq}}}=\frac{15}{1,5\times10^{3}}=1,0\times10^{-2}\,\mathrm{A}=10\,\mathrm{mA} \\
-V_1&=IR_1=(10\,\mathrm{mA})(1,0\,\mathrm{k}\Omega)=10\,\mathrm{V} \\
-V_2&=IR_2=(10\,\mathrm{mA})(500\,\Omega)=5,0\,\mathrm{V}
-\end{aligned}
-\]
-
-\[
-\begin{aligned}
-d_I&=I_{\mathrm{exp}}-I_{\mathrm{teo}}
-=29,4-10,0=+19,4\,\mathrm{mA}
-\qquad
-Er_I(\%)=\frac{|d_I|}{I_{\mathrm{teo}}}\times100
-=\frac{19,4}{10,0}\times100=194\% \\[6pt]
-d_{V_0}&=V_{0,\mathrm{exp}}-V_{0,\mathrm{teo}}
-=15,18-15,00=+0,18\,\mathrm{V}
-\qquad
-Er_{V_0}(\%)=\frac{|d_{V_0}|}{V_{0,\mathrm{teo}}}\times100
-=\frac{0.18}{15,00}\times100=1,20\% \\[6pt]
-d_{V_1}&=V_{1,\mathrm{exp}}-V_{1,\mathrm{teo}}
-=10,10-10,00=+0,10\,\mathrm{V}
-\qquad
-Er_{V_1}(\%)=\frac{|d_{V_1}|}{V_{1,\mathrm{teo}}}\times100
-=\frac{0,10}{10,00}\times100=1,00\% \\[6pt]
-d_{V_2}&=V_{2,\mathrm{exp}}-V_{2,\mathrm{teo}}
-=5,06-5,00=+0,06\,\mathrm{V}
-\qquad
-Er_{V_2}(\%)=\frac{|d_{V_2}|}{V_{2,\mathrm{teo}}}\times100
-=\frac{0,06}{5,00}\times100=1,20\%
-\end{aligned}
-\]
-
-explicar erro alto.
 
 \subsubsection{Verificação da lei das malhas:}
 De acordo com a secção \ref{sec:fundam_teorica}, considerando a malha definida pelo circuito, temos que:
@@ -152,9 +87,9 @@ Visto que o valor experimental $(0,00\ \text{V})$ está inserido na gama de valo
 		\hline
 		$I_0$            & $ 13,83\pm 0.01 \, \text{mA}$ & $ 13,84 \, \text{mA}$  & $-0,01$\,mA     & $0,07$           \\
 		\hline
-		$I_1$            & $ 13,83\pm 0.01\, \text{mA}$  & $ 13,84 \, \text{mA}$  & $-0,01$\,mA     & $0,07$           \\
+		$I_1$            & $ 2,29\pm 0.01\, \text{mA}$   & $ 2,31 \, \text{mA}$   & $-0,02$\,mA     & $0,86$           \\
 		\hline
-		$I_2$            & $ 2,29\pm 0.01\, \text{mA}$   & $ 2,32 \, \text{mA}$   & $-0,03$\,mA     & $1,29 $          \\
+		$I_2$            & $ 13,83\pm 0.01\, \text{mA}$  & $ 13,84 \, \text{mA}$  & $-0,01$\,mA     & $0.07 $          \\
 		\hline
 		$I_3$            & $ 11,53\pm 0.01\, \text{mA}$  & $ 11,60 \, \text{mA}$  & $-0,07$\,mA     & $0,60$           \\
 		\hline
@@ -169,28 +104,8 @@ Visto que o valor experimental $(0,00\ \text{V})$ está inserido na gama de valo
 	\end{tabular}
 \end{table}
 
-\subsubsection{Cálculos:}
-\[
-\begin{aligned}
-R_{13}&=\left(\frac{1}{R_1}+\frac{1}{R_3}\right)^{-1}
-=\left(\frac{1}{500}+\frac{1}{100}\right)^{-1}
-=8,33\times10^{1}\,\Omega=83,3\,\Omega \\
-R_{\mathrm{eq}}&=R_{13}+R_2=83,3+1,00\times10^{3}
-=1,083\times10^{3}\,\Omega \\
-I_0&=\frac{V_0}{R_{\mathrm{eq}}}
-=\frac{15}{1,083\times10^{3}}
-=1,38\times10^{-2}\,\mathrm{A}=13,8\,\mathrm{mA}=I_2 \\
-V_2&=I_2R_2=(1,38\times10^{-2})(1,00\times10^{3})
-=13,8\,\mathrm{V}, \qquad
-V_1=V_3=V_0-V_2=15,0-13,8=1,15\,\mathrm{V} \\
-I_1&=\frac{V_1}{R_1}=\frac{1,15}{500}
-=2,31\times10^{-3}\,\mathrm{A}=2,31\,\mathrm{mA}, \qquad
-I_3=\frac{V_3}{R_3}=\frac{1,15}{100}
-=1,15\times10^{-2}\,\mathrm{A}=11,5\,\mathrm{mA}
-\end{aligned}
-\]
-
-\subsubsection{Verificação da lei das malhas:}
+\subsection{Montagem 3}
+\subsection{Verificação da lei das malhas:}
 De acordo com a secção \ref{sec:fundam_teorica}, considerando a malha definida pelo circuito constituído pela fonte e as resistências $R_1$ e $R_2$, temos que:
 
 \begin{equation*}
@@ -212,8 +127,6 @@ Considerando a segunda malha defenida pelo circuito constituído pelas resistên
 Os resultados obtidos confirmam a Lei das Malhas, uma vez que a soma algébrica das tensões em cada malha é aproximadamente igual a zero. Na primeira malha observa-se um pequeno desvio em relação a zero, enquanto na segunda malha o resultado é praticamente nulo. Esta diferença pode ser explicada pelas incertezas associadas às medições experimentais, como a resolução e precisão do multímetro ($\pm 0{,}01$ V), as tolerâncias dos componentes do circuito, possíveis resistências internas dos fios e da fonte, bem como pequenas variações ou ruído durante a medição. Assim, considerando estas limitações experimentais, os resultados obtidos são consistentes com a Lei das Malhas.
 
 \vspace{1 cm}
-
-\subsection{Montagem 3}
 
 \subsubsection{Verificação do príncipio da sobreposição:}
 
