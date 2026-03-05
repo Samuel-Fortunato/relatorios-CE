@@ -47,10 +47,10 @@ A montagem 2-A é constituída pelas mesmas resistências da montagem anterior, 
 \begin{figure}[!ht]
 	\centering
 	\begin{circuitikz}[american voltages]
-		\draw (0,0) to [battery1={$V=???\qty{}{V}$}] ++(4,0)
+		\draw (0,0) to [battery1={$V=\qty{15}{V}$}] ++(4,0)
 		-- ++(0,-1)
-		to [R=digam me pls] ++(-2,0)
-		to [R=n sei] ++(-2,0)
+		to [R={$R_2=\qty{500}{\ohm}$}] ++(-2,0)
+		to [R={$R_1=\qty{1}{k\ohm}$}] ++(-2,0)
 		-- (0,0);
 	\end{circuitikz}
 	\caption{Montagem 2-A}
@@ -81,14 +81,16 @@ Como se pode constatar na \cref{cir:mont2b}, acrescentou-se ao circuito anterior
 \begin{figure}[!ht]
 	\centering
 	\begin{circuitikz}[american voltages]
-		\draw (0,0) to [battery1={$V=???\qty{}{V}$}] ++(6,0)
-		-- ++(0,-2) -- ++(-1,0)
-		to [R, l_=digam me pls] ++(-2,0) node (meio) {}
-		to [R, l_=n sei] ++(-2,0) node (fim) {}
+		\draw (0,0) to [battery1={$V=\qty{15}{V}$}] ++(6,0)
+		-- ++(0,-2)
+		to [R, l_={$R_2=\qty{500}{\ohm}$}] ++(-3,0) node (meio) {}
+		-- ++(0,0.5)
+		to [R, l_={$R_1=\qty{1}{k\ohm}$}] ++(-2,0)
+		-- ++(0,-0.5) node (fim) {}
 		-- ++(-1,0) -- (0,0);
 
-		\draw (meio) -- ++(0,-1)
-		to [R=nao faço ideia] ++(-2,0)
+		\draw (meio) -- ++(0,-0.5)
+		to [R={$R_3=\qty{100}{\ohm}$}] ++(-2,0)
 		-- (fim);
 	\end{circuitikz}
 	\caption{Montagem 2-B}
@@ -102,47 +104,28 @@ TABELA PWEAAAAAAAAAASE
 
 Para verificar experimentalmente o príncipio da sobreposição, começámos com a configuração da montagem anterior (\cref{cir:mont2b}). Com esta, medimos os valores da corrente e da tensão na $R_1 = \qty{1}{\kilo\ohm}$:
 
-\begin{figure}[!ht]
-	\centering
-	\begin{circuitikz}[american voltages]
-		\draw (0,0) to [battery1={$V=???\qty{}{V}$}] ++(7,0)
-		-- ++(0,-2)
-		to [R, l_=digam me pls] ++(-3,0) node (meio) {}
-		-- ++(0,0.5) -- ++(-1,0) node[label=below:\textbf{X}] (X) {}
-		to [R, l_=n sei, *-] ++(-2,0)
-		-- ++(0,-0.5) node (fim) {}
-		-- ++(-1,0) -- (0,0);
-
-		\draw (meio) -- ++(0,-0.5)
-		to [R=nao faço ideia] ++(-3,0)
-		-- (fim);
-	\end{circuitikz}
-	\caption{Montagem 3-A}
-	\label{cir:mont3}
-\end{figure}
-
 \begin{equation*}
-    I_3 = I =  \left(13,73 \pm 0,01\right) \, \text{mA} \qquad V_3 = \left(13,95 \pm 0,01\right) \text{V}
+	I_3 = I =  \left(13,73 \pm 0,01\right) \, \text{mA} \qquad V_3 = \left(13,95 \pm 0,01\right) \text{V}
 \end{equation*}
 
 
 
 
-De seguida, desconectou-se a fonte e foi colocada uma pilha de $9$ V na posição \textbf{x}, obtendo a montagem da \cref{cir:mont3b}. Repetiram-se as medidas para a mesma resistência $R_3$:
+De seguida, desconectou-se a fonte e foi colocada uma pilha de $9$ V no ramo da resistência $R_1$, obtendo a montagem da \cref{cir:mont3b}. Repetiram-se as medidas para a mesma resistência $R_3$:
 
 \begin{figure}[!ht]
 	\centering
 	\begin{circuitikz}[american voltages]
-		\draw (0,0) -- ++(7,0)
+		\draw (0,0) -- ++(8,0)
 		-- ++(0,-2)
-		to [R, l_=digam me pls] ++(-3,0) node (meio) {}
-		-- ++(0,0.5) to[battery1, l_={howmanyvoltsnaputadabateria?}] ++(-1,0) %node[label=below:\textbf{X}] (X) {}
-		to [R, l_=n sei, -] ++(-2,0)
+		to [R, l_={$R_2=\qty{500}{\ohm}$}] ++(-3,0) node (meio) {}
+		-- ++(0,0.5) to[battery1, l_={$V_p=\qty{7.5}{V}$}] ++(-2,0) %node[label=below:\textbf{X}] (X) {}
+		to [R, l_={$R_1=\qty{1}{k\ohm}$}] ++(-2,0)
 		-- ++(0,-0.5) node (fim) {}
 		-- ++(-1,0) -- (0,0);
 
 		\draw (meio) -- ++(0,-0.5)
-		to [R=nao faço ideia] ++(-3,0)
+		to [R={$R_3=\qty{100}{\ohm}$}] ++(-4,0)
 		-- (fim);
 	\end{circuitikz}
 	\caption{Montagem 3-B}
@@ -150,26 +133,26 @@ De seguida, desconectou-se a fonte e foi colocada uma pilha de $9$ V na posiçã
 \end{figure}
 
 \begin{equation*}
-    I_3 = \left(0,91 \pm 0,01\right) \, \text{mA} \qquad V_3 = \left(0,92 \pm 0,01\right) \text{V}
+	I_3 = \left(0,91 \pm 0,01\right) \, \text{mA} \qquad V_3 = \left(0,92 \pm 0,01\right) \text{V}
 \end{equation*}
 
 
 
-Por último, a fonte de tensão de 15 V foi ligada ao círcuito, onde se encontrava previamente nesta montagem e manteve-se a pilha na posição \textbf{x} (\cref{cir:mont3c}). A corrente e a tensão na resistência $R_1$ foram medidas novamente: 
+Por último, a fonte de tensão de 15 V foi ligada ao círcuito, onde se encontrava previamente nesta montagem e manteve-se a pilha na posição \textbf{x} (\cref{cir:mont3c}). A corrente e a tensão na resistência $R_1$ foram medidas novamente:
 
 \begin{figure}[!ht]
 	\centering
 	\begin{circuitikz}[american voltages]
-		\draw (0,0) to [battery1={$V=???\qty{}{V}$}] ++(7,0)
+		\draw (0,0) to [battery1={$V=\qty{15}{V}$}] ++(8,0)
 		-- ++(0,-2)
-		to [R, l_=digam me pls] ++(-3,0) node (meio) {}
-		-- ++(0,0.5) to[battery1, l_={voltsnaputadabateria?}] ++(-1,0) %node[label=below:\textbf{X}] (X) {}
-		to [R, l_=n sei, -] ++(-2,0)
+		to [R, l_={$R_2=\qty{500}{\ohm}$}] ++(-3,0) node (meio) {}
+		-- ++(0,0.5) to[battery1, l_={$V_p=\qty{7.5}{V}$}] ++(-2,0) %node[label=below:\textbf{X}] (X) {}
+		to [R, l_={$R_1=\qty{1}{k\ohm}$}] ++(-2,0)
 		-- ++(0,-0.5) node (fim) {}
 		-- ++(-1,0) -- (0,0);
 
 		\draw (meio) -- ++(0,-0.5)
-		to [R=nao faço ideia] ++(-3,0)
+		to [R={$R_3=\qty{100}{\ohm}$}] ++(-4,0)
 		-- (fim);
 	\end{circuitikz}
 	\caption{Montagem 3-C}
@@ -177,5 +160,5 @@ Por último, a fonte de tensão de 15 V foi ligada ao círcuito, onde se encontr
 \end{figure}
 
 \begin{equation*}
-    I_3 = \left(14,70 \pm 0,01\right) \, \text{mA} \qquad V_3 = \left(14,86 \pm 0,01\right) \text{V}
+	I_3 = \left(14,70 \pm 0,01\right) \, \text{mA} \qquad V_3 = \left(14,86 \pm 0,01\right) \text{V}
 \end{equation*}
