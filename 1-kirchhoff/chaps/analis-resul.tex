@@ -148,23 +148,23 @@ Visto que o valor experimental $(0,00\ \text{V})$ está inserido na gama de valo
 	\caption{Resultados da Montagem 2-B Analise}
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
-		\textbf{Medição} & \textbf{Valor experimental} & \textbf{Valor teórico} & \textbf{Desvio} & \textbf{Erro \%} \\
+		\textbf{Medição} & \textbf{Valor experimental}   & \textbf{Valor teórico} & \textbf{Desvio} & \textbf{Erro \%} \\
 		\hline
-		$I_0$            & $ 13,83\pm 0.01 \, \text{mA}$          & $ 13,84 \, \text{mA}$            & $-0,01$\,mA        & $0,07$           \\
+		$I_0$            & $ 13,83\pm 0.01 \, \text{mA}$ & $ 13,84 \, \text{mA}$  & $-0,01$\,mA     & $0,07$           \\
 		\hline
-		$I_1$            & $ 13,83\pm 0.01\, \text{mA}$          & $ 13,84 \, \text{mA}$               & $-0,01$\,mA     & $0,07$           \\
+		$I_1$            & $ 13,83\pm 0.01\, \text{mA}$  & $ 13,84 \, \text{mA}$  & $-0,01$\,mA     & $0,07$           \\
 		\hline
-		$I_2$            & $ 2,29\pm 0.01\, \text{mA}$           & $ 2,32 \, \text{mA}$               & $-0,03$\,mA      & $1,29 $          \\
+		$I_2$            & $ 2,29\pm 0.01\, \text{mA}$   & $ 2,32 \, \text{mA}$   & $-0,03$\,mA     & $1,29 $          \\
 		\hline
-		$I_3$            & $ 11,53\pm 0.01\, \text{mA}$         & $ 11,60 \, \text{mA}$              & $-0,07$\,mA      & $0,60$           \\
+		$I_3$            & $ 11,53\pm 0.01\, \text{mA}$  & $ 11,60 \, \text{mA}$  & $-0,07$\,mA     & $0,60$           \\
 		\hline
-		$V_0$            & $15,17 \pm 0.01\, \text{V}$          & $ 15,00 \, \text{V}$               & $+0,17$\,V       & $1,13$           \\
+		$V_0$            & $15,17 \pm 0.01\, \text{V}$   & $ 15,00 \, \text{V}$   & $+0,17$\,V      & $1,13$           \\
 		\hline
-		$V_1$            & $13,95\pm 0.01\, \text{V}$            & $ 13,84\, \text{V}$              & $+0,11$\,V        & $0,79$           \\
+		$V_1$            & $13,95\pm 0.01\, \text{V}$    & $ 13,84\, \text{V}$    & $+0,11$\,V      & $0,79$           \\
 		\hline
-		$V_2$            & $1,169\pm 0.01\, \text{V}$            & $ 1,16 \, \text{V}$             & $+0,09$\,V      & $7,76 $          \\
+		$V_2$            & $1,169\pm 0.01\, \text{V}$    & $ 1,16 \, \text{V}$    & $+0,09$\,V      & $7,76 $          \\
 		\hline
-		$V_3$            & $1,169\pm 0.01 \, \text{V}$            & $ 1,16 \, \text{V}$             & $+0,09$\,V     & $7,76 $          \\
+		$V_3$            & $1,169\pm 0.01 \, \text{V}$   & $ 1,16 \, \text{V}$    & $+0,09$\,V      & $7,76 $          \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -196,16 +196,20 @@ De acordo com a secção \ref{sec:fundam_teorica}, considerando a malha definida
 \begin{equation*}
 	\sum V = 0
 \end{equation*}
+
 Recorrendo aos valores da tabela 6:
 \begin{equation*}
 	(-13.95 \pm 0,01) - (1.169 \pm 0,01) + (15.17 \pm 0,01)
-	= (+0,051 \pm 0,01)\ \text{V}
+	= (+0,051 \pm 0,03)\ \text{V}
 \end{equation*}
+
 Considerando a segunda malha defenida pelo circuito constituído pelas resistências $R_2$ e $R_3$, temos que:
 \begin{equation*}
 	(-1.169 \pm 0,01) + (1.169 \pm 0,01)
-	= (\pm 0,0 \pm 0,01)\ \text{V}
+	= (\pm 0,0 \pm 0,02)\ \text{V}
 \end{equation*}
+
+Os resultados obtidos confirmam a Lei das Malhas, uma vez que a soma algébrica das tensões em cada malha é aproximadamente igual a zero. Na primeira malha observa-se um pequeno desvio em relação a zero, enquanto na segunda malha o resultado é praticamente nulo. Esta diferença pode ser explicada pelas incertezas associadas às medições experimentais, como a resolução e precisão do multímetro ($\pm 0{,}01$ V), as tolerâncias dos componentes do circuito, possíveis resistências internas dos fios e da fonte, bem como pequenas variações ou ruído durante a medição. Assim, considerando estas limitações experimentais, os resultados obtidos são consistentes com a Lei das Malhas.
 
 \vspace{1 cm}
 
@@ -219,33 +223,33 @@ De acordo com o princípio da sobreposição (ver secção 1.1), sendo o circuit
 Assim, arbitrariamente optou-se por realizar as medições na resistência $R_2$, pelo que para a corrente $I_2$ temos que:
 
 \[
-I_2 = I_2^{15V} + I_2^{7.5V}
+	I_2 = I_2^{15V} + I_2^{7.5V}
 \]
 
 \textbf{Com apenas a fonte de $15$ V ligada} (fig.~3), mediu-se:
 
 \[
-I_2^{15V} = (13,73 \pm 0,01)\ \text{mA}
+	I_2^{15V} = (13,73 \pm 0,01)\ \text{mA}
 \]
 
 \textbf{Com apenas a pilha de $7,5$ V ligada} (fig.~4), obteve-se:
 
 \[
-I_2^{7.5V} = (0,91 \pm 0,01)\ \text{mA}
+	I_2^{7.5V} = (0,91 \pm 0,01)\ \text{mA}
 \]
 
 Somando as contribuições individuais das duas fontes:
 
 \[
-I_2^{15V} + I_2^{7.5V}
-= (13,73 + 0,91)\ \text{mA}
-= (14,64 \pm 0,02)\ \text{mA}
+	I_2^{15V} + I_2^{7.5V}
+	= (13,73 + 0,91)\ \text{mA}
+	= (14,64 \pm 0,02)\ \text{mA}
 \]
 
 \textbf{Com a fonte de $15$ V e a pilha de $7,5$ V ligadas simultaneamente} (fig.~5), obteve-se experimentalmente:
 
 \[
-I_2 = (14,70 \pm 0,01)\ \text{mA}
+	I_2 = (14,70 \pm 0,01)\ \text{mA}
 \]
 
 
@@ -253,32 +257,32 @@ Comparando os resultados, verifica-se que o valor obtido experimentalmente \text
 \\De forma análoga para a tensão de $R_2$:
 
 \[
-V_2 = V_2^{15V} + V_2^{7.5V}
+	V_2 = V_2^{15V} + V_2^{7.5V}
 \]
 
 \textbf{Com apenas a fonte de $15$ V}:
 
 \[
-V_2^{15V} = (13,95 \pm 0,01)\ \text{V}
+	V_2^{15V} = (13,95 \pm 0,01)\ \text{V}
 \]
 
 \textbf{Com apenas a pilha de $7,5$ V}:
 
 \[
-V_2^{7.5V} = (0,92 \pm 0,01)\ \text{V}
+	V_2^{7.5V} = (0,92 \pm 0,01)\ \text{V}
 \]
 
 Logo,
 
 \[
-V_2^{15V} + V_2^{7.5V} =
-(14,87 \pm 0,02)\ \text{V}
+	V_2^{15V} + V_2^{7.5V} =
+	(14,87 \pm 0,02)\ \text{V}
 \]
 
 \textbf{Com a fonte de tensão e a pilha ligadas}, mediu-se:
 
 \[
-V_2 = (14,86 \pm 0,01)\ \text{V}
+	V_2 = (14,86 \pm 0,01)\ \text{V}
 \]
 
 Assim, dentro das incertezas experimentais das medições realizadas, os resultados obtidos para a tensão $V_2$ \textbf{são}, ao contrário da análise para a corrente $I_2$, \textbf{consistentes} com o princípio da sobreposição.
