@@ -126,7 +126,7 @@ Er_{V_2}(\%)=\frac{|d_{V_2}|}{V_{2,\mathrm{teo}}}\times100
 \end{aligned}
 \]
 
-explicar erro alto.
+
 
 \subsubsection{Verificação da lei das malhas:}
 De acordo com a secção \ref{sec:fundam_teorica}, considerando a malha definida pelo circuito, temos que:
@@ -150,21 +150,17 @@ Visto que o valor experimental $(0,00\ \text{V})$ está inserido na gama de valo
 		\hline
 		\textbf{Medição} & \textbf{Valor experimental}   & \textbf{Valor teórico} & \textbf{Desvio} & \textbf{Erro \%} \\
 		\hline
-		$I_0$            & $ 13,83\pm 0.01 \, \text{mA}$ & $ 13,84 \, \text{mA}$  & $-0,01$\,mA     & $0,07$           \\
+		$I_0 = I_2$            & $ 13,83\pm 0.01 \, \text{mA}$ & $ 13,8 \, \text{mA}$  & $+0,03$\,mA     & $0,22$           \\
 		\hline
-		$I_1$            & $ 13,83\pm 0.01\, \text{mA}$  & $ 13,84 \, \text{mA}$  & $-0,01$\,mA     & $0,07$           \\
+		$I_1$            & $ 2,29\pm 0.01\, \text{mA}$  & $ 2,31 \, \text{mA}$  & $-0,02$\,mA     & $0,87$           \\
 		\hline
-		$I_2$            & $ 2,29\pm 0.01\, \text{mA}$   & $ 2,32 \, \text{mA}$   & $-0,03$\,mA     & $1,29 $          \\
-		\hline
-		$I_3$            & $ 11,53\pm 0.01\, \text{mA}$  & $ 11,60 \, \text{mA}$  & $-0,07$\,mA     & $0,60$           \\
+		$I_3$            & $ 11,53\pm 0.01\, \text{mA}$  & $ 11,5 \, \text{mA}$  & $+0,03$\,mA     & $0,26$           \\
 		\hline
 		$V_0$            & $15,17 \pm 0.01\, \text{V}$   & $ 15,00 \, \text{V}$   & $+0,17$\,V      & $1,13$           \\
 		\hline
-		$V_1$            & $13,95\pm 0.01\, \text{V}$    & $ 13,84\, \text{V}$    & $+0,11$\,V      & $0,79$           \\
+		$V_1 = V_3 $            & $1,169\pm 0.01\, \text{V}$    & $ 1,15 \text{V}$    & $-0,331$\,V      & $22,07$           \\
 		\hline
-		$V_2$            & $1,169\pm 0.01\, \text{V}$    & $ 1,16 \, \text{V}$    & $+0,09$\,V      & $7,76 $          \\
-		\hline
-		$V_3$            & $1,169\pm 0.01 \, \text{V}$   & $ 1,16 \, \text{V}$    & $+0,09$\,V      & $7,76 $          \\
+		$V_2$            & $13,95\pm 0.01\, \text{V}$    & $ 13,8 \, \text{V}$    & $+0,15$\,V      & $1,09 $          \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -190,6 +186,81 @@ I_3=\frac{V_3}{R_3}=\frac{1,15}{100}
 \end{aligned}
 \]
 
+\[
+d_{I_2} = I_{2,\text{exp}} - I_{2,\text{teo}}
+= 13,83 - 13,8
+= 0,03\ \text{mA}
+\qquad
+Er_{I_2}(\%) =
+\frac{|d_{I_2}|}{I_{2,\text{teo}}}\times100
+=
+\frac{0,03}{13,8}\times100
+= 0,22\%
+\]
+
+\[
+d_{I_1} = I_{1,\text{exp}} - I_{1,\text{teo}}
+= 2,29 - 2,31
+= -0,02\ \text{mA}
+\qquad
+Er_{I_1}(\%) =
+\frac{|d_{I_1}|}{I_{1,\text{teo}}}\times100
+=
+\frac{0,02}{2,31}\times100
+= 0,87\%
+\]
+
+\[
+d_{I_3} = I_{3,\text{exp}} - I_{3,\text{teo}}
+= 11,53 - 11,5
+= 0,03\ \text{mA}
+\qquad
+Er_{I_3}(\%) =
+\frac{|d_{I_3}|}{I_{3,\text{teo}}}\times100
+=
+\frac{0,03}{11,5}\times100
+= 0,26\%
+\]
+
+\[
+d_{V_0} = V_{0,\text{exp}} - V_{0,\text{teo}}
+= 15,17 - 15,00
+= 0,17\ \text{V}
+\qquad
+Er_{V_0}(\%) =
+\frac{|d_{V_0}|}{V_{0,\text{teo}}}\times100
+=
+\frac{0,17}{15,00}\times100
+= 1,13\%
+\]
+
+\[
+d_{V_1} =  V_{1,\text{exp}} - V_{1,\text{teo}}
+= 1,169 - 1,5
+= -0,331\ \text{V}
+\qquad
+Er_{V_1}(\%) =
+\frac{|d_{V_1}|}{V_{1,\text{teo}}}\times100
+=
+\frac{0,331}{1,5}\times100
+= 22,07\%
+\]
+
+\[
+d_{V_2} = V_{2,\text{exp}} - V_{2,\text{teo}}
+= 13,95 - 13,8
+= 0,15\ \text{V}
+\qquad
+Er_{V_2}(\%) =
+\frac{|d_{V_2}|}{V_{2,\text{teo}}}\times100
+=
+\frac{0,15}{13,8}\times100
+= 1,09\%
+\]
+
+
+
+
 \subsubsection{Verificação da lei das malhas:}
 De acordo com a secção \ref{sec:fundam_teorica}, considerando a malha definida pelo circuito constituído pela fonte e as resistências $R_1$ e $R_2$, temos que:
 
@@ -209,7 +280,7 @@ Considerando a segunda malha defenida pelo circuito constituído pelas resistên
 	= (\pm 0,0 \pm 0,02)\ \text{V}
 \end{equation*}
 
-Os resultados obtidos confirmam a Lei das Malhas, uma vez que a soma algébrica das tensões em cada malha é aproximadamente igual a zero. Na primeira malha observa-se um pequeno desvio em relação a zero, enquanto na segunda malha o resultado é praticamente nulo. Esta diferença pode ser explicada pelas incertezas associadas às medições experimentais, como a resolução e precisão do multímetro ($\pm 0{,}01$ V), as tolerâncias dos componentes do circuito, possíveis resistências internas dos fios e da fonte, bem como pequenas variações ou ruído durante a medição. Assim, considerando estas limitações experimentais, os resultados obtidos são consistentes com a Lei das Malhas.
+Os resultados obtidos confirmam a lei das malhas, uma vez que a soma algébrica das tensões em cada malha é aproximadamente igual a zero. Na primeira malha observa-se um pequeno desvio em relação a zero, enquanto na segunda malha o resultado é praticamente nulo. Esta diferença pode ser explicada pelas incertezas associadas às medições experimentais, como a resolução e precisão do multímetro ($\pm 0{,}01$ V), as tolerâncias dos componentes do circuito, possíveis resistências internas dos fios e da fonte, bem como pequenas variações ou ruído durante a medição. Assim, considerando estas limitações experimentais, os resultados obtidos são consistentes com a lei das malhas de Kirchoff.
 
 \vspace{1 cm}
 
