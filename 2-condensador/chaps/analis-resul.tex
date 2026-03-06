@@ -1,0 +1,89 @@
+\section{Análise de Resultados}
+
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[
+			% title={Capacitor Charging Curve},
+			xlabel={$t \pm \Delta t$ (\unit{s})},
+			ylabel={$V \pm \Delta V$ (\unit{V})},
+			xmin=0, xmax=45,
+			ymin=0, ymax=7,
+			xtick={0, 6, 12, 18, 24, 30, 36, 42},
+			ytick={0, 1, 2, 3, 4, 5, 6},
+			grid=major,
+			grid style={dashed, gray!30},
+			width=10cm,
+			height=7cm,
+			legend pos=south east,
+			/pgf/number format/read comma as period % Handles the comma in your data
+		]
+
+		% Plotting the data points from your table
+		\addplot[
+			color=blue,
+			mark=*,
+			smooth, % Draws a smooth curve between points
+			thick
+		]
+		coordinates {
+				(6, 2.35)
+				(12, 4.14)
+				(18, 5.15)
+				(24, 5.55)
+				(30, 5.72)
+				(36, 5.81)
+				(42, 5.85)
+			};
+
+		% \addlegendentry{Experimental Data}
+
+	\end{axis}
+\end{tikzpicture}
+\end{figure}
+
+
+
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				% title={Capacitor Charging Curve},
+				xlabel={$t \pm \Delta t$ (\unit{s})},
+				ylabel={$V \pm \Delta V$ (\unit{V})},
+				xmin=0, xmax=45,
+				ymin=0, ymax=5,
+				xtick={0, 6, 12, 18, 24, 30, 36, 42},
+				ytick={0, 1, 2, 3, 4, 5, 6},
+				grid=major,
+				grid style={dashed, gray!30},
+				width=10cm,
+				height=7cm,
+				legend pos=south east,
+				/pgf/number format/read comma as period % Handles the comma in your data
+			]
+
+			% Plotting the data points from your table
+			\addplot[
+				color=blue,
+				mark=*,
+				smooth, % Draws a smooth curve between points
+				thick
+			]
+			coordinates {
+					(6, 3.89)
+					(12, 2.40)
+					(18, 1.35)
+					(24, 0.820)
+					(30, 0.533)
+					(36, 0.327)
+					(42, 0.202)
+				};
+
+			% \addlegendentry{Experimental Data}
+
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Charging curve of the capacitor over time.}
+	\label{gra:descarga}
+\end{figure}
