@@ -95,3 +95,44 @@ Na \cref{gra:descarga} apresentam-se os dados de voltagem ao longo do tempo vind
 
 
 Em ambos os casos obseva-se uma tendência exponencial, de acordo com as previsões teoricas das \crefrange{place}{holder}
+
+
+
+\subsection{Linearização para o processo de carga}
+
+A tensão nos terminais do condensador durante o processo de carga é dada pela equação (1):
+
+\begin{equation}
+V(t) = \varepsilon\, (1 - e^{-t/\tau_c})   
+\end{equation}
+
+Onde $\varepsilon$ é a tensão da fonte e $\tau_c$ é constante do tempo de carga.
+
+\begin{align*}
+&\frac{V(t)}{\varepsilon} = 1 - e^{-t/\tau_c} \\
+&\Leftrightarrow 1 - \frac{V(t)}{\varepsilon} = e^{-t/\tau_c}\\
+&\Leftrightarrow \ln\left(1 - \frac{V(t)}{\varepsilon}\right) = - \frac{t}{\tau_c}\\
+\end{align*}
+
+Chega-se então à relação de proporcionalidade direta, da forma $y = mx$, onde $y = \ln\left(1 - \frac{V(t)}{\varepsilon}\right)$, $x = t$ e $m = -\frac{t}{\tau_c}$
+
+
+\subsection{Linearização para o processo de descarga}
+
+Já no processo de descarga, a expressão para a tensão nos terminais do condensador em função do tempo é dada pela equação (2):
+
+\begin{equation}
+V(t) = \varepsilon\, e^{-t/\tau_d}   
+\end{equation}
+
+De forma análoga ao processo de carga:
+
+\begin{align*}
+&\frac{V(t)}{\varepsilon} = e^{-t/\tau_d} \\
+&\Leftrightarrow \quad \frac{V(t)}{\varepsilon} = e^{-t/\tau_d} \\
+&\Leftrightarrow\ln\left(\frac{V(t)}{\varepsilon}\right) = - \frac{t}{\tau_d}\\
+&\Leftrightarrow \quad V(t) - \varepsilon = - \frac{t}{\tau_d}\\
+&\Leftrightarrow \quad V(t) = \varepsilon - \frac{t}{\tau_d}\\
+\end{align*}
+
+Chega-se então à relação de proporcionalidade direta, da forma $y = mx$, onde $y = \ln\left(\frac{V(t)}{\varepsilon}\right)$, $x = t$ e $m = -\frac{t}{\tau_d}$
