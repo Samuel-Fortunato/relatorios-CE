@@ -1,5 +1,33 @@
 \section{Resultados}
 
+\begin{figure}[!ht]
+	\centering
+	\begin{circuitikz}[american voltages]
+		\draw (0,0) to [battery1, v<={$V=\qty{15}{V}$}, invert] ++(0,2)
+		to [nos=$S_1$, n=S1] ++(2,0)
+		node[ocirc] at (S1.e) {}
+		node[ocirc] at (S1.w) {}
+		to [R={$R_2=\qty{1.5}{k\ohm}$}] ++(2,0)
+		node (top) {}
+		to [nos={$S_2$}, n=S2] ++(2,0)
+		node[ocirc] at (S2.e) {}
+		node[ocirc] at (S2.w) {}
+		node (V+) {}
+		to [C={$C=\qty{10}{\milli\farad}$}, n=C1] ++(0,-2)
+		node (V-) {}
+		-- (0,0);
+
+		\draw (top) to [R, l_={$R_2=\qty{1}{k\ohm}$}] ++(0,-2);
+
+		\draw (V+) -- ++(3,0)
+		to [voltmeter] ++(0,-2)
+		-- (V-);
+
+	\end{circuitikz}
+	\caption{Montagem experimental}
+	\label{circ:montagem}
+\end{figure}
+
 \begin{table}[!ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|c|c|}
