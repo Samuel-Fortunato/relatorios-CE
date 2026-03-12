@@ -1,49 +1,54 @@
 \section{Análise de Resultados}
 
+De forma a analisar os resultados obtidos experimentalmente começou-se por representar graficamente as medições da diferenca de potencial em função do tempo.
+
+Na \cref{gra:carga} encontram-se representados os dados da \cref{tab:carga}, correspondentes ao carregamento do condensador.
 \begin{figure}[!ht]
 	\centering
 	\begin{tikzpicture}
-	\begin{axis}[
-			% title={Capacitor Charging Curve},
-			xlabel={$t \pm \Delta t$ (\unit{s})},
-			ylabel={$V \pm \Delta V$ (\unit{V})},
-			xmin=0, xmax=45,
-			ymin=0, ymax=7,
-			xtick={0, 6, 12, 18, 24, 30, 36, 42},
-			ytick={0, 1, 2, 3, 4, 5, 6},
-			grid=major,
-			grid style={dashed, gray!30},
-			width=10cm,
-			height=7cm,
-			legend pos=south east,
-			/pgf/number format/read comma as period % Handles the comma in your data
-		]
+		\begin{axis}[
+				% title={Capacitor Charging Curve},
+				xlabel={$t \pm \Delta t$ (\unit{s})},
+				xmin=0, xmax=45,
+				ymin=0, ymax=7,
+				xtick={0, 6, 12, 18, 24, 30, 36, 42},
+				ytick={0, 1, 2, 3, 4, 5, 6},
+				grid=major,
+				grid style={dashed, gray!30},
+				width=10cm,
+				height=7cm,
+				legend pos=south east,
+				ylabel={$V \pm \Delta V$ (\unit{V})},
+				/pgf/number format/read comma as period % Handles the comma in your data
+			]
 
-		% Plotting the data points from your table
-		\addplot[
-			color=blue,
-			mark=*,
-			smooth, % Draws a smooth curve between points
-			thick
-		]
-		coordinates {
-				(6, 2.35)
-				(12, 4.14)
-				(18, 5.15)
-				(24, 5.55)
-				(30, 5.72)
-				(36, 5.81)
-				(42, 5.85)
-			};
+			% Plotting the data points from your table
+			\addplot[
+				color=blue,
+				mark=*,
+				smooth, % Draws a smooth curve between points
+				thick
+			]
+			coordinates {
+					(6, 2.35)
+					(12, 4.14)
+					(18, 5.15)
+					(24, 5.55)
+					(30, 5.72)
+					(36, 5.81)
+					(42, 5.85)
+				};
 
-		% \addlegendentry{Experimental Data}
+			% \addlegendentry{Experimental Data}
 
-	\end{axis}
-\end{tikzpicture}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Voltagem em função do tempo - Carga}
+	\label{gra:carga}
 \end{figure}
 
 
-
+Na \cref{gra:descarga} apresentam-se os dados de voltagem ao longo do tempo vindos da \cref{tab:descarga}, durante a descarga do condensador.
 \begin{figure}[!ht]
 	\centering
 	\begin{tikzpicture}
@@ -84,6 +89,9 @@
 
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Charging curve of the capacitor over time.}
+	\caption{Voltagem em função do tempo - Descarga}
 	\label{gra:descarga}
 \end{figure}
+
+
+Em ambos os casos obseva-se uma tendência exponencial, de acordo com as previsões teoricas das \crefrange{place}{holder}
