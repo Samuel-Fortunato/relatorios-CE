@@ -123,7 +123,7 @@ Calcula-se então a tensão máxima no condensador, tendo em conta que quando o 
 
 Procedeu-se assim à representação dos dados linearizados na \cref{gra:lin-carga}, tal como da sua reta de ajuste, dada pela \cref{eq:reg-lin-car}
 \begin{equation} \label{eq:reg-lin-car}
-	f(x) = -0.096338 x 
+	f(x) = -0.096338 x
 \end{equation}
 
 \begin{figure}[!ht]
@@ -186,8 +186,8 @@ De forma análoga ao processo de carga, lineariza-se a expressão:
 	 & \frac{V(t)}{\varepsilon} = e^{-t/\tau_d}                                     \\
 	 & \Leftrightarrow \quad \frac{V(t)}{\varepsilon} = e^{-t/\tau_d}               \\
 	 & \Leftrightarrow\ln\left(\frac{V(t)}{\varepsilon}\right) = - \frac{t}{\tau_d} \\
-	 % & \Leftrightarrow \quad V(t) - \varepsilon = - \frac{t}{\tau_d}                \\
-	 % & \Leftrightarrow \quad V(t) = \varepsilon - \frac{t}{\tau_d}                  \\
+	% & \Leftrightarrow \quad V(t) - \varepsilon = - \frac{t}{\tau_d}                \\
+	% & \Leftrightarrow \quad V(t) = \varepsilon - \frac{t}{\tau_d}                  \\
 \end{align*}
 
 Chega-se então à relação de proporcionalidade direta, da forma $y = mx$, onde $y = \ln\left(\frac{V(t)}{\varepsilon}\right)$, $x = t$ e $m = -\frac{t}{\tau_d}$
@@ -237,11 +237,45 @@ Na \cref{gra:lin-descarga} apresentam-se os dados da descarga, linearizados, tal
 				draw=red,
 				mark=none,
 				domain={5:42}
-		] {-0.08095*x};
+			] {-0.08095*x};
 
 		\end{axis}
 	\end{tikzpicture}
 	\caption{Linearização do processo de descarga}
 	\label{gra:lin-descarga}
 \end{figure}
+\section{Determinação das constantes experimentais de tempo}
+Partindo dos declives das retas obtiram-se os seguintes valores para o $\tau_c$ e $\tau_d$:
+\begin{equation}
+	\tau_c = \frac{1}{|m_c|}
+	= \frac{1}{|0.09633|}
+	\approx 10.38s
+\end{equation}
+\begin{equation}
+	\tau_d = \frac{1}{|m_c|}
+	= \frac{1}{|0.08095|}
+	\approx 12.25s
+\end{equation}
 
+\subsection{Cálculo das constantes de tempo teóricas}
+\textbf{Carga}
+\paragraph{}
+No processo de carga com os dois interruptores fechados, as resistências $R_1$ e $R_2$ encontram-se em paralelo:
+\[
+	\tau_c = (R_1 // R_2)C
+\]
+
+\begin{equation}
+	R_{eq} = \frac{R_1 R_2}{R_1 + R_2}
+	= \frac{1500 \times 1000}{1500 + 1000}
+	= 600\,\Omega
+\end{equation}
+
+\[
+	\tau_c = R_{eq}C = 600 \times 0.01 = 6\,s
+\]
+\textbf{Descarga}
+\paragraph{}No processo de descarga com o interruptor $S_1$ aberto, só é considerada para os cálculos a resistência $R_2$:
+\begin{equation}
+	\tau_d = R_2 C = 1000 \times 0.01 = 10\,s
+\end{equation}
