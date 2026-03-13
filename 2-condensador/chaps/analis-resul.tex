@@ -100,14 +100,13 @@ Em ambos os casos obseva-se uma tendência exponencial, de acordo com as previs�
 \subsection{Linearização}
 \subsubsection{Linearização para o processo de carga}
 
-A tensão nos terminais do condensador durante o processo de carga é dada pela equação (1):
-
-\begin{equation}
+A tensão nos terminais do condensador durante o processo de carga é dada pela equação \cref{eq:carga}:
+\begin{equation} \label{eq:carga}
 	V(t) = \varepsilon\, (1 - e^{-t/\tau_c})
 \end{equation}
+Onde $\varepsilon$ é a tensão máxima do condensador e $\tau_c$ é constante do tempo de carga.
 
-Onde $\varepsilon$ é a tensão da fonte e $\tau_c$ é constante do tempo de carga.
-
+De forma a obter o valor de $\tau_c$, através de uma regressão linear, procedeu-se à linearização da expressão:
 \begin{align*}
 	 & \frac{V(t)}{\varepsilon} = 1 - e^{-t/\tau_c}                                      \\
 	 & \Leftrightarrow 1 - \frac{V(t)}{\varepsilon} = e^{-t/\tau_c}                      \\
@@ -116,18 +115,16 @@ Onde $\varepsilon$ é a tensão da fonte e $\tau_c$ é constante do tempo de car
 
 Chega-se então à relação de proporcionalidade direta, da forma $y = mx$, onde $y = \ln\left(1 - \frac{V(t)}{\varepsilon}\right)$, $x = t$ e $m = -\frac{t}{\tau_c}$
 
-Calcula-se então a {\Large \{carga máxima do condensador (verificar)\}} calculando a tensão na resistência $ R_2 $:
+Calcula-se então a tensão máxima no condensador, tendo em conta que quando o condensador está totalmente carregado, se comporta como um circuito aberto, tendo assim a mesma diferenca de potencial que $R_2$. Resolvendo o divisor de tensao formado por $R_1$ e $R_2$ obtemos:
 
 \begin{equation}
 	V_{max} = V_\text{fonte} \cdot \frac{R_2}{R_1 + R_2} = 15 \cdot \frac{1000}{1000 + 1500} = \qty{6}{V}
 \end{equation}
 
-REGRESSAO LINEAR \cref{eq:reg-lin}
-\begin{equation} \label{eq:reg-lin}
+Procedeu-se assim à representação dos dados linearizados na \cref{gra:lin-carga}, tal como da sua reta de ajuste, dada pela \cref{eq:reg-lin-car}
+\begin{equation} \label{eq:reg-lin-car}
 	f(x) = -0.096338 x 
 \end{equation}
-
-Assim, representamos o grafico linearizado, com a regressão linear respetiva:
 
 \begin{figure}[!ht]
 	\centering
@@ -179,20 +176,72 @@ Assim, representamos o grafico linearizado, com a regressão linear respetiva:
 
 \subsubsection{Linearização para o processo de descarga}
 
-Já no processo de descarga, a expressão para a tensão nos terminais do condensador em função do tempo é dada pela equação (2):
-
-\begin{equation}
+Já no processo de descarga, a expressão para a tensão nos terminais do condensador em função do tempo é dada pela equação \cref{eq:descarga}:
+\begin{equation} \label{eq:descarga}
 	V(t) = \varepsilon\, e^{-t/\tau_d}
 \end{equation}
 
-De forma análoga ao processo de carga:
-
+De forma análoga ao processo de carga, lineariza-se a expressão:
 \begin{align*}
 	 & \frac{V(t)}{\varepsilon} = e^{-t/\tau_d}                                     \\
 	 & \Leftrightarrow \quad \frac{V(t)}{\varepsilon} = e^{-t/\tau_d}               \\
 	 & \Leftrightarrow\ln\left(\frac{V(t)}{\varepsilon}\right) = - \frac{t}{\tau_d} \\
-	 & \Leftrightarrow \quad V(t) - \varepsilon = - \frac{t}{\tau_d}                \\
-	 & \Leftrightarrow \quad V(t) = \varepsilon - \frac{t}{\tau_d}                  \\
+	 % & \Leftrightarrow \quad V(t) - \varepsilon = - \frac{t}{\tau_d}                \\
+	 % & \Leftrightarrow \quad V(t) = \varepsilon - \frac{t}{\tau_d}                  \\
 \end{align*}
 
 Chega-se então à relação de proporcionalidade direta, da forma $y = mx$, onde $y = \ln\left(\frac{V(t)}{\varepsilon}\right)$, $x = t$ e $m = -\frac{t}{\tau_d}$
+
+Na \cref{gra:lin-descarga} apresentam-se os dados da descarga, linearizados, tal como a reta de ajuste, dada pela \cref{eq:reg-lin-des}
+\begin{equation} \label{eq:reg-lin-des}
+	f(x) = -0.08095 x
+\end{equation}
+
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				% title={Capacitor Charging Curve},
+				xlabel={$x=t$},
+				% xmin=0, xmax=45,
+				% ymin=0, ymax=7,
+				% xtick={0, 6, 12, 18, 24, 30, 36, 42},
+				% ytick={0, 1, 2, 3, 4, 5, 6},
+				grid=major,
+				grid style={dashed, gray!30},
+				width=10cm,
+				height=7cm,
+				legend pos=south east,
+				ylabel={$y=\ln\left(1-\frac{V(t)}{\varepsilon}\right)$},
+				/pgf/number format/read comma as period % Handles the comma in your data
+			]
+
+			% Plotting the data points from your table
+			\addplot+[
+				only marks,
+				color=blue,
+				mark=*,
+			]
+			coordinates {
+					(6,  -0.4334)
+					(12, -0.9163)
+					(18, -1.4917)
+					(24, -1.9902)
+					(30, -2.4210)
+					(36, -2.9096)
+					(42, -3.3912)
+				};
+
+			\addplot[
+				thick,
+				draw=red,
+				mark=none,
+				domain={5:42}
+		] {-0.08095*x};
+
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Linearização do processo de descarga}
+	\label{gra:lin-descarga}
+\end{figure}
+
