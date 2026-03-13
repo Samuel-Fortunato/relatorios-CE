@@ -256,6 +256,7 @@ Partindo dos declives das retas obtiram-se os seguintes valores para o $\tau_c$ 
 	= \frac{1}{|0,08095|}
 	\approx 12,25s
 \end{equation*}
+>>>>>>> 83a5d03e9d41ac07b39050c55d6ecb0fa173a220
 
 \subsubsection{Cálculo das constantes de tempo teóricas}
 \textbf{Carga}
@@ -277,10 +278,32 @@ Calculando a tensão equivalente:
 Temos que:
 
 \[
-	\tau_c = R_{eq} \, C = 600 \times 0,01 = 6\,s
+	\tau_c = R_{eq}C = 600 \times 0,01 = 6\,s
 \]
 \textbf{Descarga}
-\paragraph{}No processo de descarga com o interruptor $S_1$ aberto, só é considerada para os cálculos a resistência $R_2$. Assim:
-\begin{equation*}
-	\tau_d = R_2 \, C = 1000 \times 0,01 = 10\,s
-\end{equation*}
+\paragraph{}No processo de descarga com o interruptor $S_1$ aberto, só é considerada para os cálculos a resistência $R_2$:
+\begin{equation}
+	\tau_d = R_2 C = 1000 \times 0,01 = 10\,s
+\end{equation}
+\subsection{Determinação da Precisão e Exatidão}
+Para o cálculo da precisão foi utilizada a equação ... e para a exatidão a equação
+\begin{equation}
+	\text{Precisão}(\%) = \frac{\tau_{\text{teo}}}{\tau_{\text{exp}}} \times 100
+\end{equation}
+\begin{equation}
+	\label{eq:exatidao}
+	\text{Exatidão}(\%) = \left|\frac{\tau_{\text{exp}}-\tau_{\text{teo}}}{\tau_{\text{teo}}}\right|\times 100
+\end{equation}
+Os valores obtidos foram registados na tabela refff:
+\begin{table}[h]
+	\centering
+	\begin{tabular}{c c c c c}
+		\hline
+		Processo & $\tau_{teo}$ (s) & $\tau_{exp}$ (s) & Precisão (\%) & Exatidão            \\
+		\hline
+		Carga    & 6                & 10.30            & 58.3\%        & 71.7\% -- Não exato \\
+		Descarga & 10               & 12.25            & 81.6\%        & 22.5\% -- Não exato \\
+		\hline
+	\end{tabular}
+	\caption{Comparação entre constantes de tempo teóricas e experimentais.}
+\end{table}
