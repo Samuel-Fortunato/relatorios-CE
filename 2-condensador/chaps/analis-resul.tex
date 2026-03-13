@@ -212,7 +212,7 @@ Na \cref{gra:lin-descarga} apresentam-se os dados da descarga, linearizados, tal
 				width=10cm,
 				height=7cm,
 				legend pos=south east,
-				ylabel={$y=\ln\left(1-\frac{V(t)}{\varepsilon}\right)$},
+				ylabel={$y=\ln\left(\frac{V(t)}{\varepsilon}\right)$},
 				/pgf/number format/read comma as period % Handles the comma in your data
 			]
 
@@ -244,32 +244,38 @@ Na \cref{gra:lin-descarga} apresentam-se os dados da descarga, linearizados, tal
 	\caption{Linearização do processo de descarga}
 	\label{gra:lin-descarga}
 \end{figure}
-\section{Determinação das constantes experimentais de tempo}
+\subsection{Determinação das constantes experimentais de tempo}
 Partindo dos declives das retas obtiram-se os seguintes valores para o $\tau_c$ e $\tau_d$:
-\begin{equation}
+\begin{equation*}
 	\tau_c = \frac{1}{|m_c|}
 	= \frac{1}{|0,09633|}
 	\approx 10,38s
-\end{equation}
-\begin{equation}
+\end{equation*}
+\begin{equation*}
 	\tau_d = \frac{1}{|m_c|}
 	= \frac{1}{|0,08095|}
 	\approx 12,25s
-\end{equation}
+\end{equation*}
+>>>>>>> 83a5d03e9d41ac07b39050c55d6ecb0fa173a220
 
-\subsection{Cálculo das constantes de tempo teóricas}
+\subsubsection{Cálculo das constantes de tempo teóricas}
 \textbf{Carga}
 \paragraph{}
-No processo de carga com os dois interruptores fechados, as resistências $R_1$ e $R_2$ encontram-se em paralelo:
-\[
-	\tau_c = (R_1 // R_2)C
-\]
+No processo de carga com os dois interruptores fechados, as resistências $R_1$ e $R_2$ encontram-se em paralelo, pelo que a constante de tempo $\tau_c$ é dada pela \cref{eq:tauc}:
 
-\begin{equation}
+\begin{equation} \label{eq:tauc}
+	\tau_c = (R_1 // R_2)\,C
+\end{equation}
+
+Calculando a tensão equivalente:
+
+\begin{equation*}
 	R_{eq} = \frac{R_1 R_2}{R_1 + R_2}
 	= \frac{1500 \times 1000}{1500 + 1000}
 	= 600\,\Omega
-\end{equation}
+\end{equation*}
+
+Temos que:
 
 \[
 	\tau_c = R_{eq}C = 600 \times 0,01 = 6\,s
