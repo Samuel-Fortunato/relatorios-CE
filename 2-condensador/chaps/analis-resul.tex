@@ -134,7 +134,7 @@ Assim, representamos o grafico linearizado, com a regressão linear respetiva:
 	\begin{tikzpicture}
 		\begin{axis}[
 				% title={Capacitor Charging Curve},
-				xlabel={$t \pm \Delta t$ (\unit{s})},
+				xlabel={$x=t$},
 				% xmin=0, xmax=45,
 				% ymin=0, ymax=7,
 				% xtick={0, 6, 12, 18, 24, 30, 36, 42},
@@ -144,7 +144,7 @@ Assim, representamos o grafico linearizado, com a regressão linear respetiva:
 				width=10cm,
 				height=7cm,
 				legend pos=south east,
-				ylabel={$V \pm \Delta V$ (\unit{V})},
+				ylabel={$y=\ln\left(1-\frac{V(t)}{\varepsilon}\right)$},
 				/pgf/number format/read comma as period % Handles the comma in your data
 			]
 
