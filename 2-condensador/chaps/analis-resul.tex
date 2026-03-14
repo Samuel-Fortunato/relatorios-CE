@@ -282,18 +282,17 @@ Temos que:
 \]
 \textbf{Descarga}
 \paragraph{}No processo de descarga com o interruptor $S_1$ aberto, só é considerada para os cálculos a resistência $R_2$:
-\begin{equation}
+\begin{equation*}
 	\tau_d = R_2 C = 1000 \times 0,01 = 10\,s
-\end{equation}
+\end{equation*}
 \subsection{Determinação da Precisão e Exatidão}
-Para o cálculo da precisão foi utilizada a equação ... e para a exatidão a equação
-\begin{equation}
-	\text{Precisão}(\%) = \frac{\tau_{\text{teo}}}{\tau_{\text{exp}}} \times 100
+Procedeu-se ao cálculo da precisão dos valores obtidos através da \cref{eq:precisao} e averiguou-se a exatidão dos mesmos:
+
+\begin{equation} \label{eq:precisao}
+	\text{Precisão}(\%) = 100 - \frac{|\tau_{\text{exp}} - \tau_{\text{teo}}|}{\tau_{\text{teo}}} \times 100
 \end{equation}
-\begin{equation}
-	\label{eq:exatidao}
-	\text{Exatidão}(\%) = \left|\frac{\tau_{\text{exp}}-\tau_{\text{teo}}}{\tau_{\text{teo}}}\right|\times 100
-\end{equation}
+
+
 Os valores obtidos foram registados na tabela refff:
 \begin{table}[h]
 	\centering
@@ -301,8 +300,8 @@ Os valores obtidos foram registados na tabela refff:
 		\hline
 		Processo & $\tau_{teo}$ (s) & $\tau_{exp}$ (s) & Precisão (\%) & Exatidão            \\
 		\hline
-		Carga    & 6                & 10.30            & 58.3\%        & 71.7\% -- Não exato \\
-		Descarga & 10               & 12.25            & 81.6\%        & 22.5\% -- Não exato \\
+		Carga    & 6                & 10,30            & 28,3\%        & Não exato \\
+		Descarga & 10               & 12,25            & 77,5\%        & Não exato \\
 		\hline
 	\end{tabular}
 	\caption{Comparação entre constantes de tempo teóricas e experimentais.}
