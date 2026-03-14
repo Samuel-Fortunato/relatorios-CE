@@ -94,7 +94,7 @@ Na \cref{gra:descarga} apresentam-se os dados de voltagem ao longo do tempo vind
 \end{figure}
 
 
-Em ambos os casos obseva-se uma tendência exponencial, de acordo com as previsões teoricas das {\Huge equacoes}
+Em ambos os casos obseva-se uma tendência exponencial, de acordo com as previsões teoricas.
 
 
 \subsection{Linearização}
@@ -115,16 +115,16 @@ De forma a obter o valor de $\tau_c$, através de uma regressão linear, procede
 
 Chega-se então à relação de proporcionalidade direta, da forma $y = mx$, onde $y = \ln\left(1 - \frac{V(t)}{\varepsilon}\right)$, $x = t$ e $m = -\frac{t}{\tau_c}$
 
-Calcula-se então a tensão máxima no condensador, tendo em conta que quando o condensador está totalmente carregado, se comporta como um circuito aberto, tendo assim a mesma diferenca de potencial que $R_2$. Resolvendo o divisor de tensao formado por $R_1$ e $R_2$ obtemos:
+Calcula-se então a tensão máxima no condensador $\varepsilon$, tendo em conta que quando o condensador está totalmente carregado, se comporta como um circuito aberto, tendo assim a mesma diferenca de potencial que $R_2$. Resolvendo o divisor de tensão formado por $R_1$ e $R_2$ obtem-se:
 
-\begin{equation}
-	V_{max} = V_\text{fonte} \cdot \frac{R_2}{R_1 + R_2} = 15 \cdot \frac{1000}{1000 + 1500} = \qty{6}{V}
-\end{equation}
+\begin{equation*}
+	\varepsilon = V_\text{fonte} \cdot \frac{R_2}{R_1 + R_2} = 15 \cdot \frac{1000}{1000 + 1500} = \qty{6}{V}
+\end{equation*}
 
 Procedeu-se assim à representação dos dados linearizados na \cref{gra:lin-carga}, tal como da sua reta de ajuste, dada pela \cref{eq:reg-lin-car}
-\begin{equation} \label{eq:reg-lin-car}
-	f(x) = -0.096338 x
-\end{equation}
+\begin{equation*} \label{eq:reg-lin-car}
+	f(x) = -0,096338 x
+\end{equation*}
 
 \begin{figure}[!ht]
 	\centering
@@ -193,9 +193,9 @@ De forma análoga ao processo de carga, lineariza-se a expressão:
 Chega-se então à relação de proporcionalidade direta, da forma $y = mx$, onde $y = \ln\left(\frac{V(t)}{\varepsilon}\right)$, $x = t$ e $m = -\frac{t}{\tau_d}$
 
 Na \cref{gra:lin-descarga} apresentam-se os dados da descarga, linearizados, tal como a reta de ajuste, dada pela \cref{eq:reg-lin-des}
-\begin{equation} \label{eq:reg-lin-des}
-	f(x) = -0.08095 x
-\end{equation}
+\begin{equation*} \label{eq:reg-lin-des}
+	f(x) = -0,08095 x
+\end{equation*}
 
 \begin{figure}[!ht]
 	\centering
@@ -282,28 +282,28 @@ Temos que:
 \]
 \textbf{Descarga}
 \paragraph{}No processo de descarga com o interruptor $S_1$ aberto, só é considerada para os cálculos a resistência $R_2$:
-\begin{equation}
+\begin{equation*}
 	\tau_d = R_2 C = 1000 \times 0,01 = 10\,s
+\end{equation*}
+\subsection{Determinação da Exatidão}
+Procedeu-se ao cálculo da exatidão dos valores obtidos através da \cref{eq:exatidao}:
+
+\begin{equation} \label{eq:exatidao}
+	\text{Exatidão}(\%) = 100 - \frac{|\tau_{\text{exp}} - \tau_{\text{teo}}|}{\tau_{\text{teo}}} \times 100
 \end{equation}
-\subsection{Determinação da Precisão e Exatidão}
-Para o cálculo da precisão foi utilizada a equação ... e para a exatidão a equação
-\begin{equation}
-	\text{Precisão}(\%) = \frac{\tau_{\text{teo}}}{\tau_{\text{exp}}} \times 100
-\end{equation}
-\begin{equation}
-	\label{eq:exatidao}
-	\text{Exatidão}(\%) = \left|\frac{\tau_{\text{exp}}-\tau_{\text{teo}}}{\tau_{\text{teo}}}\right|\times 100
-\end{equation}
-Os valores obtidos foram registados na tabela refff:
+
+
+Os valores obtidos foram registados na \cref{tab:exatid}.
 \begin{table}[h]
 	\centering
+	\caption{Comparação entre constantes de tempo teóricas e experimentais.}
+	\label{tab:exatid}
 	\begin{tabular}{c c c c c}
 		\hline
-		Processo & $\tau_{teo}$ (s) & $\tau_{exp}$ (s) & Precisão (\%) & Exatidão            \\
+		Processo & $\tau_{teo}$ (s) & $\tau_{exp}$ (s) & Precisão (\%) & Resultado            \\
 		\hline
-		Carga    & 6                & 10.30            & 58.3\%        & 71.7\% -- Não exato \\
-		Descarga & 10               & 12.25            & 81.6\%        & 22.5\% -- Não exato \\
+		Carga    & 6                & 10,30            & 28,3\%        & Não exato \\
+		Descarga & 10               & 12,25            & 77,5\%        & Não exato \\
 		\hline
 	\end{tabular}
-	\caption{Comparação entre constantes de tempo teóricas e experimentais.}
 \end{table}
