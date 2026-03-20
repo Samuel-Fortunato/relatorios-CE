@@ -1,2 +1,37 @@
 \section{Resultados}
 
+\begin{figure}[!ht]
+	\centering
+	\begin{circuitikz}[american voltages]
+		\draw (0,0) to [vR] ++(3,0)
+		to [ammeter] ++(2,0)
+		coordinate (Vp)
+		-- ++(2,0)
+		node[circ, label={above:A}] (A) {}
+		to [R={$R_x=\qty{0}{\ohm}$}] ++(3,0)
+		coordinate (Ra)
+		to [R={$R_x=\qty{0}{\ohm}$}] ++(0,-4)
+		coordinate (Rb)
+		to [R={$R_x=\qty{0}{\ohm}$}] ++(-3,0)
+		node[circ, label={below:B}] (B) {}
+		-- ++(-2,0)
+		coordinate (Vn)
+		-- ++(-5,0)
+		to [battery1, v<={$\qty{15}{V}$}, invert] (0,0);
+
+		\draw (Ra) to [R={$R_x=\qty{0}{\ohm}$}] ++(3,0)
+		node[circ, label={above:C}] (C) {};
+
+		\draw (Rb) -- ++(3,0)
+		node[circ, label={below:D}] (D) {};
+
+		\draw (Vp) to [voltmeter] (Vn);
+
+
+		\draw[dashed, thick, blue] ($(A)+(-0.5,1)$) rectangle ($(D)+(0.5,-1)$);
+		\node[blue] at ($(A)!0.5!(C) + (0,1.3)$) {\textbf{Resistor Network}};
+	\end{circuitikz}
+	\caption{Montagem experimental}
+	\label{circ:montagem}
+\end{figure}
+
