@@ -9,18 +9,18 @@
 		coordinate (Vp)
 		-- ++(2,0)
 		node[circ, label={above:A}] (A) {}
-		to [R={$R_x=\qty{0}{\ohm}$}] ++(3,0)
+		to [R={$R_1=\qty{120}{\ohm}$}] ++(3,0)
 		coordinate (Ra)
-		to [R={$R_x=\qty{0}{\ohm}$}] ++(0,-4)
+		to [R={$R_3=\qty{270}{\ohm}$}] ++(0,-4)
 		coordinate (Rb)
-		to [R={$R_x=\qty{0}{\ohm}$}] ++(-3,0)
+		to [R={$R_4=\qty{120}{\ohm}$}] ++(-3,0)
 		node[circ, label={below:B}] (B) {}
 		-- ++(-2,0)
 		coordinate (Vn)
 		-- ++(-5,0)
 		to [battery1, v<={$\qty{15}{V}$}, invert] (0,0);
 
-		\draw (Ra) to [R={$R_x=\qty{0}{\ohm}$}] ++(3,0)
+		\draw (Ra) to [R={$R_2=\qty{330}{\ohm}$}] ++(3,0)
 		node[circ, label={above:C}] (C) {};
 
 		\draw (Rb) -- ++(3,0)
@@ -47,11 +47,11 @@
 		coordinate (Vp)
 		% -- ++(0,0)
 		% node[circ, label={above:A}] (A) {}
-		to [R={$R_x=\qty{0}{\ohm}$}] ++(2,0)
+		to [R={$R_1=\qty{120}{\ohm}$}] ++(2,0)
 		coordinate (Ra)
-		to [R={$R_x=\qty{0}{\ohm}$}] ++(0,-2)
+		to [R={$R_3=\qty{270}{\ohm}$}] ++(0,-2)
 		coordinate (Rb)
-		to [R={$R_x=\qty{0}{\ohm}$}] ++(-2,0)
+		to [R={$R_4=\qty{120}{\ohm}$}] ++(-2,0)
 		% node[circ, label={below:B}] (B) {}
 		% -- ++(-2,0)
 		coordinate (Vn)
@@ -114,18 +114,18 @@
 		coordinate (Vp)
 		% -- ++(0,0)
 		% node[circ, label={above:A}] (A) {}
-		to [R={$R_x=\qty{0}{\ohm}$}] ++(2,0)
+		to [R={$R_1=\qty{120}{\ohm}$}] ++(2,0)
 		coordinate (Ra)
-		to [R={$R_x=\qty{0}{\ohm}$}] ++(0,-2)
+		to [R={$R_3=\qty{270}{\ohm}$}] ++(0,-2)
 		coordinate (Rb)
-		to [R={$R_x=\qty{0}{\ohm}$}] ++(-2,0)
+		to [R={$R_4=\qty{120}{\ohm}$}] ++(-2,0)
 		% node[circ, label={below:B}] (B) {}
 		% -- ++(-2,0)
 		coordinate (Vn)
 		-- ++(-3.5,0)
 		to [battery1, v<={$\qty{15}{V}$}, invert] (0,0);
 
-		\draw (Ra) to [R={$R_x=\qty{0}{\ohm}$}] ++(2,0)
+		\draw (Ra) to [R={$R_2=\qty{330}{\ohm}$}] ++(3,0)
 		-- ++(0,-2)
 		-- (Rb);
 
@@ -177,18 +177,18 @@
 		\draw (0,0) to [battery1, v=15V, name=mainbat] ++(0,-4)
 		-- ++(2,0)
 		node[circ, label={above:B}] (B) {}
-		to [R=wtf] ++(2,0) coordinate(placaS)
-		to [R=wtf] ++(0,4) coordinate(placaN)
-		to [R=wtf] ++(-2,0)
+		to [R={$R_4=\qty{120}{\ohm}$}] ++(2,0) coordinate(placaS)
+		to [R={$R_3=\qty{270}{\ohm}$}] ++(0,4) coordinate(placaN)
+		to [R={$R_1=\qty{120}{\ohm}$}] ++(-2,0)
 		node[circ, label={above:A}] (A) {}
 		-- (0,0);
 
-		\draw (placaN) to [R=test] ++(2,0)
+		\draw (placaN) to [R, l_={$R_2=\qty{330}{\ohm}$}] ++(2,0)
 		node[circ, label={above:C}] (C) {}
 		-- ++(2,0)
 		node[ocirc, label={above:1}] (out1) {};
 
-		\draw (placaS) to [R=test] ++(2,0)
+		\draw (placaS) -- ++(2,0)
 		node[circ, label={above:D}] (D) {}
 		-- ++(2,0)
 		node[ocirc, label={above:2}] (out2) {};
@@ -214,18 +214,18 @@
 		\draw (0,0) to [battery1, v=15V, name=mainbat] ++(0,-4)
 		-- ++(1,0)
 		node[circ, label={above:B}] (B) {}
-		to [R, l_=wtf] ++(2,0) coordinate(placaS)
-		to [R, l_=wtf] ++(0,4) coordinate(placaN)
-		to [R, l=wtf] ++(-2,0)
+		to [R={$R_4=\qty{120}{\ohm}$}] ++(2,0) coordinate(placaS)
+		to [R, l_={$R_3=\qty{270}{\ohm}$}] ++(0,4) coordinate(placaN)
+		to [R={$R_1=\qty{120}{\ohm}$}] ++(-2,0)
 		node[circ, label={above:A}] (A) {}
 		-- (0,0);
 
-		\draw (placaN) to [R, l_=test] ++(2,0)
+		\draw (placaN) to [R, l_={$R_2=\qty{330}{\ohm}$}] ++(2,0)
 		node[circ, label={above:C}] (C) {}
 		-- ++(1,0)
 		node[ocirc, label={above:1}] (out1) {};
 
-		\draw (placaS) to [R, l_=test] ++(2,0)
+		\draw (placaS) -- ++(2,0)
 		node[circ, label={above:D}] (D) {}
 		-- ++(1,0)
 		node[ocirc, label={above:2}] (out2) {};
