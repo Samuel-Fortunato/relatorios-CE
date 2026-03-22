@@ -1,5 +1,6 @@
 \section{Resultados}
 
+\subsection{Montagem 1}
 \begin{figure}[!ht]
 	\centering
 	\begin{circuitikz}[american voltages]
@@ -27,22 +28,52 @@
 
 		\draw (Vp) to [voltmeter] (Vn);
 
-
 		\draw[dashed, thick, blue] ($(A)+(-0.5,1)$) rectangle ($(D)+(0.5,-1)$);
-		\node[blue] at ($(A)!0.5!(C) + (0,1.3)$) {\textbf{testCaption}};
+		\node[blue] at ($(A)!0.5!(C) + (0,1.3)$) {\textbf{Placa de resistências}};
 	\end{circuitikz}
-	\caption{Montagem experimental}
-	\label{circ:montagem1}
+	\caption{Montagem inicial}
+	\label{circ:intro1}
 \end{figure}
 
 
+\subsubsection{Alínea a)}
+{\huge Talvez não chamar a isto alínea, mas outra coisa? Nao sei o quê tho}
+\begin{figure}[!ht]
+	\centering
+	\begin{circuitikz}[american voltages]
+		\draw (0,0) to [vR] ++(2,0)
+		to [ammeter] ++(1,0)
+		-- ++(0.5,0)
+		coordinate (Vp)
+		% -- ++(0,0)
+		% node[circ, label={above:A}] (A) {}
+		to [R={$R_x=\qty{0}{\ohm}$}] ++(2,0)
+		coordinate (Ra)
+		to [R={$R_x=\qty{0}{\ohm}$}] ++(0,-2)
+		coordinate (Rb)
+		to [R={$R_x=\qty{0}{\ohm}$}] ++(-2,0)
+		% node[circ, label={below:B}] (B) {}
+		% -- ++(-2,0)
+		coordinate (Vn)
+		-- ++(-3.5,0)
+		to [battery1, v<={$\qty{15}{V}$}, invert] (0,0);
 
+		% \draw (Ra) to [R={$R_x=\qty{0}{\ohm}$}] ++(2,0)
+		% node[circ, label={above:C}] (C) {};
 
+		% \draw (Rb) -- ++(2,0)
+		% node[circ, label={below:D}] (D) {};
+
+		\draw (Vp) to [voltmeter] (Vn);
+	\end{circuitikz}
+	\caption{Circuito alínea a)}
+	\label{circ:1a}
+\end{figure}
 
 
 \begin{table}[!ht]
 	\centering
-	\caption{mont 1 caso a)}
+	\caption{Tensão e corrente alínea a)}
 	\label{mont1alinA}
 	% Use pgfplotstable to render the CSV
 	\pgfplotstabletypeset[
@@ -73,13 +104,41 @@
 \end{table}
 
 
+\subsubsection{Alínea b)}
+\begin{figure}[!ht]
+	\centering
+	\begin{circuitikz}[american voltages]
+		\draw (0,0) to [vR] ++(2,0)
+		to [ammeter] ++(1,0)
+		-- ++(0.5,0)
+		coordinate (Vp)
+		% -- ++(0,0)
+		% node[circ, label={above:A}] (A) {}
+		to [R={$R_x=\qty{0}{\ohm}$}] ++(2,0)
+		coordinate (Ra)
+		to [R={$R_x=\qty{0}{\ohm}$}] ++(0,-2)
+		coordinate (Rb)
+		to [R={$R_x=\qty{0}{\ohm}$}] ++(-2,0)
+		% node[circ, label={below:B}] (B) {}
+		% -- ++(-2,0)
+		coordinate (Vn)
+		-- ++(-3.5,0)
+		to [battery1, v<={$\qty{15}{V}$}, invert] (0,0);
 
+		\draw (Ra) to [R={$R_x=\qty{0}{\ohm}$}] ++(2,0)
+		-- ++(0,-2)
+		-- (Rb);
 
+		\draw (Vp) to [voltmeter] (Vn);
+	\end{circuitikz}
+	\caption{Circuito alinea b)}
+	\label{circ:1b}
+\end{figure}
 
 
 \begin{table}[!ht]
 	\centering
-	\caption{mot 1 caso b)}
+	\caption{Tensão e corrente alínea b)}
 	\label{tab:mont1alinB}
 	% Use pgfplotstable to render the CSV
 	\pgfplotstabletypeset[
@@ -111,16 +170,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
+\subsection{Montagem 2}
 \begin{figure}[!ht]
 	\centering
 	\begin{circuitikz}[american voltages]
@@ -145,13 +195,14 @@
 
 		\node[draw, dashed, red, thick, inner sep=20,
 			fit=(A) (B) (C) (D),
-			label={[blue, font=\bfseries]above:testCaption}] (innerRect) {};
+			label={[blue, font=\bfseries]above:Placa de resistências}] (innerRect) {};
 
 		\node[draw, dashed, blue, thick, inner sep=20,
 			fit=(mainbat) (innerRect),
-			label={[blue, font=\bfseries]above:legendaTeste}] (outerRect) {};
+			label={[blue, font=\bfseries]above:Fonte real simulada}] (outerRect) {};
+			\node[red, thick] at ($(placaN)+(0,-2)$) {\Huge \textbf{retângulo de fora ou basta a legenda?}};
 	\end{circuitikz}
-	\caption{Montagem experimental}
+	\caption{Fonte real simulada}
 	\label{circ:fonte-real-sim}
 \end{figure}
 
@@ -192,9 +243,9 @@
 
 		\node[draw, dashed, blue, thick, inner sep=20,
 			fit=(mainbat) (A) (B) (C) (D),
-			label={[blue, font=\bfseries]above:legendaTeste}] (outerRect) {};
+			label={[blue, font=\bfseries]above:Fonte real simulada}] (outerRect) {};
 	\end{circuitikz}
-	\caption{Montagem experimental}
+	\caption{Segunda montagem}
 	\label{circ:montagem2}
 \end{figure}
 
@@ -202,7 +253,7 @@
 
 \begin{table}[!ht]
 	\centering
-	\caption{mot 2}
+	\caption{Tensão e corrente alínea b)}
 	\label{tab:mont2}
 	% Use pgfplotstable to render the CSV
 	\pgfplotstabletypeset[
