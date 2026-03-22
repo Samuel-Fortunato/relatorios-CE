@@ -29,9 +29,205 @@
 
 
 		\draw[dashed, thick, blue] ($(A)+(-0.5,1)$) rectangle ($(D)+(0.5,-1)$);
-		\node[blue] at ($(A)!0.5!(C) + (0,1.3)$) {\textbf{Resistor Network}};
+		\node[blue] at ($(A)!0.5!(C) + (0,1.3)$) {\textbf{testCaption}};
 	\end{circuitikz}
 	\caption{Montagem experimental}
-	\label{circ:montagem}
+	\label{circ:montagem1}
 \end{figure}
 
+
+
+
+
+
+\begin{table}[!ht]
+	\centering
+	\caption{mont 1 caso a)}
+	\label{mont1alinA}
+	% Use pgfplotstable to render the CSV
+	\pgfplotstabletypeset[
+		col sep=comma, % Tells LaTeX the file is a CSV
+		string type,   % Treat headers as text
+		% Define the full grid (vertical lines)
+		column type={|c|},
+		% Styling the header and adding the horizontal lines for the "Full Grid"
+		every head row/.style={
+				before row=\hline,
+				after row=\hline
+			},
+		every last row/.style={
+				after row=\hline
+			},
+		% Assigning column headers and units
+		columns/Voltage/.style={
+				column name={Tensão (\unit{\volt})},
+				column type={|c|},
+				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
+			},
+		columns/Current/.style={
+				column name={Corrente (\unit{\milli\ampere})},
+				column type={c|},
+				% column type={S[table-format=2.1]|} % Adjust format to your max digits
+			},
+	]{dados/1a.csv}
+\end{table}
+
+
+
+
+
+
+\begin{table}[!ht]
+	\centering
+	\caption{mot 1 caso b)}
+	\label{tab:mont1alinB}
+	% Use pgfplotstable to render the CSV
+	\pgfplotstabletypeset[
+		col sep=comma, % Tells LaTeX the file is a CSV
+		string type,   % Treat headers as text
+		% Define the full grid (vertical lines)
+		column type={|c|},
+		% Styling the header and adding the horizontal lines for the "Full Grid"
+		every head row/.style={
+				before row=\hline,
+				after row=\hline
+			},
+		every last row/.style={
+				after row=\hline
+			},
+		% Assigning column headers and units
+		columns/Voltage/.style={
+				column name={Tensão (\unit{\volt})},
+				column type={|c|},
+				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
+			},
+		columns/Current/.style={
+				column name={Corrente (\unit{\milli\ampere})},
+				column type={c|},
+				% column type={S[table-format=2.1]|} % Adjust format to your max digits
+			},
+	]{dados/1b.csv}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{figure}[!ht]
+	\centering
+	\begin{circuitikz}[american voltages]
+		\draw (0,0) to [battery1, v=15V, name=mainbat] ++(0,-4)
+		-- ++(2,0)
+		node[circ, label={above:B}] (B) {}
+		to [R=wtf] ++(2,0) coordinate(placaS)
+		to [R=wtf] ++(0,4) coordinate(placaN)
+		to [R=wtf] ++(-2,0)
+		node[circ, label={above:A}] (A) {}
+		-- (0,0);
+
+		\draw (placaN) to [R=test] ++(2,0)
+		node[circ, label={above:C}] (C) {}
+		-- ++(2,0)
+		node[ocirc, label={above:1}] (out1) {};
+
+		\draw (placaS) to [R=test] ++(2,0)
+		node[circ, label={above:D}] (D) {}
+		-- ++(2,0)
+		node[ocirc, label={above:2}] (out2) {};
+
+		\node[draw, dashed, red, thick, inner sep=20,
+			fit=(A) (B) (C) (D),
+			label={[blue, font=\bfseries]above:testCaption}] (innerRect) {};
+
+		\node[draw, dashed, blue, thick, inner sep=20,
+			fit=(mainbat) (innerRect),
+			label={[blue, font=\bfseries]above:legendaTeste}] (outerRect) {};
+	\end{circuitikz}
+	\caption{Montagem experimental}
+	\label{circ:fonte-real-sim}
+\end{figure}
+
+
+
+\begin{figure}[!ht]
+	\centering
+	\begin{circuitikz}[american voltages]
+		\draw (0,0) to [battery1, v=15V, name=mainbat] ++(0,-4)
+		-- ++(1,0)
+		node[circ, label={above:B}] (B) {}
+		to [R, l_=wtf] ++(2,0) coordinate(placaS)
+		to [R, l_=wtf] ++(0,4) coordinate(placaN)
+		to [R, l=wtf] ++(-2,0)
+		node[circ, label={above:A}] (A) {}
+		-- (0,0);
+
+		\draw (placaN) to [R, l_=test] ++(2,0)
+		node[circ, label={above:C}] (C) {}
+		-- ++(1,0)
+		node[ocirc, label={above:1}] (out1) {};
+
+		\draw (placaS) to [R, l_=test] ++(2,0)
+		node[circ, label={above:D}] (D) {}
+		-- ++(1,0)
+		node[ocirc, label={above:2}] (out2) {};
+
+		\draw (out1) to [ammeter] ++(2,0)
+		coordinate (reostP)
+		to [vR] ++(0,-4)
+		coordinate (reostN)
+		-- (out2);
+
+		\draw (reostP) -- ++(1,0)
+		to [voltmeter] ++(0,-4)
+		-- (reostN);
+
+
+		\node[draw, dashed, blue, thick, inner sep=20,
+			fit=(mainbat) (A) (B) (C) (D),
+			label={[blue, font=\bfseries]above:legendaTeste}] (outerRect) {};
+	\end{circuitikz}
+	\caption{Montagem experimental}
+	\label{circ:montagem2}
+\end{figure}
+
+
+
+\begin{table}[!ht]
+	\centering
+	\caption{mot 2}
+	\label{tab:mont2}
+	% Use pgfplotstable to render the CSV
+	\pgfplotstabletypeset[
+		col sep=comma, % Tells LaTeX the file is a CSV
+		string type,   % Treat headers as text
+		% Define the full grid (vertical lines)
+		column type={|c|},
+		% Styling the header and adding the horizontal lines for the "Full Grid"
+		every head row/.style={
+				before row=\hline,
+				after row=\hline
+			},
+		every last row/.style={
+				after row=\hline
+			},
+		% Assigning column headers and units
+		columns/Voltage/.style={
+				column name={Tensão (\unit{\volt})},
+				column type={|c|},
+				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
+			},
+		columns/Current/.style={
+				column name={Corrente (\unit{\milli\ampere})},
+				column type={c|},
+				% column type={S[table-format=2.1]|} % Adjust format to your max digits
+			},
+	]{dados/2.csv}
+\end{table}
