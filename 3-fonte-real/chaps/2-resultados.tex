@@ -74,7 +74,7 @@
 \begin{table}[!ht]
 	\centering
 	\caption{Tensão e corrente alínea a)}
-	\label{mont1alinA}
+	\label{tab:mont1-alinA}
 	% Use pgfplotstable to render the CSV
 	\pgfplotstabletypeset[
 		col sep=comma, % Tells LaTeX the file is a CSV
@@ -90,15 +90,15 @@
 				after row=\hline
 			},
 		% Assigning column headers and units
-		columns/Voltage/.style={
-				column name={Tensão (\unit{\volt})},
-				column type={|c|},
-				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
-			},
 		columns/Current/.style={
 				column name={Corrente (\unit{\milli\ampere})},
-				column type={c|},
+				column type={|c|},
 				% column type={S[table-format=2.1]|} % Adjust format to your max digits
+			},
+		columns/Voltage/.style={
+				column name={Tensão (\unit{\volt})},
+				column type={c|},
+				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
 			},
 	]{dados/1a.csv}
 \end{table}
@@ -139,7 +139,7 @@
 \begin{table}[!ht]
 	\centering
 	\caption{Tensão e corrente alínea b)}
-	\label{tab:mont1alinB}
+	\label{tab:mont1-alinB}
 	% Use pgfplotstable to render the CSV
 	\pgfplotstabletypeset[
 		col sep=comma, % Tells LaTeX the file is a CSV
@@ -155,15 +155,15 @@
 				after row=\hline
 			},
 		% Assigning column headers and units
-		columns/Voltage/.style={
-				column name={Tensão (\unit{\volt})},
-				column type={|c|},
-				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
-			},
 		columns/Current/.style={
 				column name={Corrente (\unit{\milli\ampere})},
-				column type={c|},
+				column type={|c|},
 				% column type={S[table-format=2.1]|} % Adjust format to your max digits
+			},
+		columns/Voltage/.style={
+				column name={Tensão (\unit{\volt})},
+				column type={c|},
+				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
 			},
 	]{dados/1b.csv}
 \end{table}
@@ -270,15 +270,15 @@
 				after row=\hline
 			},
 		% Assigning column headers and units
-		columns/Voltage/.style={
-				column name={Tensão (\unit{\volt})},
-				column type={|c|},
-				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
-			},
 		columns/Current/.style={
 				column name={Corrente (\unit{\milli\ampere})},
-				column type={c|},
+				column type={|c|},
 				% column type={S[table-format=2.1]|} % Adjust format to your max digits
+			},
+		columns/Voltage/.style={
+				column name={Tensão (\unit{\volt})},
+				column type={c|},
+				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
 			},
 	]{dados/2.csv}
 \end{table}

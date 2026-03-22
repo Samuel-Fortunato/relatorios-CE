@@ -1,2 +1,151 @@
 \section{Análise de Resultados}
 
+\pgfplotstableread[col sep=comma]{dados/regres.csv}\tabelaRegressoes
+
+\pgfplotstablegetelem{0}{m}\of{\tabelaRegressoes} \let\slopeI\pgfplotsretval
+\pgfplotstablegetelem{1}{m}\of{\tabelaRegressoes} \let\slopeII\pgfplotsretval
+\pgfplotstablegetelem{2}{m}\of{\tabelaRegressoes} \let\slopeIII\pgfplotsretval
+\pgfplotstablegetelem{0}{b}\of{\tabelaRegressoes} \let\interceptI\pgfplotsretval
+\pgfplotstablegetelem{1}{b}\of{\tabelaRegressoes} \let\interceptII\pgfplotsretval
+\pgfplotstablegetelem{2}{b}\of{\tabelaRegressoes} \let\interceptIII\pgfplotsretval
+
+\subsection{Montagem 1}
+\subsubsection{alinea a)}
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				xlabel={Corrente (\unit{\milli\ampere})},
+				ylabel={Tensão (\unit{\volt})},
+				xmin=0, xmax=42.5, % Adjust these based on your data range
+				ymin=0, ymax=17.5,
+				grid=both,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=0.8\textwidth,
+				height=7cm
+			]
+
+			\addplot[
+				blue,
+				mark=*,
+				thick
+			] table [
+					col sep=comma,
+					x=Current,
+					y=Voltage
+				] {dados/1a.csv};
+
+
+			% --- AND PLOT THE REGRESSION LINE ---
+			\addplot[red, domain=5:40] {\slopeI * x + \interceptI};
+
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Gráfico V-I montagem 1 - alínea a)}
+	\label{gra:mont1-alinA}
+\end{figure}
+{\huge corrigir o nome "alinea" aqui tbm}
+
+REGRESSÃO LINEAR MONTAGEM 1 ALINEA a) :
+\begin{equation}
+	V = \pgfmathprintnumber[fixed, precision=3]{\slopeI} \times I
+	\label{eq:regLin1}
+\end{equation}
+
+
+
+\subsubsection{Alinea b)}
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				xlabel={Corrente (\unit{\milli\ampere})},
+				ylabel={Tensão (\unit{\volt})},
+				xmin=0, xmax=42.5, % Adjust these based on your data range
+				ymin=0, ymax=17.5,
+				grid=both,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=0.8\textwidth,
+				height=7cm
+			]
+
+			\addplot[
+				blue,
+				mark=*,
+				thick
+			] table [
+					col sep=comma,
+					x=Current,
+					y=Voltage
+				] {dados/1b.csv};
+
+
+			% --- AND PLOT THE REGRESSION LINE ---
+			\addplot[red, thick, domain=5:32.5] {\slopeII * x + \interceptII};
+
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Gráfico V-I montagem 1 - alínea b)}
+	\label{gra:mont1-alinB}
+\end{figure}
+
+
+REGRESSÃO LINEAR MONTAGEM 1 ALINEA b) :
+\begin{equation}
+	V = \pgfmathprintnumber[fixed, precision=3]{\slopeII} \times I
+	\label{eq:regLin2}
+\end{equation}
+
+{\huge Substituir texto em CAPS LOCK por texto bonitinho}
+
+
+
+
+\subsection{Montagem 2}
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				xlabel={Corrente (\unit{\milli\ampere})},
+				ylabel={Tensão (\unit{\volt})},
+				xmin=0, xmax=18, % Adjust these based on your data range
+				ymin=0, ymax=8,
+				grid=both,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=0.8\textwidth,
+				height=7cm
+			]
+
+			\addplot[
+				blue,
+				mark=*,
+				thick
+			] table [
+					col sep=comma,
+					x=Current,
+					y=Voltage
+				] {dados/2.csv};
+
+
+			% --- AND PLOT THE REGRESSION LINE ---
+			\addplot[red, thick, domain=0:18] {\slopeIII * x + \interceptIII};
+
+
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Gráfico V-I montagem 2}
+	\label{gra:mont2}
+\end{figure}
+
+
+REGRESSÃO LINEAR MONTAGEM 3 :
+\begin{equation}
+	V = \pgfmathprintnumber[fixed, precision=3]{\slopeIII} \times I + \pgfmathprintnumber[fixed, precision=3]{\interceptIII}
+	\label{eq:regLin3}
+\end{equation}
+
+
+
