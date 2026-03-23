@@ -188,7 +188,7 @@ Para a montagem 2, foi ligada a fonte de tensão diretamente à placa de resiste
 		\draw (0,0) to [battery1, v=15V, name=mainbat] ++(0,-4)
 		-- ++(2,0)
 		node[circ, label={above:B}] (B) {}
-		to [R={$R_4=\qty{120}{\ohm}$}] ++(2,0) coordinate(placaS)
+		to [R, l_={$R_4=\qty{120}{\ohm}$}] ++(2,0) coordinate(placaS)
 		to [R={$R_3=\qty{270}{\ohm}$}] ++(0,4) coordinate(placaN)
 		to [R={$R_1=\qty{120}{\ohm}$}] ++(-2,0)
 		node[circ, label={above:A}] (A) {}
@@ -225,7 +225,7 @@ Era pedido que se determinasse os valores de $V_0$ e $R_i$ {\Large Fazer introdu
 		\draw (0,0) to [battery1, v=15V, name=mainbat] ++(0,-4)
 		-- ++(1,0)
 		node[circ, label={above:B}] (B) {}
-		to [R={$R_4=\qty{120}{\ohm}$}] ++(2,0) coordinate(placaS)
+		to [R, l_={$R_4=\qty{120}{\ohm}$}] ++(2,0) coordinate(placaS)
 		to [R, l_={$R_3=\qty{270}{\ohm}$}] ++(0,4) coordinate(placaN)
 		to [R={$R_1=\qty{120}{\ohm}$}] ++(-2,0)
 		node[circ, label={above:A}] (A) {}
