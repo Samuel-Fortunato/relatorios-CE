@@ -29,7 +29,7 @@
 			\addplot[
 				blue,
 				mark=*,
-				thick
+				only marks,
 			] table [
 					col sep=comma,
 					x=Current,
@@ -38,7 +38,7 @@
 
 
 			% --- AND PLOT THE REGRESSION LINE ---
-			\addplot[red, domain=0:40] {\slopeI * x + \interceptI};
+			\addplot[red, thick, domain=0:40] {\slopeI * x + \interceptI};
 
 		\end{axis}
 	\end{tikzpicture}
@@ -85,7 +85,7 @@ De sequência, procedeu-se à determinação da exatidão do valor experimental 
 			\addplot[
 				blue,
 				mark=*,
-				thick
+				only marks,
 			] table [
 					col sep=comma,
 					x=Current,
@@ -141,7 +141,7 @@ De sequência, procedeu-se à determinação da exatidão do valor experimental 
 			\addplot[
 				blue,
 				mark=*,
-				thick
+				only marks,
 			] table [
 					col sep=comma,
 					x=Current,

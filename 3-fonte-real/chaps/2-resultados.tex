@@ -40,6 +40,19 @@ Para tal, fez se variar a corrente de entrada, fornecida pela fonte de tensão a
 	\label{circ:intro1}
 \end{figure}
 
+\begin{table}[!ht]
+	\centering
+	\caption{Valor das Resistências}
+	\label{tab:resist-exper}
+	\begin{tabular}{c|c|c}
+		      & Valor teórico   & Valor experimetal \\
+		\hline
+		$R_1$ & \qty{120}{\ohm} & \qty{120.5}{\ohm}   \\
+		$R_2$ & \qty{330}{\ohm} & \qty{327}{\ohm}   \\
+		$R_3$ & \qty{270}{\ohm} & \qty{260}{\ohm}   \\
+		$R_4$ & \qty{120}{\ohm} & \qty{120.6}{\ohm}
+	\end{tabular}
+\end{table}
 
 \subsubsection{Caso a)}
 
@@ -111,7 +124,6 @@ Os valores registados da tensão e da corrente constam na \cref{tab:mont1-alinA}
 	]{dados/1a.csv}
 \end{table}
 
-
 \subsubsection{Caso b)}
 Procedeu-se à análise da montagem na qual os pontos C e D estão conectados. Establecendo a ligação entre estes terminais, note-se que as resistências $R_2$ e $R_3$ passam a estar em paralelo. A montagem encontra-se representada na \cref{circ:1b}.
 \begin{figure}[!ht]
@@ -181,12 +193,13 @@ As medições encontram-se na \cref{tab:mont1-alinB}.
 
 \subsection{Montagem 2}
 
-Na segunda parte do trabalho, o objetivo foi simular uma fonte de tensão real, ou seja uma fonte que apresenta uma resistência interna. Para isso, foi ligada a fonte de tensão diretamente à placa de resistências usada nas montagens anteriores, como consta na \cref{circ:fonte-real-sim}. 
-
+Na segunda parte do trabalho, o objetivo foi simular uma fonte de tensão real, ou seja uma fonte que apresenta uma resistência interna. Para isso, foi ligada a fonte de tensão diretamente à placa de resistências usada nas montagens anteriores, como consta na \cref{circ:fonte-real-sim}.
 
 
 Para simplificar esta análise, recorreu-se ao teorema de Thévenin, que permitiu substituir toda a complexidade da placa de resistências por um circuito equivalente muito mais simples. Este modelo reduz a montagem a apenas uma fonte de tensão ideal $V_{th}$ associada em série a uma única resistência $R_{th} = R_s$, representando exatamente o comportamento que observamos nos pontos de ligação da carga (terminais 1 e 2).
 
+Para simplificar esta análise, recorreu-se ao teorema de Thévenin, que permitiu substituir toda a complexidade da placa de resistências por um circuito equivalente muito mais simples. Este modelo reduz a montagem a apenas uma fonte de tensão ideal $V_{th}$ associada em série a uma única resistência $R_{th} = R_s$, representando exatamente o comportamento que observamos nos pontos de ligação da carga (terminais 1 e 2). O circuito de Thévenin genérico encontra-se representado na \cref{circ:equiv-thevenin}:
+\vspace{10pt}
 
 \begin{figure}[!ht]
 	\centering
@@ -202,8 +215,6 @@ Para simplificar esta análise, recorreu-se ao teorema de Thévenin, que permiti
 	\label{circ:equiv-thevenin}
 \end{figure}
 
-
-Para a montagem 2, foi ligada a fonte de tensão diretamente à placa de resistencias, de forma a simular uma fonte de tensao real (com resistência interna). bla bla bla o circuito é o da \cref{circ:fonte-real-sim}.
 \begin{figure}[!ht]
 	\centering
 	\begin{circuitikz}[american voltages]
@@ -217,7 +228,7 @@ Para a montagem 2, foi ligada a fonte de tensão diretamente à placa de resiste
 		-- (0,0);
 
 		\draw (placaN) to [R, l_={$R_2=\qty{330}{\ohm}$}] ++(2,0)
-		node[circ, label={above:C}] (C) {}	
+		node[circ, label={above:C}] (C) {}
 		-- ++(2,0)
 		node[ocirc, label={above:1}] (out1) {};
 
@@ -238,12 +249,11 @@ Para a montagem 2, foi ligada a fonte de tensão diretamente à placa de resiste
 	\label{circ:fonte-real-sim}
 \end{figure}
 
-Numa fonte real, tem-se que a tensão de saída, neste caso a tensão nos terminais 1 e 2, diminui à medida que a corrente debitada por a mesma aumenta.
+Com esta montagem, foi medida a diferença de potencial nos terminais 1 e 2, $V_0$ e a corrente de curto-circuito $I_{sc}$ que atravessa a resistência equivalente, tendo-se obtido $V_0 = 7.01 \pm 0.01$V e $I_{sc} = 16.93 \pm 0.01$ mA.
 
+\vspace{10pt}
 
-
-Era pedido que se determinasse os valores de $V_0$ e $R_i$ {\Large Fazer introdução teorica do que é o V0 e o Ri}, e para isso foi pensada uma experiência eque consiste na montagem da \cref{circ:montagem2} bla bla bla onde se varia a corrente e mede o V bla bla bla para descobrir os coisos
-
+Numa fonte real, tem-se que a tensão de saída, neste caso a tensão nos terminais 1 e 2, diminui à medida que a corrente debitada por esta aumenta. Com o intuito de calcular a resistência de saída da fonte simulada, fez-se variar a corrente através de um reostáto ligado aos terminais 1 e 2, e foi registado o conjunto de valores tensão-corrente no mesmo, que se encontram na \cref{tab:mont2}.
 
 \begin{figure}[!ht]
 	\centering
@@ -287,10 +297,9 @@ Era pedido que se determinasse os valores de $V_0$ e $R_i$ {\Large Fazer introdu
 \end{figure}
 
 
-Resultados estao na \cref{tab:mont2}.
 \begin{table}[!ht]
 	\centering
-	\caption{Tensão e corrente caso b)}
+	\caption{Tensão e corrente na montagem 2}
 	\label{tab:mont2}
 	% Use pgfplotstable to render the CSV
 	\pgfplotstabletypeset[
