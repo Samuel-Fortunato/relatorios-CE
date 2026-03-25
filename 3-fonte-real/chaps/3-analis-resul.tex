@@ -109,7 +109,6 @@ REGRESSÃO LINEAR MONTAGEM 1 ALINEA b) :
 	\label{eq:regLin2}
 \end{equation}
 
-{\huge Substituir texto em CAPS LOCK por texto bonitinho}
 
 A partir do declive da regressão linear através da Lei de Ohm podemos inferir que a resitência de entrada experimental para o circuito com C e D desligados é $R_E=(497\pm01)\,\unit{\ohm}$
 
@@ -123,6 +122,8 @@ De sequência, procedeu-se à determinação da exatidão do valor experimental 
 	\text{Exatidão} = \left(1 - \frac{|497 -501,1|}{501,1}\right)\times 100 = 99,18\%
 \end{equation}
 \subsection{Montagem 2}
+Na \cref{gra:mont2}, encontra-se a regressão linear associada à montagem 2, obtida atráves das medições da \cref{tab:mont2}.
+
 \begin{figure}[!ht]
 	\centering
 	\begin{tikzpicture}
@@ -159,12 +160,18 @@ De sequência, procedeu-se à determinação da exatidão do valor experimental 
 	\label{gra:mont2}
 \end{figure}
 
-
-REGRESSÃO LINEAR MONTAGEM 3 :
+Obteve-se assim a seguinte equação característica da fonte de tensão:
 \begin{equation}
 	V = \pgfmathprintnumber[fixed, precision=3]{\slopeIII} \times I + \pgfmathprintnumber[fixed, precision=3]{\interceptIII}
 	\label{eq:regLin3}
 \end{equation}
+
+
+
+\pgfmathsetmacro{\Ri}{-\slopeIII} % Thivs does the math dd
+De onde se retira que $V_0 = \pgfmathprintnumber[fixed, precision=3]{\interceptIII}\,\unit{V}$ e $R_i = \pgfmathprintnumber[fixed, precision=3]{\Ri}\,\unit{\ohm}$
+
+
 
 
 
