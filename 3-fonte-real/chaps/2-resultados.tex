@@ -40,6 +40,19 @@ Para tal, fez se variar a corrente de entrada, fornecida pela fonte de tensão a
 	\label{circ:intro1}
 \end{figure}
 
+\begin{table}[!ht]
+	\centering
+	\caption{Valor das Resistências}
+	\label{tab:resist-exper}
+	\begin{tabular}{c|c|c}
+		      & Valor teórico   & Valor experimetal \\
+		\hline
+		$R_1$ & \qty{120}{\ohm} & \qty{120.5}{\ohm}   \\
+		$R_2$ & \qty{330}{\ohm} & \qty{327}{\ohm}   \\
+		$R_3$ & \qty{270}{\ohm} & \qty{260}{\ohm}   \\
+		$R_4$ & \qty{120}{\ohm} & \qty{120.6}{\ohm}
+	\end{tabular}
+\end{table}
 
 \subsubsection{Caso a)}
 
@@ -182,6 +195,9 @@ As medições encontram-se na \cref{tab:mont1-alinB}.
 
 Na segunda parte do trabalho, o objetivo foi simular uma fonte de tensão real, ou seja uma fonte que apresenta uma resistência interna. Para isso, foi ligada a fonte de tensão diretamente à placa de resistências usada nas montagens anteriores, como consta na \cref{circ:fonte-real-sim}.
 
+
+Para simplificar esta análise, recorreu-se ao teorema de Thévenin, que permitiu substituir toda a complexidade da placa de resistências por um circuito equivalente muito mais simples. Este modelo reduz a montagem a apenas uma fonte de tensão ideal $V_{th}$ associada em série a uma única resistência $R_{th} = R_s$, representando exatamente o comportamento que observamos nos pontos de ligação da carga (terminais 1 e 2).
+
 Para simplificar esta análise, recorreu-se ao teorema de Thévenin, que permitiu substituir toda a complexidade da placa de resistências por um circuito equivalente muito mais simples. Este modelo reduz a montagem a apenas uma fonte de tensão ideal $V_{th}$ associada em série a uma única resistência $R_{th} = R_s$, representando exatamente o comportamento que observamos nos pontos de ligação da carga (terminais 1 e 2). O circuito de Thévenin genérico encontra-se representado na \cref{circ:equiv-thevenin}:
 \vspace{10pt}
 
@@ -212,7 +228,7 @@ Para simplificar esta análise, recorreu-se ao teorema de Thévenin, que permiti
 		-- (0,0);
 
 		\draw (placaN) to [R, l_={$R_2=\qty{330}{\ohm}$}] ++(2,0)
-		node[circ, label={above:C}] (C) {}	
+		node[circ, label={above:C}] (C) {}
 		-- ++(2,0)
 		node[ocirc, label={above:1}] (out1) {};
 
@@ -281,13 +297,9 @@ Numa fonte real, tem-se que a tensão de saída, neste caso a tensão nos termin
 \end{figure}
 
 
-<<<<<<< HEAD
-Resultados estao na \cref{tab:mont2}.
-=======
->>>>>>> cf05b2d (TEXto resultadoss)
 \begin{table}[!ht]
 	\centering
-	\caption{Tensão e corrente caso b)}
+	\caption{Tensão e corrente na montagem 2}
 	\label{tab:mont2}
 	% Use pgfplotstable to render the CSV
 	\pgfplotstabletypeset[
