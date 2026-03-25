@@ -81,7 +81,7 @@ De tal modo, as zonas onde não há corrente podem efetivamente ser eliminadas, 
 Os valores registados da tensão e da corrente constam na \cref{tab:mont1-alinA}.
 \begin{table}[!ht]
 	\centering
-	\caption{Tensão e corrente alínea a)}
+	\caption{Tensão e corrente caso a)}
 	\label{tab:mont1-alinA}
 	% Use pgfplotstable to render the CSV
 	\pgfplotstabletypeset[
@@ -102,13 +102,11 @@ Os valores registados da tensão e da corrente constam na \cref{tab:mont1-alinA}
 				column name={Corrente (\unit{\milli\ampere})},
 				column type={|c|},
 				% column type={S[table-format=2.1]|} % Adjust format to your max digits
-				dec sep={,}     % <--- CHANGE DOT TO COMMA
 			},
 		columns/Voltage/.style={
 				column name={Tensão (\unit{\volt})},
 				column type={c|},
 				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
-				dec sep={,}     % <--- CHANGE DOT TO COMMA
 			},
 	]{dados/1a.csv}
 \end{table}
@@ -142,14 +140,14 @@ Procedeu-se à análise da montagem na qual os pontos C e D estão conectados. E
 
 		\draw (Vp) to [voltmeter] (Vn);
 	\end{circuitikz}
-	\caption{Circuito alinea b)}
+	\caption{Circuito caso b)}
 	\label{circ:1b}
 \end{figure}
 
 As medições encontram-se na \cref{tab:mont1-alinB}.
 \begin{table}[!ht]
 	\centering
-	\caption{Tensão e corrente alínea b)}
+	\caption{Tensão e corrente caso b)}
 	\label{tab:mont1-alinB}
 	% Use pgfplotstable to render the CSV
 	\pgfplotstabletypeset[
@@ -170,13 +168,11 @@ As medições encontram-se na \cref{tab:mont1-alinB}.
 				column name={Corrente (\unit{\milli\ampere})},
 				column type={|c|},
 				% column type={S[table-format=2.1]|} % Adjust format to your max digits
-				dec sep={,}     % <--- CHANGE DOT TO COMMA
 			},
 		columns/Voltage/.style={
 				column name={Tensão (\unit{\volt})},
 				column type={c|},
 				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
-				dec sep={,}     % <--- CHANGE DOT TO COMMA
 			},
 	]{dados/1b.csv}
 \end{table}
@@ -294,12 +290,12 @@ Era pedido que se determinasse os valores de $V_0$ e $R_i$ {\Large Fazer introdu
 Resultados estao na \cref{tab:mont2}.
 \begin{table}[!ht]
 	\centering
-	\caption{Tensão e corrente alínea b)}
+	\caption{Tensão e corrente caso b)}
 	\label{tab:mont2}
 	% Use pgfplotstable to render the CSV
 	\pgfplotstabletypeset[
 		col sep=comma, % Tells LaTeX the file is a CSV
-		string type,   % Treat headers as text
+		% string type,   % Treat headers as text
 		% Define the full grid (vertical lines)
 		column type={|c|},
 		% Styling the header and adding the horizontal lines for the "Full Grid"
@@ -315,13 +311,11 @@ Resultados estao na \cref{tab:mont2}.
 				column name={Corrente (\unit{\milli\ampere})},
 				column type={|c|},
 				% column type={S[table-format=2.1]|} % Adjust format to your max digits
-				dec sep={,}     % <--- CHANGE DOT TO COMMA
 			},
 		columns/Voltage/.style={
 				column name={Tensão (\unit{\volt})},
 				column type={c|},
 				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
-				dec sep={,}     % <--- CHANGE DOT TO COMMA
 			},
 	]{dados/2.csv}
 \end{table}
