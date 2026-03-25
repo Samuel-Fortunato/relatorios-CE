@@ -188,6 +188,21 @@ Na segunda parte do trabalho, o objetivo foi simular uma fonte de tensão real, 
 Para simplificar esta análise, recorreu-se ao teorema de Thévenin, que permitiu substituir toda a complexidade da placa de resistências por um circuito equivalente muito mais simples. Este modelo reduz a montagem a apenas uma fonte de tensão ideal $V_{th}$ associada em série a uma única resistência $R_{th} = R_s$, representando exatamente o comportamento que observamos nos pontos de ligação da carga (terminais 1 e 2).
 
 
+\begin{figure}[!ht]
+	\centering
+	\begin{circuitikz}[american voltages]
+		\draw (0,0) node[ocirc, label={above:1}] (out1) {}
+		-- ++(-1,0)
+		to [R, l_={$R_{Th}$}] ++(-3,0)
+		to [battery1, l_={$V_{Th}$}] ++(0,-2)
+		-- ++(4,0)
+		node[ocirc, label={above:2}] (out2) {};
+	\end{circuitikz}
+	\caption{Circuito equivalente de Thévenin}
+	\label{circ:equiv-thevenin}
+\end{figure}
+
+
 Para a montagem 2, foi ligada a fonte de tensão diretamente à placa de resistencias, de forma a simular uma fonte de tensao real (com resistência interna). bla bla bla o circuito é o da \cref{circ:fonte-real-sim}
 \begin{figure}[!ht]
 	\centering
@@ -218,7 +233,6 @@ Para a montagem 2, foi ligada a fonte de tensão diretamente à placa de resiste
 		\node[draw, dashed, blue, thick, inner sep=20,
 			fit=(mainbat) (innerRect),
 			label={[blue, font=\bfseries]above:Fonte real simulada}] (outerRect) {};
-			\node[red, thick] at ($(placaN)+(0,-2)$) {\Huge \textbf{retângulo de fora ou basta a legenda?}};
 	\end{circuitikz}
 	\caption{Fonte real simulada}
 	\label{circ:fonte-real-sim}
