@@ -19,7 +19,9 @@
 \pgfplotstablegetelem{0}{exat}\of{\tabelaResult} \let\exatI\pgfplotsretval
 \pgfplotstablegetelem{1}{exat}\of{\tabelaResult} \let\exatII\pgfplotsretval
 \pgfplotstablegetelem{2}{exat}\of{\tabelaResult} \let\exatIII\pgfplotsretval
+
 \pgfplotstablegetelem{2}{Vexp}\of{\tabelaResult} \let\VexpIII\pgfplotsretval
+\pgfplotstablegetelem{2}{Vteo}\of{\tabelaResult} \let\VteoIII\pgfplotsretval
 
 \subsection{Montagem 1}
 \subsubsection{Caso a)}
@@ -149,7 +151,7 @@ Na \cref{gra:mont2}, encontra-se a regressão linear associada à montagem 2, ob
 	\centering
 	\begin{tikzpicture}
 		\begin{axis}[
-				xlabel={Corrente (\unit{\mili\ampere})},
+				xlabel={Corrente (\unit{\milli\ampere})},
 				ylabel={Tensão (\unit{\volt})},
 				xmin=0, xmax=18, % Adjust these based on your data range
 				ymin=0, ymax=8,
@@ -198,17 +200,15 @@ Anulando a fonte (curto-circuito):
 \begin{align*}
 	               & R_{eq} = R_2 + (R_3 \parallel R_1 + R_4)                                   \\
 	               & R_1 + R_4 = 241,1 \, \Omega                                                \\
-	\Rightarrow \, & R_{eq} = 327 + \frac{260 \cdot 241,1}{260 + 241,1} \approx 452,1 \, \Omega
+	\Rightarrow \, & R_{eq} = 327 + \frac{260 \cdot 241,1}{260 + 241,1} \approx \pgfmathprintnumber[fixed, precision=3]{\teoIII} \, \Omega
 \end{align*}
 
 Em circuito aberto entre 1 e 2, não circula corrente em R2, logo não existe queda de tensão nessa resistência. A queda de tensão a calcular é a queda de tensão em $R_3$.
 
 \begin{align*}
-	V_{Th} = V_3 = V_s \, \frac{R_3}{R_1+R_3+R_4} = 15 \cdot \frac{260}{501} = \qty{7,8}{\volt}
+	V_{Th} = V_3 = V_s \, \frac{R_3}{R_1+R_3+R_4} = 15 \cdot \frac{260}{501} = \pgfmathprintnumber[fixed, precision=3]{\VteoIII}\,\unit{V}
 \end{align*}
 
-{\huge{448 ohm}}
-
 \begin{equation*}
-	\text{Exatidão} = \left(1 - \frac{|448 - 452|}{452}\right)\times 100 = 99,12\%
+	\text{Exatidão} = \left(1 - \frac{|448 - 452|}{452}\right)\times 100 = \pgfmathprintnumber[fixed, precision=3]{\exatIII}
 \end{equation*}
