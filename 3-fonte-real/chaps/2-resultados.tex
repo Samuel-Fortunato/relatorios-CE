@@ -56,10 +56,7 @@ Para tal, fez se variar a corrente de entrada, fornecida pela fonte de tensão a
 
 \subsubsection{Caso a)}
 
-{\huge SAMUEL - Troca o caso a) e b)}
-
-Nesta configuração, os terminais C e D estão desconectados, logo não ha corrente tanto nos ramos do circuito que conectam a estes terminais, como na resistência $R_2$.
-De tal modo, as zonas onde não há corrente podem efetivamente ser eliminadas, obtendo-se assim o circuito equivalente representado na \cref{circ:1a}.
+Nesta configuração, os pontos C e D estão conectados. Establecendo a ligação entre estes terminais, note-se que as resistências $R_2$ e $R_3$ passam a estar em paralelo. Assim, o circuito equivalente encontra-se representada no \cref{circ:1a}.
 
 \begin{figure}[!ht]
 	\centering
@@ -81,15 +78,13 @@ De tal modo, as zonas onde não há corrente podem efetivamente ser eliminadas, 
 		-- ++(-3.5,0)
 		to [battery1, v<={$\qty{15}{V}$}, invert] (0,0);
 
-		% \draw (Ra) to [R={$R_x=\qty{0}{\ohm}$}] ++(2,0)
-		% node[circ, label={above:C}] (C) {};
-
-		% \draw (Rb) -- ++(2,0)
-		% node[circ, label={below:D}] (D) {};
+		\draw (Ra) to [R={$R_2=\qty{330}{\ohm}$}] ++(3,0)
+		-- ++(0,-2)
+		-- (Rb);
 
 		\draw (Vp) to [voltmeter] (Vn);
 	\end{circuitikz}
-	\caption{Circuito a)}
+	\caption{Circuito caso a)}
 	\label{circ:1a}
 \end{figure}
 
@@ -127,7 +122,9 @@ Os valores registados da tensão e da corrente constam na \cref{tab:mont1-alinA}
 \end{table}
 
 \subsubsection{Caso b)}
-Procedeu-se à análise da montagem na qual os pontos C e D estão conectados. Establecendo a ligação entre estes terminais, note-se que as resistências $R_2$ e $R_3$ passam a estar em paralelo. A montagem encontra-se representada na \cref{circ:1b}.
+Nesta configuração, os terminais C e D estão desconectados, logo não ha corrente tanto nos ramos do circuito que conectam a estes terminais, como na resistência $R_2$.
+De tal modo, as zonas onde não há corrente podem efetivamente ser eliminadas, obtendo-se assim o circuito equivalente representado na \cref{circ:1b}.
+
 \begin{figure}[!ht]
 	\centering
 	\begin{circuitikz}[american voltages]
@@ -148,17 +145,19 @@ Procedeu-se à análise da montagem na qual os pontos C e D estão conectados. E
 		-- ++(-3.5,0)
 		to [battery1, v<={$\qty{15}{V}$}, invert] (0,0);
 
-		\draw (Ra) to [R={$R_2=\qty{330}{\ohm}$}] ++(3,0)
-		-- ++(0,-2)
-		-- (Rb);
+		% \draw (Ra) to [R={$R_x=\qty{0}{\ohm}$}] ++(2,0)
+		% node[circ, label={above:C}] (C) {};
+
+		% \draw (Rb) -- ++(2,0)
+		% node[circ, label={below:D}] (D) {};
 
 		\draw (Vp) to [voltmeter] (Vn);
 	\end{circuitikz}
-	\caption{Circuito caso b)}
+	\caption{Circuito b)}
 	\label{circ:1b}
 \end{figure}
 
-As medições encontram-se na \cref{tab:mont1-alinB}.
+As medições de corrente e tensão encontram-se na \cref{tab:mont1-alinB}.
 \begin{table}[!ht]
 	\centering
 	\caption{Tensão e corrente caso b)}
