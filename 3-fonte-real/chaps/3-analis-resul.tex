@@ -23,8 +23,12 @@
 \pgfplotstablegetelem{2}{Vexp}\of{\tabelaResult} \let\VexpIII\pgfplotsretval
 \pgfplotstablegetelem{2}{Vteo}\of{\tabelaResult} \let\VteoIII\pgfplotsretval
 
-\subsection{Montagem 1}
+\subsection{Montagem 1 - Resistência de Entrada}
 \subsubsection{Caso a)}
+De acordo com a Lei de Ohm, a tensão e a corrente estão relacionadas de forma linear de forma que, a constante de proporcionalidade é a resistência equivalente do circuito. Assim, representando graficamente a tensão em função da corrente, o declive da reta corresponde ao valor experimental da resistência de entrada do sistema.
+
+Na \cref{gra:mont1-alinA}, encontra-se a regressão linear associada à montagem 1 com C e D ligados, obtida atráves das medições da \cref{tab:mont1-alinA}.
+
 \begin{figure}[!ht]
 	\centering
 	\begin{tikzpicture}
@@ -56,18 +60,24 @@
 
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Gráfico V-I montagem 1 - alínea a)}
+	\caption{Gráfico V-I montagem 1 - caso a)}
 	\label{gra:mont1-alinA}
 \end{figure}
 
-REGRESSÃO LINEAR MONTAGEM 1 ALINEA a) :
+\textbf{Relação entre a tensão e a corrente (C e D ligados):}
+
 \begin{equation}
 	V = \pgfmathprintnumber[fixed, precision=4]{\slopeI} \times I
 	\label{eq:regLin1}
 \end{equation}
-A partir do declive da regressão linear através da Lei de Ohm podemos inferir que a resitência de entrada experimental para o circuito com C e D ligados é $R_E=\pgfmathprintnumber[fixed, precision=3]{\expI}\,\unit{\ohm}$
 
-\paragraph{\textbf{Valor teórico}}
+Assim, a partir do declive da regressão linear, inferir-se que a resitência de entrada experimental para o circuito com C e D ligados é $R_E=\pgfmathprintnumber[fixed, precision=3]{\expI}\,\unit{\ohm}$.
+
+\paragraph{\textbf{Valor teórico:}}
+\paragraph{}
+
+Os valores teóricos foram calculados segundo os valores experimentais da \cref{tab:resist-exper}.
+
 % {\large SAMUEL - Calcular valores do excel e meter aqui}
 \begin{equation}
 	R_E= R_1+ ({R_2 \parallel R_3})+R_4 = 120,5+\frac{327,0 \cdot 260,0}{327,0 + 260,0}+120,6 = \pgfmathprintnumber[fixed, precision=3]{\teoI}\,\Omega
@@ -81,7 +91,10 @@ De sequência, procedeu-se à determinação da exatidão do valor experimental 
 \end{equation}
 
 
-\subsubsection{Alinea b)}
+\subsubsection{Caso b)}
+
+Na \cref{gra:mont1-alinB}, encontra-se a regressão linear associada à montagem 2, obtida atráves das medições da \cref{tab:mont1-alinB}.
+
 \begin{figure}[!ht]
 	\centering
 	\begin{tikzpicture}
@@ -113,39 +126,38 @@ De sequência, procedeu-se à determinação da exatidão do valor experimental 
 
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Gráfico V-I montagem 1 - alínea b)}
+	\caption{Gráfico V-I montagem 1 - caso b)}
 	\label{gra:mont1-alinB}
 \end{figure}
 
-
-REGRESSÃO LINEAR MONTAGEM 1 ALINEA b) :
+\vspace{10pt}
+\textbf{ Relação entre a tensão e a corrente (C
+	e D desligados):}
 \begin{equation}
 	V = \pgfmathprintnumber[fixed, precision=3]{\slopeII} \times I
 	\label{eq:regLin2}
 \end{equation}
 
 
-A partir do declive da regressão linear através da Lei de Ohm podemos inferir que a resitência de entrada experimental para o circuito com C e D desligados é $R_E= \pgfmathprintnumber[fixed, precision=3]{\expII} \,\unit{\ohm}$
+Da mesma forma, a partir do declive da regressão linear, inferir-se que a resitência de entrada experimental para o circuito com C e D desligados é $R_E= \pgfmathprintnumber[fixed, precision=3]{\expII} \,\unit{\ohm}$.
 
-\paragraph{\textbf{Valor teórico}}
-
-\vspace{10pt}
-Os valores teóricos foram calculados segundo os valores experimentais da \cref{tab:resist-exper}.
+\paragraph{\textbf{Valor teórico:}}
 
 \begin{equation*}
 	R_E= R_1+ R_3 +R_4 = 120,5+ 260 +120,6 = \pgfmathprintnumber[fixed, precision=3]{\teoII}\,\Omega
 \end{equation*}
-De sequência, procedeu-se à determinação da exatidão do valor experimental obtido com a equação \eqref{eq:exatidao}, de forma a avaliar o desvio do resultado experimental em relação ao valor teórico.
+
+Posteriormente, determinou-se a exatidão do valor experimental obtido através da equação \eqref{eq:exatidao}.
 
 \begin{equation*}
 	\text{Exatidão} = \left(1 - \frac{|\pgfmathprintnumber[fixed, precision=3]{\expII}-\pgfmathprintnumber[fixed, precision=3]{\teoII}|}{\pgfmathprintnumber[fixed, precision=3]{\teoII}}\right)\times 100 = \pgfmathprintnumber[fixed, precision=3]{\exatII}\%
 \end{equation*}
 
 
-
-
-\subsection{Montagem 2}
+\subsection{Montagem 2 - Fonte real}
 Na \cref{gra:mont2}, encontra-se a regressão linear associada à montagem 2, obtida atráves das medições da \cref{tab:mont2}.
+
+\enlargethispage{2\baselineskip}
 
 \begin{figure}[!ht]
 	\centering
@@ -189,26 +201,27 @@ Obteve-se assim a seguinte equação característica da fonte de tensão:
 	\label{eq:regLin3}
 \end{equation*}
 
-De onde se retira que $V_0 = \pgfmathprintnumber[fixed, precision=3]{\VexpIII}\,\unit{V}$ e $R_i = \pgfmathprintnumber[fixed, precision=3]{\expIII}\,\unit{\ohm}$
+A equação da fonte real é dada por: V = $-R_i$I $+ V_0$. Dessa forma, obtém-se $V_0 = \pgfmathprintnumber[fixed, precision=3]{\VexpIII}\,\unit{V}$ e $R_i = \pgfmathprintnumber[fixed, precision=3]{\expIII}\,\unit{\ohm}$.
 
 
-\paragraph{\textbf{Valor teórico}}
+\paragraph{\textbf{Valor teórico:}}
 
 \vspace{10pt}
 Anulando a fonte (curto-circuito):
 
 \begin{align*}
-	               & R_{eq} = R_2 + (R_3 \parallel R_1 + R_4)                                   \\
-	               & R_1 + R_4 = 241,1 \, \Omega                                                \\
+	               & R_{eq} = R_2 + (R_3 \parallel R_1 + R_4)                                                                              \\
+	               & R_1 + R_4 = 241,1 \, \Omega                                                                                           \\
 	\Rightarrow \, & R_{eq} = 327 + \frac{260 \cdot 241,1}{260 + 241,1} \approx \pgfmathprintnumber[fixed, precision=3]{\teoIII} \, \Omega
 \end{align*}
 
-Em circuito aberto entre 1 e 2, não circula corrente em R2, logo não existe queda de tensão nessa resistência. A queda de tensão a calcular é a queda de tensão em $R_3$.
+Em circuito aberto entre 1 e 2, não circula corrente em $R_2$, logo não existe queda de tensão nessa resistência. A queda de tensão a calcular é a queda de tensão em $R_3$.
 
 \begin{align*}
 	V_{Th} = V_3 = V_s \, \frac{R_3}{R_1+R_3+R_4} = 15 \cdot \frac{260}{501} = \pgfmathprintnumber[fixed, precision=3]{\VteoIII}\,\unit{V}
 \end{align*}
 
+Por fim, calculou-se a exatidão do valor experimental obtido com a equação \eqref{eq:exatidao}.
 \begin{equation*}
-	\text{Exatidão} = \left(1 - \frac{|448 - 452|}{452}\right)\times 100 = \pgfmathprintnumber[fixed, precision=3]{\exatIII}
+	\text{Exatidão} = \left(1 - \frac{|448 - 452|}{452}\right)\times 100 = \pgfmathprintnumber[fixed, precision=3]{\exatIII}\%
 \end{equation*}
