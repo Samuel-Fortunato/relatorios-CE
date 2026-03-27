@@ -45,12 +45,12 @@ Para tal, fez se variar a corrente de entrada, fornecida pela fonte de tensão a
 	\caption{Valor das Resistências}
 	\label{tab:resist-exper}
 	\begin{tabular}{c|c|c}
-		      & Valor teórico   & Valor experimetal \\
+		      & Valor teórico     & Valor experimetal \\
 		\hline
-		$R_1$ & \qty{120}{\ohm} & \qty{120.5}{\ohm} \\
-		$R_2$ & \qty{330}{\ohm} & \qty{327}{\ohm}   \\
-		$R_3$ & \qty{270}{\ohm} & \qty{260}{\ohm}   \\
-		$R_4$ & \qty{120}{\ohm} & \qty{120.6}{\ohm}
+		$R_1$ & \qty{120,0}{\ohm} & \qty{120,5}{\ohm} \\
+		$R_2$ & \qty{330,0}{\ohm} & \qty{327,0}{\ohm} \\
+		$R_3$ & \qty{270,0}{\ohm} & \qty{260,0}{\ohm} \\
+		$R_4$ & \qty{120,0}{\ohm} & \qty{120,6}{\ohm}
 	\end{tabular}
 \end{table}
 
@@ -197,9 +197,7 @@ As medições de corrente e tensão encontram-se na \cref{tab:mont1-alinB}.
 Na segunda parte do trabalho, o objetivo foi simular uma fonte de tensão real, ou seja uma fonte que apresenta uma resistência interna. Para isso, foi ligada a fonte de tensão diretamente à placa de resistências usada nas montagens anteriores, como consta na \cref{circ:fonte-real-sim}.
 
 
-Para simplificar esta análise, recorreu-se ao teorema de Thévenin, que permitiu substituir toda a complexidade da placa de resistências por um circuito equivalente muito mais simples. Este modelo reduz a montagem a apenas uma fonte de tensão ideal $V_{th}$ associada em série a uma única resistência $R_{th} = R_s$, representando exatamente o comportamento que observamos nos pontos de ligação da carga (terminais 1 e 2).
-
-Para simplificar esta análise, recorreu-se ao teorema de Thévenin, que permitiu substituir toda a complexidade da placa de resistências por um circuito equivalente muito mais simples. Este modelo reduz a montagem a apenas uma fonte de tensão ideal $V_{th}$ associada em série a uma única resistência $R_{th} = R_s$, representando exatamente o comportamento que observamos nos pontos de ligação da carga (terminais 1 e 2). O circuito de Thévenin genérico encontra-se representado na \cref{circ:equiv-thevenin}:
+Para simplificar esta análise, recorreu-se ao teorema de Thévenin, que permitiu substituir toda a complexidade da placa de resistências por um circuito equivalente muito mais simples. Este modelo reduz a montagem a apenas uma fonte de tensão ideal $V_{th}$ associada em série a uma única resistência $R_{th} = R_s$, representando exatamente o comportamento que observamos nos pontos de ligação da carga (terminais 1 e 2). O circuito de Thévenin genérico encontra-se representado na \cref{circ:equiv-thevenin}.
 \vspace{10pt}
 
 \begin{figure}[!ht]
@@ -329,6 +327,6 @@ Numa fonte real, tem-se que a tensão de saída, neste caso a tensão nos termin
 			},
 	]{dados/2.csv}
 \end{table}
-\vspace{100pt}
+\vspace{120pt}
 
 Os valores medidos apresentam incertezas inerentes aos instrumentos de medição utilizados, voltímetro e amperímetro de $\pm 0,1$ V e $\pm 0,1$ mA, respetivamente.

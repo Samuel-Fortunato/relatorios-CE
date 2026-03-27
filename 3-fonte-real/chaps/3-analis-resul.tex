@@ -71,7 +71,7 @@ Na \cref{gra:mont1-alinA}, encontra-se a regressão linear associada à montagem
 	\label{eq:regLin1}
 \end{equation}
 
-Assim, a partir do declive da regressão linear, inferir-se que a resitência de entrada experimental para o circuito com C e D ligados é $R_E=\pgfmathprintnumber[fixed, precision=3]{\expI}\,\unit{\ohm}$.
+Assim, a partir do declive da regressão linear, inferir-se que a resistência de entrada experimental para o circuito com C e D ligados é $R_E=\pgfmathprintnumber[fixed, precision=3]{\expI}\,\unit{\ohm}$.
 
 \paragraph{\textbf{Valor teórico:}}
 \paragraph{}
@@ -142,9 +142,10 @@ Na \cref{gra:mont1-alinB}, encontra-se a regressão linear associada à montagem
 Da mesma forma, a partir do declive da regressão linear, inferir-se que a resitência de entrada experimental para o circuito com C e D desligados é $R_E= \pgfmathprintnumber[fixed, precision=3]{\expII} \,\unit{\ohm}$.
 
 \paragraph{\textbf{Valor teórico:}}
+Os valores teóricos foram determinados com base nos valores experimentais da \cref{tab:resist-exper}.
 
 \begin{equation*}
-	R_E= R_1+ R_3 +R_4 = 120,5+ 260 +120,6 = \pgfmathprintnumber[fixed, precision=3]{\teoII}\,\Omega
+	R_E= R_1+ R_3 +R_4 = 120,5+ 260,0 +120,6 = \pgfmathprintnumber[fixed, precision=3]{\teoII}\,\Omega
 \end{equation*}
 
 Posteriormente, determinou-se a exatidão do valor experimental obtido através da equação \eqref{eq:exatidao}.
@@ -210,18 +211,18 @@ A equação da fonte real é dada por: V = $-R_i$I $+ V_0$. Dessa forma, obtém-
 Anulando a fonte (curto-circuito):
 
 \begin{align*}
-	               & R_{eq} = R_2 + (R_3 \parallel R_1 + R_4)                                                                              \\
-	               & R_1 + R_4 = 241,1 \, \Omega                                                                                           \\
-	\Rightarrow \, & R_{eq} = 327 + \frac{260 \cdot 241,1}{260 + 241,1} \approx \pgfmathprintnumber[fixed, precision=3]{\teoIII} \, \Omega
+	               & R_{eq} = R_2 + (R_3 \parallel R_1 + R_4)                                                                                    \\
+	               & R_1 + R_4 = 241,1 \, \Omega                                                                                                 \\
+	\Rightarrow \, & R_{eq} = 327,0 + \frac{260,0 \cdot 241,1}{260,0 + 241,1} \approx \pgfmathprintnumber[fixed, precision=3]{\teoIII} \, \Omega
 \end{align*}
 
 Em circuito aberto entre 1 e 2, não circula corrente em $R_2$, logo não existe queda de tensão nessa resistência. A queda de tensão a calcular é a queda de tensão em $R_3$.
 
 \begin{align*}
-	V_{Th} = V_3 = V_s \, \frac{R_3}{R_1+R_3+R_4} = 15 \cdot \frac{260}{501} = \pgfmathprintnumber[fixed, precision=3]{\VteoIII}\,\unit{V}
+	V_{Th} = V_3 = V_s \, \frac{R_3}{R_1+R_3+R_4} = 15 \cdot \frac{260,0}{501,1} = \pgfmathprintnumber[fixed, precision=3]{\VteoIII}\,\unit{V}
 \end{align*}
 
 Por fim, calculou-se a exatidão do valor experimental obtido com a equação \eqref{eq:exatidao}.
 \begin{equation*}
-	\text{Exatidão} = \left(1 - \frac{|448 - 452|}{452}\right)\times 100 = \pgfmathprintnumber[fixed, precision=3]{\exatIII}\%
+	\text{Exatidão} = \left(1 - \frac{|447,9 - 452,1|}{452,1}\right)\times 100 = \pgfmathprintnumber[fixed, precision=3]{\exatIII}\%
 \end{equation*}
