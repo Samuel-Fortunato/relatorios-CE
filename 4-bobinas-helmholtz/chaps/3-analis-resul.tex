@@ -1,0 +1,126 @@
+\section{Análise de Resultados}
+
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				xlabel={Corrente (\unit{\milli\ampere})},
+				ylabel={Tensão (\unit{\volt})},
+				xmin=0, xmax=130, % Adjust these based on your data range
+				ymin=0, ymax=4,
+				grid=both,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=0.8\textwidth,
+				height=7cm
+			]
+
+			\addplot[
+				blue,
+				mark=*,
+				only marks,
+			] table [
+					col sep=comma,
+					x=Vh,
+					y=B
+				] {dados/solenoide.csv};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Gráfico V-I montagem 1 - caso a)}
+	\label{gra:mont1-alinA}
+\end{figure}
+
+
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				xlabel={Corrente (\unit{\milli\ampere})},
+				ylabel={Tensão (\unit{\volt})},
+				% xmin=0, xmax=130, % Adjust these based on your data range
+				% ymin=0, ymax=4,
+				grid=both,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=0.8\textwidth,
+				height=7cm
+			]
+
+			\addplot[
+				blue,
+				mark=*,
+				only marks,
+			] table [
+					col sep=comma,
+					x=x,
+					y=Vh
+				] {dados/bobinas-serie.csv};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Gráfico V-I montagem 1 - caso a)}
+	\label{placeholder}
+\end{figure}
+
+
+
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				xlabel={Corrente (\unit{\milli\ampere})},
+				ylabel={Tensão (\unit{\volt})},
+				% xmin=0, xmax=130, % Adjust these based on your data range
+				% ymin=0, ymax=4,
+				grid=both,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=0.8\textwidth,
+				height=7cm
+			]
+
+			\addplot[
+				blue,
+				mark=*,
+				only marks,
+			] table [
+					col sep=comma,
+					x=x,
+					y=Vh
+				] {dados/bobins-rights.csv};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Gráfico V-I montagem 1 - caso a)}
+	\label{placeholder2}
+\end{figure}
+
+
+
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				xlabel={Corrente (\unit{\milli\ampere})},
+				ylabel={Tensão (\unit{\volt})},
+				% xmin=0, xmax=130, % Adjust these based on your data range
+				% ymin=0, ymax=4,
+				grid=both,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=0.8\textwidth,
+				height=7cm
+			]
+
+			\addplot[
+				blue,
+				mark=*,
+				only marks,
+			] table [
+					col sep=comma,
+					x=x,
+					y=Vh
+				] {dados/lefts-bobains.csv};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Gráfico V-I montagem 1 - caso a)}
+	\label{placeholder3}
+\end{figure}
