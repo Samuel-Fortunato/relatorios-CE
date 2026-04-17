@@ -1,13 +1,18 @@
+\pgfplotstableread[header=false, col sep=comma]{dados/regress.csv}\tabelaRegressoes
+\pgfplotstablegetelem{0}{1}\of{\tabelaRegressoes} \let\Slope\pgfplotsretval
+\pgfplotstablegetelem{0}{2}\of{\tabelaRegressoes} \let\Intercept\pgfplotsretval
+
+
 \section{Análise de Resultados}
 
 \begin{figure}[!ht]
 	\centering
 	\begin{tikzpicture}
 		\begin{axis}[
-				xlabel={Corrente (\unit{\milli\ampere})},
-				ylabel={Tensão (\unit{\volt})},
-				xmin=0, xmax=130, % Adjust these based on your data range
-				ymin=0, ymax=4,
+				xlabel={Campo Magnético (\unit{\tesla})},
+				ylabel={Tensão (\unit{\milli\volt})},
+				xmin=0, xmax=4, % Adjust these based on your data range
+				ymin=0, ymax=130,
 				grid=both,
 				% grid style={dashed, gray!30},
 				% legend pos=north west,
@@ -21,25 +26,35 @@
 				only marks,
 			] table [
 					col sep=comma,
-					x=Vh,
-					y=B
+					x=B,
+					y=Vh
 				] {dados/solenoide.csv};
+
+			\addplot[red, domain=0:4] {\Slope * x + \Intercept};
+
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Gráfico V-I montagem 1 - caso a)}
+	\caption{Calibração da sonda - Gráfico V-B}
 	\label{gra:mont1-alinA}
 \end{figure}
+
+
+Regressão linear e tals e coiso - compltear com texto - está na \cref{eq:reg-lin}. Verificar algarismos significativos.
+\begin{equation}\label{eq:reg-lin}
+	V = \Slope \times B + \Intercept
+\end{equation}
 
 
 \begin{figure}[!ht]
 	\centering
 	\begin{tikzpicture}
 		\begin{axis}[
-				xlabel={Corrente (\unit{\milli\ampere})},
-				ylabel={Tensão (\unit{\volt})},
-				% xmin=0, xmax=130, % Adjust these based on your data range
-				% ymin=0, ymax=4,
+				xlabel={Posição (\unit{cm})},
+				ylabel={Tensão (\unit{\milli\volt})},
+				xmin=-9, xmax=9, % Adjust these based on your data range
+				ymin=0, ymax=28,
 				grid=both,
+				axis lines=center,
 				% grid style={dashed, gray!30},
 				% legend pos=north west,
 				width=0.8\textwidth,
@@ -57,7 +72,7 @@
 				] {dados/bobinas-serie.csv};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Gráfico V-I montagem 1 - caso a)}
+	\caption{Gráfico - tensão ao longo das bobinas}
 	\label{placeholder}
 \end{figure}
 
@@ -69,9 +84,10 @@
 		\begin{axis}[
 				xlabel={Corrente (\unit{\milli\ampere})},
 				ylabel={Tensão (\unit{\volt})},
-				% xmin=0, xmax=130, % Adjust these based on your data range
-				% ymin=0, ymax=4,
+				xmin=-9, xmax=9, % Adjust these based on your data range
+				ymin=0, ymax=28,
 				grid=both,
+				axis lines=center,
 				% grid style={dashed, gray!30},
 				% legend pos=north west,
 				width=0.8\textwidth,
@@ -101,9 +117,10 @@
 		\begin{axis}[
 				xlabel={Corrente (\unit{\milli\ampere})},
 				ylabel={Tensão (\unit{\volt})},
-				% xmin=0, xmax=130, % Adjust these based on your data range
-				% ymin=0, ymax=4,
+				xmin=-9, xmax=9, % Adjust these based on your data range
+				ymin=0, ymax=28,
 				grid=both,
+				axis lines=center,
 				% grid style={dashed, gray!30},
 				% legend pos=north west,
 				width=0.8\textwidth,
@@ -123,4 +140,37 @@
 	\end{tikzpicture}
 	\caption{Gráfico V-I montagem 1 - caso a)}
 	\label{placeholder3}
+\end{figure}
+
+
+
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				xlabel={Corrente (\unit{\milli\ampere})},
+				ylabel={Tensão (\unit{\volt})},
+				xmin=-9, xmax=9, % Adjust these based on your data range
+				ymin=-12, ymax=12,
+				grid=both,
+				axis lines=center,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=0.8\textwidth,
+				height=7cm
+			]
+
+			\addplot[
+				blue,
+				mark=*,
+				only marks,
+			] table [
+					col sep=comma,
+					x=x,
+					y=Vh
+				] {dados/oposed-bobains.csv};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Gráfico V-I montagem 1 - caso a)}
+	\label{ksdjfh}
 \end{figure}
