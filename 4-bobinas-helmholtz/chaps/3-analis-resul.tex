@@ -1,6 +1,5 @@
 \pgfplotstableread[header=false, col sep=comma]{dados/regress.csv}\tabelaRegressoes
 \pgfplotstablegetelem{0}{1}\of{\tabelaRegressoes} \let\Slope\pgfplotsretval
-\pgfplotstablegetelem{0}{2}\of{\tabelaRegressoes} \let\Intercept\pgfplotsretval
 
 
 \section{Análise de Resultados}
@@ -11,12 +10,13 @@
 		\begin{axis}[
 				xlabel={Campo Magnético (\unit{\tesla})},
 				ylabel={Tensão (\unit{\milli\volt})},
-				xmin=0, xmax=4, % Adjust these based on your data range
-				ymin=0, ymax=130,
+				xmin=0, xmax=5.6, % Adjust these based on your data range
+				ymin=0, ymax=139,
 				grid=both,
+				axis lines=center,
 				% grid style={dashed, gray!30},
 				% legend pos=north west,
-				width=0.8\textwidth,
+				width=0.7\textwidth,
 				height=7cm
 			]
 
@@ -29,8 +29,14 @@
 					x=B,
 					y=Vh
 				] {dados/solenoide.csv};
+			\addlegendentry{Medições}
 
-			\addplot[red, domain=0:4] {\Slope * x + \Intercept};
+			\addplot[
+				red,
+				thick,
+				domain=0.1:3.9
+			] {\Slope * x};
+			\addlegendentry{Regressão}
 
 		\end{axis}
 	\end{tikzpicture}
@@ -39,138 +45,208 @@
 \end{figure}
 
 
-Regressão linear e tals e coiso - compltear com texto - está na \cref{eq:reg-lin}. Verificar algarismos significativos.
+Regressão linear e tals e coiso - compltear com texto - está na \cref{eq:reg-lin}. {\Large Verificar algarismos significativos. Verificar unidades (mV e T).}
 \begin{equation}\label{eq:reg-lin}
-	V = \Slope \times B + \Intercept
+	V = \Slope \times B
 \end{equation}
-
 
 \begin{figure}[!ht]
 	\centering
 	\begin{tikzpicture}
 		\begin{axis}[
 				xlabel={Posição (\unit{cm})},
-				ylabel={Tensão (\unit{\milli\volt})},
+				ylabel={Campo Magnético (\unit{\tesla})},
 				xmin=-9, xmax=9, % Adjust these based on your data range
-				ymin=0, ymax=28,
+				ymin=-490, ymax=920,
 				grid=both,
 				axis lines=center,
 				% grid style={dashed, gray!30},
-				% legend pos=north west,
-				width=0.8\textwidth,
-				height=7cm
+				legend pos=south west,
+				width=0.9\textwidth,
+				height=10cm
 			]
 
 			\addplot[
-				blue,
-				mark=*,
-				only marks,
+				red,
+				thick,
+				mark=x,
 			] table [
 					col sep=comma,
 					x=x,
-					y=Vh
+					y=B
 				] {dados/bobinas-serie.csv};
-		\end{axis}
-	\end{tikzpicture}
-	\caption{Gráfico - tensão ao longo das bobinas}
-	\label{placeholder}
-\end{figure}
-
-
-
-\begin{figure}[!ht]
-	\centering
-	\begin{tikzpicture}
-		\begin{axis}[
-				xlabel={Corrente (\unit{\milli\ampere})},
-				ylabel={Tensão (\unit{\volt})},
-				xmin=-9, xmax=9, % Adjust these based on your data range
-				ymin=0, ymax=28,
-				grid=both,
-				axis lines=center,
-				% grid style={dashed, gray!30},
-				% legend pos=north west,
-				width=0.8\textwidth,
-				height=7cm
-			]
+			\addlegendentry{Bobinas em série}
 
 			\addplot[
-				blue,
-				mark=*,
-				only marks,
+				green!80!black,
+				thick,
+				mark=x,
 			] table [
 					col sep=comma,
 					x=x,
-					y=Vh
-				] {dados/bobins-rights.csv};
-		\end{axis}
-	\end{tikzpicture}
-	\caption{Gráfico V-I montagem 1 - caso a)}
-	\label{placeholder2}
-\end{figure}
-
-
-
-\begin{figure}[!ht]
-	\centering
-	\begin{tikzpicture}
-		\begin{axis}[
-				xlabel={Corrente (\unit{\milli\ampere})},
-				ylabel={Tensão (\unit{\volt})},
-				xmin=-9, xmax=9, % Adjust these based on your data range
-				ymin=0, ymax=28,
-				grid=both,
-				axis lines=center,
-				% grid style={dashed, gray!30},
-				% legend pos=north west,
-				width=0.8\textwidth,
-				height=7cm
-			]
-
-			\addplot[
-				blue,
-				mark=*,
-				only marks,
-			] table [
-					col sep=comma,
-					x=x,
-					y=Vh
+					y=B
 				] {dados/lefts-bobains.csv};
-		\end{axis}
-	\end{tikzpicture}
-	\caption{Gráfico V-I montagem 1 - caso a)}
-	\label{placeholder3}
-\end{figure}
-
-
-
-\begin{figure}[!ht]
-	\centering
-	\begin{tikzpicture}
-		\begin{axis}[
-				xlabel={Corrente (\unit{\milli\ampere})},
-				ylabel={Tensão (\unit{\volt})},
-				xmin=-9, xmax=9, % Adjust these based on your data range
-				ymin=-12, ymax=12,
-				grid=both,
-				axis lines=center,
-				% grid style={dashed, gray!30},
-				% legend pos=north west,
-				width=0.8\textwidth,
-				height=7cm
-			]
+			\addlegendentry{Bobina da esquerda}
 
 			\addplot[
 				blue,
-				mark=*,
-				only marks,
+				thick,
+				mark=x,
 			] table [
 					col sep=comma,
 					x=x,
-					y=Vh
+					y=B
+				] {dados/bobins-rights.csv};
+			\addlegendentry{Bobina da direita}
+
+			\addplot[
+				magenta!80!black,
+				thick,
+				mark=x,
+			] table [
+					col sep=comma,
+					x=x,
+					y=B
 				] {dados/oposed-bobains.csv};
+			\addlegendentry{Bobinas em oposição}
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Gráfico V-I montagem 1 - caso a)}
-	\label{ksdjfh}
+	\caption{Gráfico - Módulo do campo magnético $||\vec{B}||$ ao longo do eixo das bobinas}
+	\label{gra:todas}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					xlabel={Posição (\unit{cm})},
+					ylabel={Campo Magnético (\unit{\tesla})},
+					xmin=-9, xmax=9, % Adjust these based on your data range
+					ymin=0, ymax=900,
+					grid=both,
+					axis lines=center,
+					% grid style={dashed, gray!30},
+					% legend pos=north west,
+					width=\textwidth,
+					height=6cm
+				]
+
+				\addplot[
+					blue,
+					mark=x,
+					thick,
+					% only marks,
+				] table [
+						col sep=comma,
+						x=x,
+						y=B
+					] {dados/bobinas-serie.csv};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Bobinas em série}
+		\label{sdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					xlabel={Posição (\unit{cm})},
+					ylabel={Campo Magnético (\unit{\tesla})},
+					xmin=-9, xmax=9, % Adjust these based on your data range
+					ymin=0, ymax=650,
+					grid=both,
+					axis lines=center,
+					% grid style={dashed, gray!30},
+					% legend pos=north west,
+					width=\textwidth,
+					height=6cm
+				]
+
+				\addplot[
+					blue,
+					mark=x,
+					thick,
+					% only marks,
+				] table [
+						col sep=comma,
+						x=x,
+						y=B
+					] {dados/bobins-rights.csv};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Bobina da direita}
+		\label{1232}
+	\end{subfigure}
+
+	\vspace{1cm}
+
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					xlabel={Posição (\unit{cm})},
+					ylabel={Campo Magnético (\unit{\tesla})},
+					xmin=-9, xmax=9, % Adjust these based on your data range
+					ymin=0, ymax=650,
+					grid=both,
+					axis lines=center,
+					% grid style={dashed, gray!30},
+					% legend pos=north west,
+					width=\textwidth,
+					height=6cm
+				]
+
+				\addplot[
+					blue,
+					mark=x,
+					thick,
+					% only marks,
+				] table [
+						col sep=comma,
+						x=x,
+						y=B
+					] {dados/lefts-bobains.csv};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Bobina da esquerda}
+		\label{1dfse}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+					xlabel={Corrente (\unit{\milli\ampere})},
+					ylabel={Campo Magnético (\unit{\tesla})},
+					xmin=-9, xmax=9, % Adjust these based on your data range
+					ymin=-430, ymax=430,
+					grid=both,
+					axis lines=center,
+					% grid style={dashed, gray!30},
+					% legend pos=north west,
+					width=\textwidth,
+					height=6cm
+				]
+
+				\addplot[
+					blue,
+					mark=x,
+					thick,
+					% only marks,
+				] table [
+						col sep=comma,
+						x=x,
+						y=B
+					] {dados/oposed-bobains.csv};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Bobinas em sentidos opostos}
+		\label{dfs}
+	\end{subfigure}
+
+	\caption{Gráfico: Campo magnético $||\vec{B}||$ - várias configurações}
+	\label{fig:comparacao}
 \end{figure}
