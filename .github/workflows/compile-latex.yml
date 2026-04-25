@@ -1,0 +1,35 @@
+name: Build LaTeX Reports
+on: [push]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Necessary to create a Release
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX documents
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: "**/main.tex"
+          args: "-pdf -file-line-error -interaction=nonstopmode -cd"
+
+      - name: Rename PDFs for clarity
+        run: |
+          find . -name "main.pdf" | while read f; do
+            dir=$(basename $(dirname "$f"))
+            mv "$f" "${dir}_report.pdf"
+          done
+
+      - name: Create Release and Upload PDFs
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest Lab Reports
+          body: "Automated build of all lab reports."
+          # This specifically uploads only the renamed PDFs
+          files: "*_report.pdf" 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
