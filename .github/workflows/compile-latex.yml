@@ -1,0 +1,39 @@
+name: Build LaTeX Reports
+on: [push]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX documents
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: "**/main.tex"
+          args: "-pdf -file-line-error -interaction=nonstopmode -cd"
+
+      - name: Mudar o nome dos PDFs
+        run: |
+          # Use find to locate main.pdf, then get the folder name
+          find . -name "main.pdf" | while read f; do
+            dir=$(basename $(dirname "$f"))
+            # Fixed the variable syntax: added $ before {dir}
+            mv "$f" "relatório-${dir}.pdf"
+          done
+
+      - name: Criar Release e Carregar ficheiros
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Relatórios Compilados
+          body: "Last updated on: ${{ github.event.head_commit.timestamp }}"
+          files: "relatório-*.pdf"
+          # These two lines are the fix for the "stuck" release:
+          make_latest: true
+          overwrite: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
