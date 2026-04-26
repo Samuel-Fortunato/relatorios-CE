@@ -1,5 +1,6 @@
-\pgfplotstableread[header=false, col sep=comma]{dados/regress.csv}\tabelaRegressoes
-\pgfplotstablegetelem{0}{1}\of{\tabelaRegressoes} \let\Slope\pgfplotsretval
+\pgfplotstableread[col sep=comma]{dados/regress.csv}\tabelaRegressoes
+\pgfplotstablegetelem{0}{m}\of{\tabelaRegressoes} \let\Slope\pgfplotsretval
+\pgfplotstablegetelem{2}{m}\of{\tabelaRegressoes} \let\Rsquare\pgfplotsretval
 
 
 \section{Análise de Resultados}
@@ -8,7 +9,7 @@
 	\centering
 	\begin{tikzpicture}
 		\begin{axis}[
-				xlabel={$\vec{B}$ [\unit{\tesla}]},
+				xlabel={$\vec{B}$ [\unit{\milli\tesla}]},
 				ylabel={Tensão [\unit{\milli\volt}]},
 				xmin=0, xmax=5.6, % Adjust these based on your data range
 				ymin=0, ymax=139,
@@ -55,9 +56,9 @@ Regressão linear e tals e coiso - compltear com texto - está na \cref{eq:reg-l
 	\begin{tikzpicture}
 		\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
-				ylabel={$\vec{B}$ [\unit{\tesla}]},
+				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
 				xmin=-9, xmax=9, % Adjust these based on your data range
-				ymin=-490, ymax=920,
+				ymin=-0.45, ymax=0.89,
 				grid=both,
 				axis lines=center,
 				% grid style={dashed, gray!30},
@@ -126,9 +127,9 @@ Regressão linear e tals e coiso - compltear com texto - está na \cref{eq:reg-l
 		\begin{tikzpicture}
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
-				ylabel={$\vec{B}$ [\unit{\tesla}]},
+				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
 					xmin=-9, xmax=9, % Adjust these based on your data range
-					ymin=0, ymax=900,
+					ymin=0, ymax=0.9,
 					grid=both,
 					axis lines=center,
 					% grid style={dashed, gray!30},
@@ -159,9 +160,9 @@ Regressão linear e tals e coiso - compltear com texto - está na \cref{eq:reg-l
 		\begin{tikzpicture}
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
-				ylabel={$\vec{B}$ [\unit{\tesla}]},
+				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
 					xmin=-9, xmax=9, % Adjust these based on your data range
-					ymin=0, ymax=650,
+					ymin=0, ymax=0.65,
 					grid=both,
 					axis lines=center,
 					% grid style={dashed, gray!30},
@@ -194,9 +195,9 @@ Regressão linear e tals e coiso - compltear com texto - está na \cref{eq:reg-l
 		\begin{tikzpicture}
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
-				ylabel={$\vec{B}$ [\unit{\tesla}]},
+				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
 					xmin=-9, xmax=9, % Adjust these based on your data range
-					ymin=0, ymax=650,
+					ymin=0, ymax=0.65,
 					grid=both,
 					axis lines=center,
 					% grid style={dashed, gray!30},
@@ -227,9 +228,9 @@ Regressão linear e tals e coiso - compltear com texto - está na \cref{eq:reg-l
 		\begin{tikzpicture}
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
-				ylabel={$\vec{B}$ [\unit{\tesla}]},
+				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
 					xmin=-9, xmax=9, % Adjust these based on your data range
-					ymin=-430, ymax=430,
+					ymin=-0.45, ymax=0.45,
 					grid=both,
 					axis lines=center,
 					% grid style={dashed, gray!30},
@@ -255,6 +256,6 @@ Regressão linear e tals e coiso - compltear com texto - está na \cref{eq:reg-l
 		\label{dfs}
 	\end{subfigure}
 
-	\caption{Gráfico: Campo magnético $||\vec{B}||$ - várias configurações}
+	\caption{Gráfico - Campo magnético $||\vec{B}||$ - várias configurações}
 	\label{fig:comparacao}
 \end{figure}

@@ -1,2 +1,33 @@
 \section{Resultados}
 
+\begin{table}[!ht]
+	\centering
+	\caption{sdfsfw}
+	\label{sffdsdf}
+	% Use pgfplotstable to render the CSV
+	\pgfplotstabletypeset[
+		col sep=comma, % Tells LaTeX the file is a CSV
+		% string type,   % Treat headers as text
+		% Define the full grid (vertical lines)
+		column type={|c|},
+		% Styling the header and adding the horizontal lines for the "Full Grid"
+		every head row/.style={
+				before row=\hline,
+				after row=\hline
+			},
+		every last row/.style={
+				after row=\hline
+			},
+		% Assigning column headers and units
+		columns/Vh/.style={
+				column name={1fdsdv3r},
+				% column type={|c|},
+				% column type={S[table-format=2.1]|} % Adjust format to your max digits
+			},
+		columns/Is/.style={
+				column name={sdff2r34gf},
+				% column type={c|},
+				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
+			},
+	]{dados/solenoide.csv}
+\end{table}
