@@ -1,8 +1,20 @@
 \section{Resultados}
+Primeiramente, foi efetuada a calibração da sonda de efeito de Hall. Para tal, realizou-se uma montagem constítuida por uma fonte de $15 \, \unit{\volt}$, um reóstato, e um amperímetro. A sonda foi introduzida num solenóide-padrão, e posicionada no centro geométrico do mesmo para minimizar o erro associado à aplicação da equação \cref{eq:solenoid}, válida para solenóides para os quais o comprimento é muito maior que o raio e $N/L$ é conhecido:
+
+\begin{equation}
+	B = \mu_0 \, \frac{N}{L}I_S
+	\label{eq:solenoid}
+\end{equation}
+
+em que $B$ corresponde ao campo magnético, $\mu_0$ à permeabilidade do vácuo, $N$ ao número de espiras, $L$ ao comprimento da solenóide e $I_S$ à corrente na solenóide.
+
+Fez-se então variar a corrente que percorria o solenóide, $I_S$ através do reóstato, e mediu-se a diferença de potencial elétrico $V_H$ gerada nos terminais da sonda devido ao efeito desse campo para cada valor de corrente. As medições  como realizadas encontram-se na \cref{tab:calib-sonda}:
+
+
 
 \begin{table}[!ht]
 	\centering
-	\caption{sdfsfw}
+	\caption{Tensão de Hall e corrente na solenóide medidas.}
 	\label{sffdsdf}
 	% Use pgfplotstable to render the CSV
 	\pgfplotstabletypeset[
@@ -30,4 +42,5 @@
 				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
 			},
 	]{dados/solenoide.csv}
+	\label{tab:calib-sonda}
 \end{table}
