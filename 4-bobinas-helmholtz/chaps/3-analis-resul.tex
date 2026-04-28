@@ -42,7 +42,7 @@ Com as medições da corrente $I_S$ da \cref{tab:calib-sonda}, e através da \cr
 	]{dados/solenoide.csv}
 \end{table}
 
-Sabendo que a tensão de Hall é diretamente proporcional ao campo magnético, realizou-se uma regressão linear com o intuito de encontrar a constante de proporcionalidade que relaciona as duas grandezas. Assim, o gráfico de calibração da sonda encontra-se representado na \cref{gra:mont1-alinA} e a respetiva equação na \cref{eq:reg-lin}:
+Sabendo que a tensão de Hall é diretamente proporcional ao campo magnético, realizou-se uma regressão linear com o intuito de encontrar a constante de proporcionalidade que relaciona as duas grandezas. Assim, o gráfico de calibração da sonda encontra-se representado na \cref{gra:mont1-alinA}:
 
 
 \begin{figure}[!ht]
@@ -87,18 +87,20 @@ Sabendo que a tensão de Hall é diretamente proporcional ao campo magnético, r
 
 Da linearização resultaram a \cref{eq:reg-lin} e os seguintes parâmetros de validação estatística:
 \begin{equation}\label{eq:reg-lin}
-	V_H = \Slope \times B
+	V_H = \Slope \times B \quad	[\unit{\milli\volt}]
 \end{equation}
 \begin{align*}
-	\sigma = \StdDev \qquad R^2 = \Rsquare
+	\sigma = \StdDev \, \text{V/T}  \qquad R^2 = \Rsquare
 \end{align*}
-Sendo 32,5419 a constante de proporcionalidade entre a tensão de Hall e o campo magnético $B$, $R^2$ o coeficiente de correlação e $\sigma$ o desvio padrão.
+Sendo 32,5419 V/T a constante de proporcionalidade entre a tensão de Hall e o campo magnético $B$, $R^2$ o coeficiente de correlação e $\sigma$ o desvio padrão.
 
 \vspace{1.5pt}
 Ao analisar a precisão dos resultados obtidos através da regressão linear, é evidente que o sistema de medição e a metodologia experimental foram rigorosos. O principal indicador desta qualidade é o coeficiente de determinação, $R^2$, que ao atingir um valor tão próximo de 1 demonstra que a correlação entre a tensão de Hall e o campo magnético é praticamente perfeita, garantindo que o modelo matemático adotado descreve fielmente o fenómeno físico observado.
-Além da forte correlação, o desvio padrão de aproximadamente $0.02$ reforça a consistência das leituras. A dispersão dos dados em torno da reta de ajuste é residual, o que sugere que as fontes de erro aleatório, como flutuações na corrente do solenóide, foram minimizadas durante o procedimento experimental.
+Além da forte correlação, o desvio padrão de aproximadamente $0.02$ V/T reforça a consistência das leituras. A dispersão dos dados em torno da reta de ajuste é residual, o que sugere que as fontes de erro aleatório, como flutuações na corrente do solenóide, foram minimizadas durante o procedimento experimental.
 
 \subsection{Campo magnético gerado pelas bobinas de Helmholtz}
+
+Com base nos valores precedentemente elencados, procedeu-se ao traçado dos perfis do campo magnético em função da posição axial, para cada configuração. Na \cref{gra:todas} encontram-se representadas todas estas curvas, em simultâneo enquanto que nas \crefrange{sdf}{dfs}, é possível analisar cada uma individualmente.
 
 \begin{figure}[!ht]
 	\centering
