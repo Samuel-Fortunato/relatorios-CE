@@ -37,7 +37,7 @@ Com as medições da corrente $I_S$ da \cref{tab:calib-sonda}, e através da \cr
 				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
 			},
 		columns/B/.style={
-				column name={$||\vec{B}||$ [\unit{T}]},
+				column name={${B}$ [\unit{T}]},
 			},
 	]{dados/solenoide.csv}
 \end{table}
@@ -49,7 +49,7 @@ Sabendo que a tensão de Hall é diretamente proporcional ao campo magnético, r
 	\centering
 	\begin{tikzpicture}
 		\begin{axis}[
-				xlabel={$\vec{B}$ [\unit{\milli\tesla}]},
+				xlabel={${B}$ [\unit{\milli\tesla}]},
 				ylabel={Tensão de Hall [\unit{\milli\volt}]},
 				xmin=0, xmax=5.6, % Adjust these based on your data range
 				ymin=0, ymax=139,
@@ -92,7 +92,7 @@ Da linearização resultaram a \cref{eq:reg-lin} e os seguintes parâmetros de v
 \begin{align*}
 	\sigma = \StdDev \qquad R^2 = \Rsquare
 \end{align*}
-Sendo 32,5419 a constante de proporcionalidade entre a tensão de Hall e o campo magnético $B_x$, $R^2$ o coeficiente de correlação e $\sigma$ o desvio padrão.
+Sendo 32,5419 a constante de proporcionalidade entre a tensão de Hall e o campo magnético $B$, $R^2$ o coeficiente de correlação e $\sigma$ o desvio padrão.
 
 \vspace{1.5pt}
 Ao analisar a precisão dos resultados obtidos através da regressão linear, é evidente que o sistema de medição e a metodologia experimental foram rigorosos. O principal indicador desta qualidade é o coeficiente de determinação, $R^2$, que ao atingir um valor tão próximo de 1 demonstra que a correlação entre a tensão de Hall e o campo magnético é praticamente perfeita, garantindo que o modelo matemático adotado descreve fielmente o fenómeno físico observado.
@@ -105,7 +105,7 @@ Além da forte correlação, o desvio padrão de aproximadamente $0.02$ reforça
 	\begin{tikzpicture}
 		\begin{axis}[
 			xlabel={Posição [\unit{cm}]},
-			ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
+			ylabel={${B}$ [\unit{\milli\tesla}]},
 			xmin=-9, xmax=9, % Adjust these based on your data range
 			ymin=-0.45, ymax=0.89,
 			grid=both,
@@ -165,7 +165,7 @@ Além da forte correlação, o desvio padrão de aproximadamente $0.02$ reforça
 			\addlegendentry{Bobinas em oposição}
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Gráfico - Módulo do campo magnético $||\vec{B}||$ ao longo do eixo das bobinas}
+	\caption{Gráfico - Campo magnético ${B}$ ao longo do eixo das bobinas}
 	\label{gra:todas}
 \end{figure}
 
@@ -176,7 +176,7 @@ Além da forte correlação, o desvio padrão de aproximadamente $0.02$ reforça
 		\begin{tikzpicture}
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
-				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
+				ylabel={${B}$ [\unit{\milli\tesla}]},
 				xmin=-9, xmax=9, % Adjust these based on your data range
 				ymin=0, ymax=0.9,
 				grid=both,
@@ -209,7 +209,7 @@ Além da forte correlação, o desvio padrão de aproximadamente $0.02$ reforça
 		\begin{tikzpicture}
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
-				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
+				ylabel={${B}$ [\unit{\milli\tesla}]},
 				xmin=-9, xmax=9, % Adjust these based on your data range
 				ymin=0, ymax=0.65,
 				grid=both,
@@ -244,7 +244,7 @@ Além da forte correlação, o desvio padrão de aproximadamente $0.02$ reforça
 		\begin{tikzpicture}
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
-				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
+				ylabel={${B}$ [\unit{\milli\tesla}]},
 				xmin=-9, xmax=9, % Adjust these based on your data range
 				ymin=0, ymax=0.65,
 				grid=both,
@@ -277,7 +277,7 @@ Além da forte correlação, o desvio padrão de aproximadamente $0.02$ reforça
 		\begin{tikzpicture}
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
-				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
+				ylabel={${B}$ [\unit{\milli\tesla}]},
 				xmin=-9, xmax=9, % Adjust these based on your data range
 				ymin=-0.45, ymax=0.45,
 				grid=both,
@@ -305,7 +305,7 @@ Além da forte correlação, o desvio padrão de aproximadamente $0.02$ reforça
 		\label{dfs}
 	\end{subfigure}
 
-	\caption{Gráficos - Campo magnético $||\vec{B}||$ - várias configurações}
+	\caption{Gráficos - Campo magnético ${B}$ - várias configurações}
 	\label{fig:comparacao}
 \end{figure}
 
@@ -325,7 +325,7 @@ Para verificar o principio da sobreposisão, na \cref{gra:sobrepos-serie} foram 
 		\begin{tikzpicture}
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
-				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
+				ylabel={${B}$ [\unit{\milli\tesla}]},
 				xmin=-9, xmax=9, % Adjust these based on your data range
 				ymin=0, ymax=0.9,
 				grid=both,
@@ -370,7 +370,7 @@ Para verificar o principio da sobreposisão, na \cref{gra:sobrepos-serie} foram 
 		\begin{tikzpicture}
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
-				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
+				ylabel={${B}$ [\unit{\milli\tesla}]},
 				xmin=-9, xmax=9, % Adjust these based on your data range
 				ymin=-0.45, ymax=0.45,
 				grid=both,
@@ -418,22 +418,22 @@ A configuração de Helmholtz (bobinas em série) resulta na soma vetorial dos c
 
 Em contraste, a configuração com as bobinas percorridas com corrente em sentidos contrários, apresenta um comportamento distinto. Devido à inversão do sentido da corrente na bobina da direita, os campos magnéticos no ponto central possuem módulos iguais, mas sentidos opostos, resultando num campo nulo na origem. Observa-se um comportamento linear do campo no intervalo $ -1 \leq x \leq 1 $ [cm], onde o gradiente permanece constante. O perfil atinge picos de intensidade em sentidos opostos (aproximadamente $\pm \, 0{,}35$ mT) nas proximidades dos centros das bobinas, evidenciando a inversão do vetor campo magnético ao cruzar a origem.
 
-\subsection{Expressão teórica para $B(x)$}
+\subsection{Expressão teórica para $B$}
 Outro dos objetivos do trabalho prático incidiu sobre a dedução da expressão teórica do campo gerado pelas bobinas de Helmholtz ao longo do seu eixo.
 Sendo assim, equação do campo magnético no eixo de uma bobina centrada em 0 ($x = 0$) é dado por:
 
 \begin{equation}
-	B(x) = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + x^2)^{3/2}}
+	B = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + x^2)^{3/2}}
 \end{equation}
 
 Tomando a configuração de Helmholtz, em que as bobinas estão dispostas simetricamente relativamente ao eixo das ordenadas, e distanciadas $R/2$, temos:
 
 \begin{align*}
-	B_1(x) & = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + (x-\frac{R}{2})^2)^{3/2}} \\
-	B_2(x) & = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + (x+\frac{R}{2})^2)^{3/2}}
+	B_1 & = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + (x-\frac{R}{2})^2)^{3/2}} \\
+	B_2 & = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + (x+\frac{R}{2})^2)^{3/2}}
 \end{align*}
 
-Sendo $B_1$ o campo relativo à bobina direita e $B_2$ ao da esquerda. Assim, $B(x) = B_1(x) + B_2(x)$. Para $x = 0$ :
+Sendo $B_1$ o campo relativo à bobina direita e $B_2$ ao da esquerda. Assim, $B = B_1 + B_2$. Para $x = 0$ :
 
 
 \begin{align*}
