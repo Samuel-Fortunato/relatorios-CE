@@ -7,11 +7,8 @@
 \section{Análise de Resultados}
 
 \subsection{Calibração da sonda de Hall}
-{\huge Falta mencionar aqui na frase introdutoria que a tabela também contem o Vh medido na sonda}
 
-{\huge Also, será melhor substituir "campo magnético $B$" por "módulo do campo magnético $||\vec{B}||$" ?}
-
-Os valores do campo magnético $B$ calculados, com as medições da corrente na solenóide e com recurso à \cref{eq:solenoid}, tomando $\mu_0 = 4\pi \times 10^{-7} \, \unit{\henry /, \meter}$ e $\frac{N}{L} = 3467 \pm 60$ espiras/m, constam na tabela:
+Foi medida a tensão de Hall nos terminais do solenóide-padrão, e foram calculados os valores da componente axial do campo magnético $B_x$  através das medições da corrente na solenóide $I_S$ e com recurso à \cref{eq:solenoid}, tomando $\mu_0 = 4\pi \times 10^{-7} \, \unit{\henry /, \meter}$ e $\frac{N}{L}$ espiras/m. Os resultados constam na \cref{tab:calculo-do-B}:
 
 \begin{table}[!ht]
 	\centering
@@ -90,16 +87,18 @@ Sabendo que a tensão de Hall é diretamente proporcional ao campo magnético, r
 	\label{gra:mont1-alinA}
 \end{figure}
 
-
-{\Large Verificar algarismos significativos. $R^2$ para precisão, guys.}
-
-\begin{gather}\label{eq:reg-lin}
+Da linearização resultaram a \cref{eq:reg-lin} e os seguintes parâmetros de validação estatística:
+\begin{equation}\label{eq:reg-lin}
 	V_H = \Slope \times B
-	\\
-	R^2 = \Rsquare
-	\\
-	\sigma = \StdDev
-\end{gather}
+\end{equation}
+\begin{align*}
+	\sigma = \StdDev \qquad R^2 = \Rsquare
+\end{align*}
+Sendo $R^2$ o coeficiente de correlação e $\sigma$ o desvio padrão.
+
+\vspace{1.5pt}
+Ao analisar a precisão dos resultados obtidos através da regressão linear, é evidente que o sistema de medição e a metodologia experimental foram rigorosos. O principal indicador desta qualidade é o coeficiente de determinação, $R^2$, que ao atingir um valor tão próximo de 1 demonstra que a correlação entre a tensão de Hall e o campo magnético é praticamente perfeita, garantindo que o modelo matemático adotado descreve fielmente o fenómeno físico observado.
+Além da forte correlação, o desvio padrão de aproximadamente $0.02$ reforça a consistência das leituras. A dispersão dos dados em torno da reta de ajuste é residual, o que sugere que as fontes de erro aleatório, como flutuações na corrente do solenóide, foram minimizadas durante o procedimento experimental.
 
 \subsection{Campo magnético gerado pelas bobinas de Helmholtz}
 Na segunda parte da atividade experimental, recorreu-se à sonda para medir o campo magnético e a sua variação face a alterações no circuito. Procurou-se também verificar o princípio da sobreposição de campos magnéticos.
