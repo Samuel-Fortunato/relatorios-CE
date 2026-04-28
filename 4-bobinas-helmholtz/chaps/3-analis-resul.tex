@@ -100,12 +100,11 @@ Sabendo que a tensão de Hall é diretamente proporcional ao campo magnético, r
 Na segunda parte da atividade experimental, recorreu-se à sonda para medir o campo magnético e a sua variação face a alterações no circuito. Procurou-se também verificar o princípio da sobreposição de campos magnéticos.
 
 
-Primeiramente, foi fechado um circuito entre a sonda e o multímetro com o intuito de verificar que a sonda não estava a sofrer interferência de tensões residuais. Para tal foi ajustado o potenciómetro da sonda até que a tensão indicada no multímetro fosse nula. De seguida, partindo da montagem anterior, substituiu-se a solenóide por duas bobinas de Helmholtz ligadas em série. Estas foram posicionadas a $6,475 \, \unit{\cm}$ uma da outra, o equivalente ao seu raio $R$, calculado como média aritmética dos raio exterior e interior.
+Primeiramente, foi fechado um circuito entre a sonda e o multímetro com o intuito de verificar que a sonda não estava a sofrer interferência de tensões residuais. Para tal foi ajustado o potenciómetro da sonda até que a tensão indicada no multímetro fosse nula. De seguida, partindo da montagem anterior, substituiu-se a solenóide por duas bobinas de Helmholtz ligadas em série. Estas foram posicionadas a $6,475 \, \unit{\cm}$ uma da outra, o equivalente ao seu raio $R$, calculado como média aritmética do seu raio exterior e interior.
 A sonda foi colocada de forma a atravessar o centro geométrico das bobinas. Fixou-se um valor de corrente de $I = 0,5 \, \unit{\ampere}$ para o resto da experiência e tendo em conta posição da escala da sonda relativamente à da bobina, registou-se uma posição de referência para sonda $x = 0$, e mediu-se a variação da tensão $V_H$ à medida que se distanciava  a sonda da sua posição inicial. Analogamente ao método adotado para a calibração da sonda, obtêm-se valores de $B$ para cada posição considerada.
 
 
-Repetiu-se o procedimento para avaliar o efeito de cada bobina individualmente, e para uma outra configuração em que a corrente circulava em sentidos contrários nas duas bobinas. Na \cref{gra:todas} constam as curvas do campo magnético $B$ em função da posição, tomando x = 0 como ponto médio entre as bobinas, e na \cref{fig:comparacao}:
-
+Repetiu-se o procedimento para avaliar o efeito de cada bobina individualmente, e para uma outra configuração em que a corrente circulava em sentidos contrários nas duas bobinas. Na \cref{gra:todas} constam todas as curvas obtidas do campo magnético $B$ em função da posição relativas às várias configurações, tomando x = 0 como ponto médio entre as bobinas. Na \cref{fig:comparacao} constam as curvas individualmente.
 
 \begin{figure}[!ht]
 	\centering
@@ -321,20 +320,20 @@ Repetiu-se o procedimento para avaliar o efeito de cada bobina individualmente, 
 A equação do campo magnético no eixo de uma bobina centrada em 0 ($x = 0$) é dado por:
 
 \begin{equation}
-	B(x) = \frac{\mu_0}{2}\frac{I \cdot R^2}{(R^2 + x^2)^{3/2}}
+	B(x) = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + x^2)^{3/2}}
 \end{equation}
 
 Tomando a configuração em que as bobinas estão dispostas simetricamente relativamente ao eixo das ordenadas, e distanciadas $R/2$, temos:
 
 \begin{align*}
-	B_1(x) & = \frac{\mu_0}{2}\frac{I \cdot R^2}{(R^2 + (x-\frac{R}{2})^2)^{3/2}} \\
-	B_2(x) & = \frac{\mu_0}{2}\frac{I \cdot R^2}{(R^2 + (x+\frac{R}{2})^2)^{3/2}}
+	B_1(x) & = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + (x-\frac{R}{2})^2)^{3/2}} \\
+	B_2(x) & = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + (x+\frac{R}{2})^2)^{3/2}}
 \end{align*}
 
 Sendo $B_1$ o campo relativo à bobina direita e $B_2$ ao da esquerda. Assim, $B(x) = B_1(x) + B_2(x)$. Para $x = 0$ :
 
 
 \begin{align*}
-	B(0) = \mu_0 \, \frac{I \cdot R^2}{\left(R^2 + \left(\frac{R}{2}\right)^2\right)^{3/2}} & = \mu_0 \, \frac{I \cdot R^2}{\left(R^2 + \frac{R^2}{4}\right)^{3/2}} = \mu_0 \, \frac{I \cdot R^2}{\left(\frac{5}{4}\right)^{3/2} \, R^3} = \mu_0 \, \left(\frac{4}{5}\right)^{3/2} \frac{I}{R} \approx 4\pi \times 10^{-7} \times 0,716 \times \frac{I}{R} \\ &\approx \left(9,00 \times 10^{-7}\right) \, \frac{I}{R}
+	B(0) = \mu_0 \, \frac{I N R^2}{\left(R^2 + \left(\frac{R}{2}\right)^2\right)^{3/2}} & = \mu_0 \, \frac{I N R^2}{\left(R^2 + \frac{R^2}{4}\right)^{3/2}} = \mu_0 \, \frac{I N R^2}{\left(\frac{5}{4}\right)^{3/2} \, R^3} =  \left(\frac{4}{5}\right)^{3/2} \, \frac{\mu_0 I}{R} 
 \end{align*}
 
