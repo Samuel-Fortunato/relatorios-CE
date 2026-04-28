@@ -99,6 +99,7 @@ Ao analisar a precisão dos resultados obtidos através da regressão linear, é
 Além da forte correlação, o desvio padrão de aproximadamente $0.02$ V/T reforça a consistência das leituras. A dispersão dos dados em torno da reta de ajuste é residual, o que sugere que as fontes de erro aleatório, como flutuações na corrente do solenóide, foram minimizadas durante o procedimento experimental.
 
 \subsection{Campo magnético gerado pelas bobinas de Helmholtz}
+Na segunda parte da atividade experimental, recorreu-se à sonda para medir o campo magnético e a sua variação face a alterações no circuito, usando a calibração feita anteroriormente. Procurou-se também verificar o princípio da sobreposição de campos magnéticos.
 
 Com base nos valores precedentemente elencados, procedeu-se ao traçado dos perfis do campo magnético em função da posição axial, para cada configuração. Na \cref{gra:todas} encontram-se representadas todas estas curvas, em simultâneo enquanto que nas \crefrange{sdf}{dfs}, é possível analisar cada uma individualmente.
 
@@ -311,15 +312,8 @@ Com base nos valores precedentemente elencados, procedeu-se ao traçado dos perf
 	\label{fig:comparacao}
 \end{figure}
 
-{\Huge Este parágrafo está com linguagem bue tosca, podem ajustar please? É preciso também explicar porque de fazer soma e subtracao um do outro}
 
-
-
-
-
-
-
-Para verificar o principio da sobreposisão, na \cref{gra:sobrepos-serie} foram representados os valores das duas bobinas juntas, junto com a soma das duas bobinas separadas e na \cref{gra:sobrepos-oposto} os valores das bobinas com correntes opostas, junto com a subtração das duas bobinas separadas.
+Para verificar o principio da sobreposisão, na \cref{gra:sobrepos-serie} foram representados os valores do campo magnético gerado pelas duas bobinas na configuração de Helmholtz (bobinas em série), junto com a soma do campo magnético das duas bobinas operadas de forma independente. Na \cref{gra:sobrepos-oposto} foram representados os valores do campo magnético gerado pelas bobinas percorridas com corrente em sentidos contrários (também chamada de configuração anti-Helmholtz), junto com a subtração das contribuições individuais de cada bobina.
 
 \begin{figure}[!ht]
 	\begin{minipage}{0.49\linewidth}
@@ -328,12 +322,12 @@ Para verificar o principio da sobreposisão, na \cref{gra:sobrepos-serie} foram 
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
 				ylabel={${B}$ [\unit{\milli\tesla}]},
-				xmin=-9, xmax=9, % Adjust these based on your data range
+				xmin=-10.9, xmax=9, % Adjust these based on your data range
 				ymin=0, ymax=0.9,
 				grid=both,
 				axis lines=center,
 				% grid style={dashed, gray!30},
-				% legend pos=north west,
+				legend pos=south west,
 				width=\textwidth,
 				height=6cm
 				]
@@ -349,6 +343,7 @@ Para verificar o principio da sobreposisão, na \cref{gra:sobrepos-serie} foram 
 						x=x,
 						y=tot
 					] {dados/sobreposicao.csv};
+				\addlegendentry{Helmholtz}
 
 
 				\addplot[
@@ -362,9 +357,10 @@ Para verificar o principio da sobreposisão, na \cref{gra:sobrepos-serie} foram 
 						x=x,
 						y=sum
 					] {dados/sobreposicao.csv};
+				\addlegendentry{$B_1 + B_2$}
 			\end{axis}
 		\end{tikzpicture}
-		\caption{legenda}
+		\caption{Configuração de Helmholtz}
 		\label{gra:sobrepos-serie}
 	\end{minipage}
 	\begin{minipage}{0.49\linewidth}
@@ -373,12 +369,12 @@ Para verificar o principio da sobreposisão, na \cref{gra:sobrepos-serie} foram 
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
 				ylabel={${B}$ [\unit{\milli\tesla}]},
-				xmin=-9, xmax=9, % Adjust these based on your data range
+				xmin=-11.9, xmax=9, % Adjust these based on your data range
 				ymin=-0.45, ymax=0.45,
 				grid=both,
 				axis lines=center,
 				% grid style={dashed, gray!30},
-				% legend pos=north west,
+				legend pos=south west,
 				width=\textwidth,
 				height=6cm
 				]
@@ -394,7 +390,7 @@ Para verificar o principio da sobreposisão, na \cref{gra:sobrepos-serie} foram 
 						x=x,
 						y=tot-op
 					] {dados/sobreposicao.csv};
-
+				\addlegendentry{Helmholtz}
 
 				\addplot[
 					red,
@@ -407,14 +403,15 @@ Para verificar o principio da sobreposisão, na \cref{gra:sobrepos-serie} foram 
 						x=x,
 						y=sub
 					] {dados/sobreposicao.csv};
+				\addlegendentry{$B_1 + B_2$}
 			\end{axis}
 		\end{tikzpicture}
-		\caption{legenda}
+		\caption{Configuração anti-Helmholtz}
 		\label{gra:sobrepos-oposto}
 	\end{minipage}
 \end{figure}
 
-A análise do gráfico anterior permite verificar a sobreposição do campo magnético. Quando as bobinas são operadas de forma independente observa-se que cada uma gera um perfil de campo simétrico com um valor máximo de aproximadamente $0{,}48$ mT, decaindo suavemente à medida que a distância em relação ao plano da espira aumenta.
+A análise deste gráfico permite verificar a o principio de sobreposição do campo magnético. Quando as bobinas são operadas de forma independente observa-se que cada uma gera um perfil de campo simétrico com um valor máximo de aproximadamente $0{,}48$ mT, decaindo suavemente à medida que a distância em relação ao plano da bobina aumenta.
 
 A configuração de Helmholtz (bobinas em série) resulta na soma vetorial dos campos individuais. O perfil resultante evidencia a principal característica do arranjo: a criação de uma região de campo magnético aproximadamente uniforme no centro do sistema, para $ -2 \leq x \leq 2$ [cm]. Nesta zona central, o perfil de queda de intensidade de uma bobina é compensado simetricamente pela contribuição da bobina oposta, consolidando uma região de elevada homogeneidade, onde se verifica um módulo de campo magnético constante de aproximadamente $0{,}75$ mT.
 
