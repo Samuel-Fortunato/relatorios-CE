@@ -1,4 +1,7 @@
 \section{Resultados}
+
+\subsection{Calibração da sonda de Hall}
+
 Primeiramente, foi efetuada a calibração da sonda de efeito de Hall. Para tal, realizou-se uma montagem constítuida por uma fonte de $15 \, \unit{\volt}$, um reóstato, e um amperímetro. A sonda foi introduzida num solenóide-padrão, e posicionada no centro geométrico do mesmo para minimizar o erro associado à aplicação da equação \cref{eq:solenoid}, válida para solenóides para os quais o comprimento é muito maior que o raio e $N/L$ é conhecido:
 
 \begin{equation}
@@ -9,7 +12,6 @@ Primeiramente, foi efetuada a calibração da sonda de efeito de Hall. Para tal,
 em que $B$ corresponde ao campo magnético, $\mu_0$ à permeabilidade do vácuo, $N$ ao número de espiras, $L$ ao comprimento da solenóide e $I_S$ à corrente na solenóide.
 
 Fez-se então variar a corrente que percorria o solenóide, $I_S$ através do reóstato, e mediu-se a diferença de potencial elétrico $V_H$ gerada nos terminais da sonda devido ao efeito desse campo, para cada valor de corrente. As medições  realizadas encontram-se na \cref{tab:calib-sonda}:
-
 
 
 \begin{table}[!ht]
@@ -42,6 +44,17 @@ Fez-se então variar a corrente que percorria o solenóide, $I_S$ através do re
 			},
 	]{dados/solenoide.csv}
 \end{table}
+
+
+\subsection{Campo magnético em bobinas de Helmholtz}
+Na segunda parte da atividade experimental, recorreu-se à sonda para medir o campo magnético e a sua variação face a alterações no circuito. Procurou-se também verificar o princípio da sobreposição de campos magnéticos.
+
+
+Primeiramente, foi fechado um circuito entre a sonda e o multímetro com o intuito de verificar que a sonda não estava a sofrer interferência de tensões residuais. Para tal foi ajustado o potenciómetro da sonda até que a tensão indicada no multímetro fosse nula. De seguida, partindo da montagem anterior, substituiu-se o solenóide por duas bobinas de Helmholtz ligadas em série. Estas foram posicionadas a $6,475 \, \unit{\cm}$ uma da outra, o equivalente ao seu raio $R$, calculado como média aritmética do seu raio exterior e interior.
+A sonda foi colocada de forma a atravessar o centro geométrico das bobinas. Fixou-se um valor de corrente de $I_S = 0,5 \, \unit{\ampere}$ para o resto da experiência e tendo em conta posição da escala da sonda relativamente à da bobina, registou-se uma posição de referência para sonda $x = 0$, e mediu-se a variação da tensão $V_H$ à medida que se distanciava  a sonda da sua posição inicial. Analogamente ao método adotado para a calibração da sonda, obtêm-se valores de $B$ para cada posição considerada.
+
+
+Repetiu-se o procedimento para avaliar o efeito de cada bobina individualmente, e para uma outra configuração em que a corrente circulava em sentidos contrários nas duas bobinas. Na \crefrange{tab:Vh-serie}{tab:Vh-opostas} constam as medições efetuadas para as várias configurações consideradas.
 
 \begin{table}[!ht]
 	\begin{minipage}{0.49\linewidth}

@@ -5,7 +5,8 @@
 
 \subsection{Calibração da sonda de Hall}
 
-Foi medida a tensão de Hall nos terminais do solenóide-padrão, e foram calculados os valores da componente axial do campo magnético $B_x$  através das medições da corrente na solenóide $I_S$ e com recurso à \cref{eq:solenoid}, tomando $\mu_0 = 4\pi \times 10^{-7} \, \unit{\henry /, \meter}$ e $\frac{N}{L}$ espiras/m. Os resultados constam na \cref{tab:calculo-do-B}:
+
+Com as medições da corrente $I_S$ da \cref{tab:calib-sonda}, e através da \cref{eq:solenoid}, foram calculados os valores da componente axial do campo magnético $B$, tomando $\mu_0 = 4\pi \times 10^{-7} \, \unit{\henry /, \meter}$ e $\frac{N}{L}$ espiras/m. Os resultados assim como os valores de $V_H$ obtidos anteriormente, constam na \cref{tab:calculo-do-B}:
 
 \begin{table}[!ht]
 	\centering
@@ -98,14 +99,6 @@ Ao analisar a precisão dos resultados obtidos através da regressão linear, é
 Além da forte correlação, o desvio padrão de aproximadamente $0.02$ reforça a consistência das leituras. A dispersão dos dados em torno da reta de ajuste é residual, o que sugere que as fontes de erro aleatório, como flutuações na corrente do solenóide, foram minimizadas durante o procedimento experimental.
 
 \subsection{Campo magnético gerado pelas bobinas de Helmholtz}
-Na segunda parte da atividade experimental, recorreu-se à sonda para medir o campo magnético e a sua variação face a alterações no circuito. Procurou-se também verificar o princípio da sobreposição de campos magnéticos.
-
-
-Primeiramente, foi fechado um circuito entre a sonda e o multímetro com o intuito de verificar que a sonda não estava a sofrer interferência de tensões residuais. Para tal foi ajustado o potenciómetro da sonda até que a tensão indicada no multímetro fosse nula. De seguida, partindo da montagem anterior, substituiu-se o solenóide por duas bobinas de Helmholtz ligadas em série. Estas foram posicionadas a $6,475 \, \unit{\cm}$ uma da outra, o equivalente ao seu raio $R$, calculado como média aritmética do seu raio exterior e interior.
-A sonda foi colocada de forma a atravessar o centro geométrico das bobinas. Fixou-se um valor de corrente de $I = 0,5 \, \unit{\ampere}$ para o resto da experiência e tendo em conta posição da escala da sonda relativamente à da bobina, registou-se uma posição de referência para sonda $x = 0$, e mediu-se a variação da tensão $V_H$ à medida que se distanciava  a sonda da sua posição inicial. Analogamente ao método adotado para a calibração da sonda, obtêm-se valores de $B$ para cada posição considerada.
-
-
-Repetiu-se o procedimento para avaliar o efeito de cada bobina individualmente, e para uma outra configuração em que a corrente circulava em sentidos contrários nas duas bobinas. Na \cref{gra:todas} constam todas as curvas obtidas do campo magnético $B$ em função da posição relativas às várias configurações, tomando x = 0 como ponto médio entre as bobinas. Na \cref{fig:comparacao} constam as curvas individualmente.
 
 \begin{figure}[!ht]
 	\centering
@@ -426,7 +419,7 @@ A configuração de Helmholtz (bobinas em série) resulta na soma vetorial dos c
 Em contraste, a configuração com as bobinas percorridas com corrente em sentidos contrários, apresenta um comportamento distinto. Devido à inversão do sentido da corrente na bobina da direita, os campos magnéticos no ponto central possuem módulos iguais, mas sentidos opostos, resultando num campo nulo na origem. Observa-se um comportamento linear do campo no intervalo $ -1 \leq x \leq 1 $ [cm], onde o gradiente permanece constante. O perfil atinge picos de intensidade em sentidos opostos (aproximadamente $\pm \, 0{,}35$ mT) nas proximidades dos centros das bobinas, evidenciando a inversão do vetor campo magnético ao cruzar a origem.
 
 \subsection{Expressão teórica para $B(x)$}
-Outro dos objetivos do trabalho prático incidia sobre a dedução da expressão teórica do campo gerado pelas bobinas de Helmholtz ao longo do seu eixo.
+Outro dos objetivos do trabalho prático incidiu sobre a dedução da expressão teórica do campo gerado pelas bobinas de Helmholtz ao longo do seu eixo.
 Sendo assim, equação do campo magnético no eixo de uma bobina centrada em 0 ($x = 0$) é dado por:
 
 \begin{equation}
