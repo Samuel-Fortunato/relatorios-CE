@@ -15,14 +15,13 @@ Fez-se então variar a corrente que percorria o solenóide, $I_S$ através do re
 \begin{table}[!ht]
 	\centering
 	\caption{Tensão de Hall e corrente na solenóide medidas.}
-	\label{sffdsdf}
+	\label{tab:calib-sonda}
 	% Use pgfplotstable to render the CSV
 	\pgfplotstabletypeset[
 		col sep=comma, % Tells LaTeX the file is a CSV
 		% string type,   % Treat headers as text
-		% Define the full grid (vertical lines)
-		column type={|c|},
-		% Styling the header and adding the horizontal lines for the "Full Grid"
+		% column type={|c|},
+		columns={Vh, Is},
 		every head row/.style={
 				before row=\hline,
 				after row=\hline
@@ -32,15 +31,136 @@ Fez-se então variar a corrente que percorria o solenóide, $I_S$ através do re
 			},
 		% Assigning column headers and units
 		columns/Vh/.style={
-				column name={1fdsdv3r},
+				column name={$V_H$ [\unit{mV}]},
 				% column type={|c|},
 				% column type={S[table-format=2.1]|} % Adjust format to your max digits
 			},
 		columns/Is/.style={
-				column name={sdff2r34gf},
+				column name={$I_S$ [\unit{mA}]},
 				% column type={c|},
 				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
 			},
 	]{dados/solenoide.csv}
-	\label{tab:calib-sonda}
 \end{table}
+
+\begin{table}[!ht]
+	\begin{minipage}{0.49\linewidth}
+		\centering
+		\caption{Bobinas em série}
+		\label{tab:Vh-serie}
+		\pgfplotstabletypeset[
+			col sep=comma, % Tells LaTeX the file is a CSV
+			% string type,   % Treat headers as text
+			% column type={|c|},
+			columns={x, Vh},
+			every head row/.style={
+					before row=\hline,
+					after row=\hline
+				},
+			every last row/.style={
+					after row=\hline
+				},
+			% Assigning column headers and units
+			columns/x/.style={
+					column name={$x$ [\unit{cm}]},
+					% column type={c|},
+					% column type={|S[table-format=2.2]|} % Adjust format to your max digits
+				},
+			columns/Vh/.style={
+					column name={$V_H$ [\unit{mV}]},
+					% column type={|c|},
+					% column type={S[table-format=2.1]|} % Adjust format to your max digits
+				},
+		]{dados/bobinas-serie.csv}
+	\end{minipage}
+	\begin{minipage}{0.49\linewidth}
+		\centering
+		\caption{Bobina da direita}
+		\label{tab:Vh-direita}
+		\pgfplotstabletypeset[
+			col sep=comma, % Tells LaTeX the file is a CSV
+			% string type,   % Treat headers as text
+			% column type={|c|},
+			columns={x, Vh},
+			every head row/.style={
+					before row=\hline,
+					after row=\hline
+				},
+			every last row/.style={
+					after row=\hline
+				},
+			% Assigning column headers and units
+			columns/x/.style={
+					column name={$x$ [\unit{cm}]},
+					% column type={c|},
+					% column type={|S[table-format=2.2]|} % Adjust format to your max digits
+				},
+			columns/Vh/.style={
+					column name={$V_H$ [\unit{mV}]},
+					% column type={|c|},
+					% column type={S[table-format=2.1]|} % Adjust format to your max digits
+				},
+		]{dados/bobins-rights.csv}
+	\end{minipage}
+\end{table}
+\begin{table}[!ht]
+	\begin{minipage}{0.49\linewidth}
+		\centering
+		\caption{Bobina da esquerda}
+		\label{tab:Vh-esquerda}
+		\pgfplotstabletypeset[
+			col sep=comma, % Tells LaTeX the file is a CSV
+			% string type,   % Treat headers as text
+			% column type={|c|},
+			columns={x, Vh},
+			every head row/.style={
+					before row=\hline,
+					after row=\hline
+				},
+			every last row/.style={
+					after row=\hline
+				},
+			% Assigning column headers and units
+			columns/x/.style={
+					column name={$x$ [\unit{cm}]},
+					% column type={c|},
+					% column type={|S[table-format=2.2]|} % Adjust format to your max digits
+				},
+			columns/Vh/.style={
+					column name={$V_H$ [\unit{mV}]},
+					% column type={|c|},
+					% column type={S[table-format=2.1]|} % Adjust format to your max digits
+				},
+		]{dados/lefts-bobains.csv}
+	\end{minipage}
+	\begin{minipage}{0.49\linewidth}
+		\centering
+		\caption{Bobinas opostas}
+		\label{tab:Vh-opostas}
+		\pgfplotstabletypeset[
+			col sep=comma, % Tells LaTeX the file is a CSV
+			% string type,   % Treat headers as text
+			% column type={|c|},
+			columns={x, Vh},
+			every head row/.style={
+					before row=\hline,
+					after row=\hline
+				},
+			every last row/.style={
+					after row=\hline
+				},
+			% Assigning column headers and units
+			columns/x/.style={
+					column name={$x$ [\unit{cm}]},
+					% column type={c|},
+					% column type={|S[table-format=2.2]|} % Adjust format to your max digits
+				},
+			columns/Vh/.style={
+					column name={$V_H$ [\unit{mV}]},
+					% column type={|c|},
+					% column type={S[table-format=2.1]|} % Adjust format to your max digits
+				},
+		]{dados/oposed-bobains.csv}
+	\end{minipage}
+\end{table}
+{\huge Nao sei bem como dizer, mas "bobinas opostas" na legenda da \cref{tab:Vh-opostas} não me soa bem}

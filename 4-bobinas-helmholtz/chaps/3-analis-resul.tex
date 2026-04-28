@@ -6,11 +6,47 @@
 \section{Análise de Resultados}
 
 \subsection{Calibração da sonda de Hall}
+{\huge Falta mencionar aqui na frase introdutoria que a tabela também contem o Vh medido na sonda}
+
+{\huge Also, será melhor substituir "campo magnético $B$" por "módulo do campo magnético $||\vec{B}||$" ?}
+
 Os valores do campo magnético $B$ calculados, com as medições da corrente na solenóide e com recurso à \cref{eq:solenoid}, tomando $\mu_0 = 4\pi \times 10^{-7} \, \unit{\henry /, \meter}$ e $\frac{N}{L} = 3467 \pm 60$ espiras/m, constam na tabela:
-{\huge TABELA PLS PLS TABELLA TABLES}
 
+\begin{table}[!ht]
+	\centering
+	\caption{Tensão de Hall, corrente no solenoide e módulo do campo magnético calculado.}
+	\label{tab:calculo-do-B}
+	% Use pgfplotstable to render the CSV
+	\pgfplotstabletypeset[
+		col sep=comma, % Tells LaTeX the file is a CSV
+		% string type,   % Treat headers as text
+		% column type={|c|},
+		columns={Vh, Is, B},
+		every head row/.style={
+				before row=\hline,
+				after row=\hline
+			},
+		every last row/.style={
+				after row=\hline
+			},
+		% Assigning column headers and units
+		columns/Vh/.style={
+				column name={$V_H$ [\unit{mV}]},
+				% column type={|c|},
+				% column type={S[table-format=2.1]|} % Adjust format to your max digits
+			},
+		columns/Is/.style={
+				column name={$I_S$ [\unit{mA}]},
+				% column type={c|},
+				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
+			},
+		columns/B/.style={
+			column name={$||\vec{B}||$ [\unit{T}]},
+			},
+	]{dados/solenoide.csv}
+\end{table}
 
-Sabendo que a tensão de Hall é diretamente proporcional ao campo magnético, realizou-se uma regressão linear com o intuito de encontrar a constante de proporcionalidade que relaciona as duas grandezas. Assim, o gráfico de calibração da sonda encontra-se representado na \cref{gra:mont1-alinA} e a respetiva equação na \cref{eq:reg-lin}: 
+Sabendo que a tensão de Hall é diretamente proporcional ao campo magnético, realizou-se uma regressão linear com o intuito de encontrar a constante de proporcionalidade que relaciona as duas grandezas. Assim, o gráfico de calibração da sonda encontra-se representado na \cref{gra:mont1-alinA} e a respetiva equação na \cref{eq:reg-lin}:
 
 
 \begin{figure}[!ht]
@@ -54,7 +90,7 @@ Sabendo que a tensão de Hall é diretamente proporcional ao campo magnético, r
 \end{figure}
 
 
-{\Large Verificar algarismos significativos. $R^2$ para precisão, guys.} 
+{\Large Verificar algarismos significativos. $R^2$ para precisão, guys.}
 
 \begin{equation}\label{eq:reg-lin}
 	V_H = \Slope \times B
@@ -75,16 +111,16 @@ Repetiu-se o procedimento para avaliar o efeito de cada bobina individualmente, 
 	\centering
 	\begin{tikzpicture}
 		\begin{axis}[
-				xlabel={Posição [\unit{cm}]},
-				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
-				xmin=-9, xmax=9, % Adjust these based on your data range
-				ymin=-0.45, ymax=0.89,
-				grid=both,
-				axis lines=center,
-				% grid style={dashed, gray!30},
-				legend pos=south west,
-				width=0.9\textwidth,
-				height=10cm
+			xlabel={Posição [\unit{cm}]},
+			ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
+			xmin=-9, xmax=9, % Adjust these based on your data range
+			ymin=-0.45, ymax=0.89,
+			grid=both,
+			axis lines=center,
+			% grid style={dashed, gray!30},
+			legend pos=south west,
+			width=0.9\textwidth,
+			height=10cm
 			]
 
 			\addplot[
@@ -148,14 +184,14 @@ Repetiu-se o procedimento para avaliar o efeito de cada bobina individualmente, 
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
 				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
-					xmin=-9, xmax=9, % Adjust these based on your data range
-					ymin=0, ymax=0.9,
-					grid=both,
-					axis lines=center,
-					% grid style={dashed, gray!30},
-					% legend pos=north west,
-					width=\textwidth,
-					height=6cm
+				xmin=-9, xmax=9, % Adjust these based on your data range
+				ymin=0, ymax=0.9,
+				grid=both,
+				axis lines=center,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=\textwidth,
+				height=6cm
 				]
 
 				\addplot[
@@ -181,14 +217,14 @@ Repetiu-se o procedimento para avaliar o efeito de cada bobina individualmente, 
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
 				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
-					xmin=-9, xmax=9, % Adjust these based on your data range
-					ymin=0, ymax=0.65,
-					grid=both,
-					axis lines=center,
-					% grid style={dashed, gray!30},
-					% legend pos=north west,
-					width=\textwidth,
-					height=6cm
+				xmin=-9, xmax=9, % Adjust these based on your data range
+				ymin=0, ymax=0.65,
+				grid=both,
+				axis lines=center,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=\textwidth,
+				height=6cm
 				]
 
 				\addplot[
@@ -216,14 +252,14 @@ Repetiu-se o procedimento para avaliar o efeito de cada bobina individualmente, 
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
 				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
-					xmin=-9, xmax=9, % Adjust these based on your data range
-					ymin=0, ymax=0.65,
-					grid=both,
-					axis lines=center,
-					% grid style={dashed, gray!30},
-					% legend pos=north west,
-					width=\textwidth,
-					height=6cm
+				xmin=-9, xmax=9, % Adjust these based on your data range
+				ymin=0, ymax=0.65,
+				grid=both,
+				axis lines=center,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=\textwidth,
+				height=6cm
 				]
 
 				\addplot[
@@ -249,14 +285,14 @@ Repetiu-se o procedimento para avaliar o efeito de cada bobina individualmente, 
 			\begin{axis}[
 				xlabel={Posição [\unit{cm}]},
 				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
-					xmin=-9, xmax=9, % Adjust these based on your data range
-					ymin=-0.45, ymax=0.45,
-					grid=both,
-					axis lines=center,
-					% grid style={dashed, gray!30},
-					% legend pos=north west,
-					width=\textwidth,
-					height=6cm
+				xmin=-9, xmax=9, % Adjust these based on your data range
+				ymin=-0.45, ymax=0.45,
+				grid=both,
+				axis lines=center,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=\textwidth,
+				height=6cm
 				]
 
 				\addplot[
@@ -274,7 +310,7 @@ Repetiu-se o procedimento para avaliar o efeito de cada bobina individualmente, 
 		\end{tikzpicture}
 		\caption{Bobinas em sentidos opostos}
 		\label{dfs}
- 	\end{subfigure}
+	\end{subfigure}
 
 	\caption{Gráfico - Campo magnético $||\vec{B}||$ - várias configurações}
 	\label{fig:comparacao}
@@ -291,14 +327,14 @@ A equação do campo magnético no eixo de uma bobina centrada em 0 ($x = 0$) é
 Tomando a configuração em que as bobinas estão dispostas simetricamente relativamente ao eixo das ordenadas, e distanciadas $R/2$, temos:
 
 \begin{align*}
-	B_1(x) &= \frac{\mu_0}{2}\frac{I \cdot R^2}{(R^2 + (x-\frac{R}{2})^2)^{3/2}}\\	
-	B_2(x) &= \frac{\mu_0}{2}\frac{I \cdot R^2}{(R^2 + (x+\frac{R}{2})^2)^{3/2}}
+	B_1(x) & = \frac{\mu_0}{2}\frac{I \cdot R^2}{(R^2 + (x-\frac{R}{2})^2)^{3/2}} \\
+	B_2(x) & = \frac{\mu_0}{2}\frac{I \cdot R^2}{(R^2 + (x+\frac{R}{2})^2)^{3/2}}
 \end{align*}
 
 Sendo $B_1$ o campo relativo à bobina direita e $B_2$ ao da esquerda. Assim, $B(x) = B_1(x) + B_2(x)$. Para $x = 0$ :
 
 
 \begin{align*}
-	B(0) = \mu_0 \, \frac{I \cdot R^2}{\left(R^2 + \left(\frac{R}{2}\right)^2\right)^{3/2}} &= \mu_0 \, \frac{I \cdot R^2}{\left(R^2 + \frac{R^2}{4}\right)^{3/2}} = \mu_0 \, \frac{I \cdot R^2}{\left(\frac{5}{4}\right)^{3/2} \, R^3} = \mu_0 \, \left(\frac{4}{5}\right)^{3/2} \frac{I}{R} \approx 4\pi \times 10^{-7} \times 0,716 \times \frac{I}{R}\\ &\approx \left(9,00 \times 10^{-7}\right) \, \frac{I}{R} 
+	B(0) = \mu_0 \, \frac{I \cdot R^2}{\left(R^2 + \left(\frac{R}{2}\right)^2\right)^{3/2}} & = \mu_0 \, \frac{I \cdot R^2}{\left(R^2 + \frac{R^2}{4}\right)^{3/2}} = \mu_0 \, \frac{I \cdot R^2}{\left(\frac{5}{4}\right)^{3/2} \, R^3} = \mu_0 \, \left(\frac{4}{5}\right)^{3/2} \frac{I}{R} \approx 4\pi \times 10^{-7} \times 0,716 \times \frac{I}{R} \\ &\approx \left(9,00 \times 10^{-7}\right) \, \frac{I}{R}
 \end{align*}
 
