@@ -1,5 +1,6 @@
 \pgfplotstableread[col sep=comma]{dados/regress.csv}\tabelaRegressoes
 \pgfplotstablegetelem{0}{m}\of{\tabelaRegressoes} \let\Slope\pgfplotsretval
+\pgfplotstablegetelem{1}{m}\of{\tabelaRegressoes} \let\StdDev\pgfplotsretval
 \pgfplotstablegetelem{2}{m}\of{\tabelaRegressoes} \let\Rsquare\pgfplotsretval
 
 
@@ -92,9 +93,13 @@ Sabendo que a tensão de Hall é diretamente proporcional ao campo magnético, r
 
 {\Large Verificar algarismos significativos. $R^2$ para precisão, guys.}
 
-\begin{equation}\label{eq:reg-lin}
+\begin{gather}\label{eq:reg-lin}
 	V_H = \Slope \times B
-\end{equation}
+	\\
+	R^2 = \Rsquare
+	\\
+	\sigma = \StdDev
+\end{gather}
 
 \subsection{Campo magnético gerado pelas bobinas de Helmholtz}
 Na segunda parte da atividade experimental, recorreu-se à sonda para medir o campo magnético e a sua variação face a alterações no circuito. Procurou-se também verificar o princípio da sobreposição de campos magnéticos.
