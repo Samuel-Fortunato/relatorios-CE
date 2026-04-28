@@ -91,7 +91,7 @@ Da linearização resultaram a \cref{eq:reg-lin} e os seguintes parâmetros de v
 \begin{align*}
 	\sigma = \StdDev \qquad R^2 = \Rsquare
 \end{align*}
-Sendo 32,5 a constante de proporcionalidade entre a tensão de Hall e o campo magnético $B_x$, $R^2$ o coeficiente de correlação e $\sigma$ o desvio padrão.
+Sendo 32,5419 a constante de proporcionalidade entre a tensão de Hall e o campo magnético $B_x$, $R^2$ o coeficiente de correlação e $\sigma$ o desvio padrão.
 
 \vspace{1.5pt}
 Ao analisar a precisão dos resultados obtidos através da regressão linear, é evidente que o sistema de medição e a metodologia experimental foram rigorosos. O principal indicador desta qualidade é o coeficiente de determinação, $R^2$, que ao atingir um valor tão próximo de 1 demonstra que a correlação entre a tensão de Hall e o campo magnético é praticamente perfeita, garantindo que o modelo matemático adotado descreve fielmente o fenómeno físico observado.
@@ -101,7 +101,7 @@ Além da forte correlação, o desvio padrão de aproximadamente $0.02$ reforça
 Na segunda parte da atividade experimental, recorreu-se à sonda para medir o campo magnético e a sua variação face a alterações no circuito. Procurou-se também verificar o princípio da sobreposição de campos magnéticos.
 
 
-Primeiramente, foi fechado um circuito entre a sonda e o multímetro com o intuito de verificar que a sonda não estava a sofrer interferência de tensões residuais. Para tal foi ajustado o potenciómetro da sonda até que a tensão indicada no multímetro fosse nula. De seguida, partindo da montagem anterior, substituiu-se a solenóide por duas bobinas de Helmholtz ligadas em série. Estas foram posicionadas a $6,475 \, \unit{\cm}$ uma da outra, o equivalente ao seu raio $R$, calculado como média aritmética do seu raio exterior e interior.
+Primeiramente, foi fechado um circuito entre a sonda e o multímetro com o intuito de verificar que a sonda não estava a sofrer interferência de tensões residuais. Para tal foi ajustado o potenciómetro da sonda até que a tensão indicada no multímetro fosse nula. De seguida, partindo da montagem anterior, substituiu-se o solenóide por duas bobinas de Helmholtz ligadas em série. Estas foram posicionadas a $6,475 \, \unit{\cm}$ uma da outra, o equivalente ao seu raio $R$, calculado como média aritmética do seu raio exterior e interior.
 A sonda foi colocada de forma a atravessar o centro geométrico das bobinas. Fixou-se um valor de corrente de $I = 0,5 \, \unit{\ampere}$ para o resto da experiência e tendo em conta posição da escala da sonda relativamente à da bobina, registou-se uma posição de referência para sonda $x = 0$, e mediu-se a variação da tensão $V_H$ à medida que se distanciava  a sonda da sua posição inicial. Analogamente ao método adotado para a calibração da sonda, obtêm-se valores de $B$ para cada posição considerada.
 
 
@@ -426,14 +426,14 @@ A configuração de Helmholtz (bobinas em série) resulta na soma vetorial dos c
 Em contraste, a configuração com as bobinas percorridas com corrente em sentidos contrários, apresenta um comportamento distinto. Devido à inversão do sentido da corrente na bobina da direita, os campos magnéticos no ponto central possuem módulos iguais, mas sentidos opostos, resultando num campo nulo na origem. Observa-se um comportamento linear do campo no intervalo $ -1 \leq x \leq 1 $ [cm], onde o gradiente permanece constante. O perfil atinge picos de intensidade em sentidos opostos (aproximadamente $\pm \, 0{,}35$ mT) nas proximidades dos centros das bobinas, evidenciando a inversão do vetor campo magnético ao cruzar a origem.
 
 \subsection{Expressão teórica para $B(x)$}
-
-A equação do campo magnético no eixo de uma bobina centrada em 0 ($x = 0$) é dado por:
+Outro dos objetivos do trabalho prático incidia sobre a dedução da expressão teórica do campo gerado pelas bobinas de Helmholtz ao longo do seu eixo.
+Sendo assim, equação do campo magnético no eixo de uma bobina centrada em 0 ($x = 0$) é dado por:
 
 \begin{equation}
 	B(x) = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + x^2)^{3/2}}
 \end{equation}
 
-Tomando a configuração em que as bobinas estão dispostas simetricamente relativamente ao eixo das ordenadas, e distanciadas $R/2$, temos:
+Tomando a configuração de Helmholtz, em que as bobinas estão dispostas simetricamente relativamente ao eixo das ordenadas, e distanciadas $R/2$, temos:
 
 \begin{align*}
 	B_1(x) & = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + (x-\frac{R}{2})^2)^{3/2}} \\
