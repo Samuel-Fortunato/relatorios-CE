@@ -4,99 +4,98 @@
 \section{Análise de Resultados}
 
 \subsection{Calibração da sonda de Hall}
-{\huge Falta mencionar aqui na frase introdutoria que a tabela também contem o Vh medido na sonda}
 
-{\huge Also, será melhor substituir "campo magnético $B$" por "módulo do campo magnético $||\vec{B}||$" ?}
-
-Os valores do campo magnético $B$ calculados, com as medições da corrente na solenóide e com recurso à \cref{eq:solenoid}, tomando $\mu_0 = 4\pi \times 10^{-7} \, \unit{\henry /, \meter}$ e $\frac{N}{L} = 3467 \pm 60$ espiras/m, constam na tabela:
+Foi medida a tensão de Hall nos terminais do solenóide-padrão, e foram calculados os valores da componente axial do campo magnético $B_x$  através das medições da corrente na solenóide $I_S$ e com recurso à \cref{eq:solenoid}, tomando $\mu_0 = 4\pi \times 10^{-7} \, \unit{\henry /, \meter}$ e $\frac{N}{L}$ espiras/m. Os resultados constam na \cref{tab:calculo-do-B}:
 
 \begin{table}[!ht]
-    \centering
-    \caption{Tensão de Hall, corrente no solenoide e módulo do campo magnético calculado.}
-    \label{tab:calculo-do-B}
-    % Use pgfplotstable to render the CSV
-    \pgfplotstabletypeset[
-        col sep=comma, % Tells LaTeX the file is a CSV
-        % string type,   % Treat headers as text
-        % column type={|c|},
-        columns={Vh, Is, B},
-        every head row/.style={
-                before row=\hline,
-                after row=\hline
-            },
-        every last row/.style={
-                after row=\hline
-            },
-        % Assigning column headers and units
-        columns/Vh/.style={
-                column name={$V_H$ [\unit{mV}]},
-                % column type={|c|},
-                % column type={S[table-format=2.1]|} % Adjust format to your max digits
-            },
-        columns/Is/.style={
-                column name={$I_S$ [\unit{mA}]},
-                % column type={c|},
-                % column type={|S[table-format=2.2]|} % Adjust format to your max digits
-            },
-        columns/B/.style={
-                column name={$||\vec{B}||$ [\unit{T}]},
-            },
-    ]{dados/solenoide.csv}
+	\centering
+	\caption{Tensão de Hall, corrente no solenoide e módulo do campo magnético calculado.}
+	\label{tab:calculo-do-B}
+	% Use pgfplotstable to render the CSV
+	\pgfplotstabletypeset[
+		col sep=comma, % Tells LaTeX the file is a CSV
+		% string type,   % Treat headers as text
+		% column type={|c|},
+		columns={Vh, Is, B},
+		every head row/.style={
+				before row=\hline,
+				after row=\hline
+			},
+		every last row/.style={
+				after row=\hline
+			},
+		% Assigning column headers and units
+		columns/Vh/.style={
+				column name={$V_H$ [\unit{mV}]},
+				% column type={|c|},
+				% column type={S[table-format=2.1]|} % Adjust format to your max digits
+			},
+		columns/Is/.style={
+				column name={$I_S$ [\unit{mA}]},
+				% column type={c|},
+				% column type={|S[table-format=2.2]|} % Adjust format to your max digits
+			},
+		columns/B/.style={
+				column name={$||\vec{B}||$ [\unit{T}]},
+			},
+	]{dados/solenoide.csv}
 \end{table}
 
 Sabendo que a tensão de Hall é diretamente proporcional ao campo magnético, realizou-se uma regressão linear com o intuito de encontrar a constante de proporcionalidade que relaciona as duas grandezas. Assim, o gráfico de calibração da sonda encontra-se representado na \cref{gra:mont1-alinA} e a respetiva equação na \cref{eq:reg-lin}:
 
 
 \begin{figure}[!ht]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-                xlabel={$\vec{B}$ [\unit{\milli\tesla}]},
-                ylabel={Tensão de Hall [\unit{\milli\volt}]},
-                xmin=0, xmax=5.6, % Adjust these based on your data range
-                ymin=0, ymax=139,
-                grid=both,
-                axis lines=center,
-                % grid style={dashed, gray!30},
-                % legend pos=north west,
-                width=0.7\textwidth,
-                height=7cm
-            ]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				xlabel={$\vec{B}$ [\unit{\milli\tesla}]},
+				ylabel={Tensão de Hall [\unit{\milli\volt}]},
+				xmin=0, xmax=5.6, % Adjust these based on your data range
+				ymin=0, ymax=139,
+				grid=both,
+				axis lines=center,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=0.7\textwidth,
+				height=7cm
+			]
 
-            \addplot[
-                blue,
-                mark=*,
-                only marks,
-            ] table [
-                    col sep=comma,
-                    x=B,
-                    y=Vh
-                ] {dados/solenoide.csv};
-            \addlegendentry{Medições}
+			\addplot[
+				blue,
+				mark=*,
+				only marks,
+			] table [
+					col sep=comma,
+					x=B,
+					y=Vh
+				] {dados/solenoide.csv};
+			\addlegendentry{Medições}
 
-            \addplot[
-                red,
-                thick,
-                domain=0.1:3.9
-            ] {\Slope * x};
-            \addlegendentry{Regressão}
+			\addplot[
+				red,
+				thick,
+				domain=0.1:3.9
+			] {\Slope * x};
+			\addlegendentry{Regressão}
 
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Calibração da sonda - Gráfico V-B}
-    \label{gra:mont1-alinA}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Calibração da sonda - Gráfico V-B}
+	\label{gra:mont1-alinA}
 \end{figure}
 
+Da linearização resultaram a \cref{eq:reg-lin} e os seguintes parâmetros de validação estatística:
+\begin{equation}\label{eq:reg-lin}
+	V_H = \Slope \times B
+\end{equation}
+\begin{align*}
+	\sigma = \StdDev \qquad R^2 = \Rsquare
+\end{align*}
+Sendo $R^2$ o coeficiente de correlação e $\sigma$ o desvio padrão.
 
-{\Large Verificar algarismos significativos. $R^2$ para precisão, guys.}
-
-\begin{gather}\label{eq:reg-lin}
-    V_H = \Slope \times B
-    \\
-    R^2 = \Rsquare
-    \\
-    \sigma = \StdDev
-\end{gather}
+\vspace{1.5pt}
+Ao analisar a precisão dos resultados obtidos através da regressão linear, é evidente que o sistema de medição e a metodologia experimental foram rigorosos. O principal indicador desta qualidade é o coeficiente de determinação, $R^2$, que ao atingir um valor tão próximo de 1 demonstra que a correlação entre a tensão de Hall e o campo magnético é praticamente perfeita, garantindo que o modelo matemático adotado descreve fielmente o fenómeno físico observado.
+Além da forte correlação, o desvio padrão de aproximadamente $0.02$ reforça a consistência das leituras. A dispersão dos dados em torno da reta de ajuste é residual, o que sugere que as fontes de erro aleatório, como flutuações na corrente do solenóide, foram minimizadas durante o procedimento experimental.
 
 \subsection{Campo magnético gerado pelas bobinas de Helmholtz}
 Na segunda parte da atividade experimental, recorreu-se à sonda para medir o campo magnético e a sua variação face a alterações no circuito. Procurou-se também verificar o princípio da sobreposição de campos magnéticos.
@@ -109,212 +108,212 @@ A sonda foi colocada de forma a atravessar o centro geométrico das bobinas. Fix
 Repetiu-se o procedimento para avaliar o efeito de cada bobina individualmente, e para uma outra configuração em que a corrente circulava em sentidos contrários nas duas bobinas. Na \cref{gra:todas} constam todas as curvas obtidas do campo magnético $B$ em função da posição relativas às várias configurações, tomando x = 0 como ponto médio entre as bobinas. Na \cref{fig:comparacao} constam as curvas individualmente.
 
 \begin{figure}[!ht]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            xlabel={Posição [\unit{cm}]},
-            ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
-            xmin=-9, xmax=9, % Adjust these based on your data range
-            ymin=-0.45, ymax=0.89,
-            grid=both,
-            axis lines=center,
-            % grid style={dashed, gray!30},
-            legend pos=south west,
-            width=0.9\textwidth,
-            height=10cm
-            ]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			xlabel={Posição [\unit{cm}]},
+			ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
+			xmin=-9, xmax=9, % Adjust these based on your data range
+			ymin=-0.45, ymax=0.89,
+			grid=both,
+			axis lines=center,
+			% grid style={dashed, gray!30},
+			legend pos=south west,
+			width=0.9\textwidth,
+			height=10cm
+			]
 
-            \addplot[
-                red,
-                thick,
-                mark=x,
-                smooth,
-            ] table [
-                    col sep=comma,
-                    x=x,
-                    y=B
-                ] {dados/bobinas-serie.csv};
-            \addlegendentry{Bobinas em série}
+			\addplot[
+				red,
+				thick,
+				mark=x,
+				smooth,
+			] table [
+					col sep=comma,
+					x=x,
+					y=B
+				] {dados/bobinas-serie.csv};
+			\addlegendentry{Bobinas em série}
 
-            \addplot[
-                green!80!black,
-                thick,
-                mark=x,
-                smooth,
-            ] table [
-                    col sep=comma,
-                    x=x,
-                    y=B
-                ] {dados/lefts-bobains.csv};
-            \addlegendentry{Bobina da esquerda}
+			\addplot[
+				green!80!black,
+				thick,
+				mark=x,
+				smooth,
+			] table [
+					col sep=comma,
+					x=x,
+					y=B
+				] {dados/lefts-bobains.csv};
+			\addlegendentry{Bobina da esquerda}
 
-            \addplot[
-                blue,
-                thick,
-                mark=x,
-                smooth,
-            ] table [
-                    col sep=comma,
-                    x=x,
-                    y=B
-                ] {dados/bobins-rights.csv};
-            \addlegendentry{Bobina da direita}
+			\addplot[
+				blue,
+				thick,
+				mark=x,
+				smooth,
+			] table [
+					col sep=comma,
+					x=x,
+					y=B
+				] {dados/bobins-rights.csv};
+			\addlegendentry{Bobina da direita}
 
-            \addplot[
-                magenta!80!black,
-                thick,
-                mark=x,
-                smooth,
-            ] table [
-                    col sep=comma,
-                    x=x,
-                    y=B
-                ] {dados/oposed-bobains.csv};
-            \addlegendentry{Bobinas em oposição}
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Gráfico - Módulo do campo magnético $||\vec{B}||$ ao longo do eixo das bobinas}
-    \label{gra:todas}
+			\addplot[
+				magenta!80!black,
+				thick,
+				mark=x,
+				smooth,
+			] table [
+					col sep=comma,
+					x=x,
+					y=B
+				] {dados/oposed-bobains.csv};
+			\addlegendentry{Bobinas em oposição}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Gráfico - Módulo do campo magnético $||\vec{B}||$ ao longo do eixo das bobinas}
+	\label{gra:todas}
 \end{figure}
 
 \begin{figure}[!ht]
-    \centering
-    \begin{subfigure}[b]{0.49\textwidth}
-        \centering
-        \begin{tikzpicture}
-            \begin{axis}[
-                xlabel={Posição [\unit{cm}]},
-                ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
-                xmin=-9, xmax=9, % Adjust these based on your data range
-                ymin=0, ymax=0.9,
-                grid=both,
-                axis lines=center,
-                % grid style={dashed, gray!30},
-                % legend pos=north west,
-                width=\textwidth,
-                height=6cm
-                ]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				xlabel={Posição [\unit{cm}]},
+				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
+				xmin=-9, xmax=9, % Adjust these based on your data range
+				ymin=0, ymax=0.9,
+				grid=both,
+				axis lines=center,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=\textwidth,
+				height=6cm
+				]
 
-                \addplot[
-                    blue,
-                    mark=x,
-                    thick,
-                    smooth,
-                    % only marks,
-                ] table [
-                        col sep=comma,
-                        x=x,
-                        y=B
-                    ] {dados/bobinas-serie.csv};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{Bobinas em série}
-        \label{sdf}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.49\textwidth}
-        \centering
-        \begin{tikzpicture}
-            \begin{axis}[
-                xlabel={Posição [\unit{cm}]},
-                ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
-                xmin=-9, xmax=9, % Adjust these based on your data range
-                ymin=0, ymax=0.65,
-                grid=both,
-                axis lines=center,
-                % grid style={dashed, gray!30},
-                % legend pos=north west,
-                width=\textwidth,
-                height=6cm
-                ]
+				\addplot[
+					blue,
+					mark=x,
+					thick,
+					smooth,
+					% only marks,
+				] table [
+						col sep=comma,
+						x=x,
+						y=B
+					] {dados/bobinas-serie.csv};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Bobinas em série}
+		\label{sdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				xlabel={Posição [\unit{cm}]},
+				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
+				xmin=-9, xmax=9, % Adjust these based on your data range
+				ymin=0, ymax=0.65,
+				grid=both,
+				axis lines=center,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=\textwidth,
+				height=6cm
+				]
 
-                \addplot[
-                    blue,
-                    mark=x,
-                    thick,
-                    smooth,
-                    % only marks,
-                ] table [
-                        col sep=comma,
-                        x=x,
-                        y=B
-                    ] {dados/bobins-rights.csv};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{Bobina da direita}
-        \label{1232}
-    \end{subfigure}
+				\addplot[
+					blue,
+					mark=x,
+					thick,
+					smooth,
+					% only marks,
+				] table [
+						col sep=comma,
+						x=x,
+						y=B
+					] {dados/bobins-rights.csv};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Bobina da direita}
+		\label{1232}
+	\end{subfigure}
 
-    \vspace{1cm}
+	\vspace{1cm}
 
-    \begin{subfigure}[b]{0.49\textwidth}
-        \centering
-        \begin{tikzpicture}
-            \begin{axis}[
-                xlabel={Posição [\unit{cm}]},
-                ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
-                xmin=-9, xmax=9, % Adjust these based on your data range
-                ymin=0, ymax=0.65,
-                grid=both,
-                axis lines=center,
-                % grid style={dashed, gray!30},
-                % legend pos=north west,
-                width=\textwidth,
-                height=6cm
-                ]
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				xlabel={Posição [\unit{cm}]},
+				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
+				xmin=-9, xmax=9, % Adjust these based on your data range
+				ymin=0, ymax=0.65,
+				grid=both,
+				axis lines=center,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=\textwidth,
+				height=6cm
+				]
 
-                \addplot[
-                    blue,
-                    mark=x,
-                    thick,
-                    smooth,
-                    % only marks,
-                ] table [
-                        col sep=comma,
-                        x=x,
-                        y=B
-                    ] {dados/lefts-bobains.csv};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{Bobina da esquerda}
-        \label{1dfse}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.49\textwidth}
-        \centering
-        \begin{tikzpicture}
-            \begin{axis}[
-                xlabel={Posição [\unit{cm}]},
-                ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
-                xmin=-9, xmax=9, % Adjust these based on your data range
-                ymin=-0.45, ymax=0.45,
-                grid=both,
-                axis lines=center,
-                % grid style={dashed, gray!30},
-                % legend pos=north west,
-                width=\textwidth,
-                height=6cm
-                ]
+				\addplot[
+					blue,
+					mark=x,
+					thick,
+					smooth,
+					% only marks,
+				] table [
+						col sep=comma,
+						x=x,
+						y=B
+					] {dados/lefts-bobains.csv};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Bobina da esquerda}
+		\label{1dfse}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				xlabel={Posição [\unit{cm}]},
+				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
+				xmin=-9, xmax=9, % Adjust these based on your data range
+				ymin=-0.45, ymax=0.45,
+				grid=both,
+				axis lines=center,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=\textwidth,
+				height=6cm
+				]
 
-                \addplot[
-                    blue,
-                    mark=x,
-                    thick,
-                    smooth,
-                    % only marks,
-                ] table [
-                        col sep=comma,
-                        x=x,
-                        y=B
-                    ] {dados/oposed-bobains.csv};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{Bobinas em sentidos opostos}
-        \label{dfs}
-    \end{subfigure}
+				\addplot[
+					blue,
+					mark=x,
+					thick,
+					smooth,
+					% only marks,
+				] table [
+						col sep=comma,
+						x=x,
+						y=B
+					] {dados/oposed-bobains.csv};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Bobinas em sentidos opostos}
+		\label{dfs}
+	\end{subfigure}
 
-    \caption{Gráfico - Campo magnético $||\vec{B}||$ - várias configurações}
-    \label{fig:comparacao}
+	\caption{Gráfico - Campo magnético $||\vec{B}||$ - várias configurações}
+	\label{fig:comparacao}
 \end{figure}
 
 A análise do gráfico anterior permite verificar a sobreposição do campo magnético. Quando as bobinas são operadas de forma independente observa-se que cada uma gera um perfil de campo simétrico com um valor máximo de aproximadamente $0{,}48$ mT, decaindo suavemente à medida que a distância em relação ao plano da espira aumenta.
@@ -328,20 +327,20 @@ Em contraste, a configuração com as bobinas percorridas com corrente em sentid
 A equação do campo magnético no eixo de uma bobina centrada em 0 ($x = 0$) é dado por:
 
 \begin{equation}
-    B(x) = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + x^2)^{3/2}}
+	B(x) = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + x^2)^{3/2}}
 \end{equation}
 
 Tomando a configuração em que as bobinas estão dispostas simetricamente relativamente ao eixo das ordenadas, e distanciadas $R/2$, temos:
 
 \begin{align*}
-    B_1(x) & = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + (x-\frac{R}{2})^2)^{3/2}} \\
-    B_2(x) & = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + (x+\frac{R}{2})^2)^{3/2}}
+	B_1(x) & = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + (x-\frac{R}{2})^2)^{3/2}} \\
+	B_2(x) & = \frac{\mu_0}{2}\frac{I N R^2}{(R^2 + (x+\frac{R}{2})^2)^{3/2}}
 \end{align*}
 
 Sendo $B_1$ o campo relativo à bobina direita e $B_2$ ao da esquerda. Assim, $B(x) = B_1(x) + B_2(x)$. Para $x = 0$ :
 
 
 \begin{align*}
-    B(0) = \mu_0 \, \frac{I N R^2}{\left(R^2 + \left(\frac{R}{2}\right)^2\right)^{3/2}} & = \mu_0 \, \frac{I N R^2}{\left(R^2 + \frac{R^2}{4}\right)^{3/2}} = \mu_0 \, \frac{I N R^2}{\left(\frac{5}{4}\right)^{3/2} \, R^3} =  \left(\frac{4}{5}\right)^{3/2} \, \frac{\mu_0 I}{R}
+	B(0) = \mu_0 \, \frac{I N R^2}{\left(R^2 + \left(\frac{R}{2}\right)^2\right)^{3/2}} & = \mu_0 \, \frac{I N R^2}{\left(R^2 + \frac{R^2}{4}\right)^{3/2}} = \mu_0 \, \frac{I N R^2}{\left(\frac{5}{4}\right)^{3/2} \, R^3} =  \left(\frac{4}{5}\right)^{3/2} \, \frac{\mu_0 I}{R}
 \end{align*}
 
