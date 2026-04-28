@@ -312,8 +312,111 @@ Repetiu-se o procedimento para avaliar o efeito de cada bobina individualmente, 
 		\label{dfs}
 	\end{subfigure}
 
-	\caption{Gráfico - Campo magnético $||\vec{B}||$ - várias configurações}
+	\caption{Gráficos - Campo magnético $||\vec{B}||$ - várias configurações}
 	\label{fig:comparacao}
+\end{figure}
+
+{\Huge Este parágrafo está com linguagem bue tosca, podem ajustar please? É preciso também explicar porque de fazer soma e subtracao um do outro}
+
+
+
+
+
+
+
+Para verificar o principio da sobreposisão, na \cref{gra:sobrepos-serie} foram representados os valores das duas bobinas juntas, junto com a soma das duas bobinas separadas e na \cref{gra:sobrepos-oposto} os valores das bobinas com correntes opostas, junto com a subtração das duas bobinas separadas.
+
+\begin{figure}[!ht]
+	\begin{minipage}{0.49\linewidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				xlabel={Posição [\unit{cm}]},
+				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
+				xmin=-9, xmax=9, % Adjust these based on your data range
+				ymin=0, ymax=0.9,
+				grid=both,
+				axis lines=center,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=\textwidth,
+				height=6cm
+				]
+
+				\addplot[
+					blue,
+					mark=x,
+					thick,
+					smooth,
+					% only marks,
+				] table [
+						col sep=comma,
+						x=x,
+						y=tot
+					] {dados/sobreposicao.csv};
+
+
+				\addplot[
+					red,
+					mark=x,
+					thick,
+					smooth,
+					% only marks,
+				] table [
+						col sep=comma,
+						x=x,
+						y=sum
+					] {dados/sobreposicao.csv};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{legenda}
+		\label{gra:sobrepos-serie}
+	\end{minipage}
+	\begin{minipage}{0.49\linewidth}
+		\centering
+		\begin{tikzpicture}
+			\begin{axis}[
+				xlabel={Posição [\unit{cm}]},
+				ylabel={$\vec{B}$ [\unit{\milli\tesla}]},
+				xmin=-9, xmax=9, % Adjust these based on your data range
+				ymin=-0.45, ymax=0.45,
+				grid=both,
+				axis lines=center,
+				% grid style={dashed, gray!30},
+				% legend pos=north west,
+				width=\textwidth,
+				height=6cm
+				]
+
+				\addplot[
+					blue,
+					mark=x,
+					thick,
+					smooth,
+					% only marks,
+				] table [
+						col sep=comma,
+						x=x,
+						y=tot-op
+					] {dados/sobreposicao.csv};
+
+
+				\addplot[
+					red,
+					mark=x,
+					thick,
+					smooth,
+					% only marks,
+				] table [
+						col sep=comma,
+						x=x,
+						y=sub
+					] {dados/sobreposicao.csv};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{legenda}
+		\label{gra:sobrepos-oposto}
+	\end{minipage}
 \end{figure}
 
 A análise do gráfico anterior permite verificar a sobreposição do campo magnético. Quando as bobinas são operadas de forma independente observa-se que cada uma gera um perfil de campo simétrico com um valor máximo de aproximadamente $0{,}48$ mT, decaindo suavemente à medida que a distância em relação ao plano da espira aumenta.
