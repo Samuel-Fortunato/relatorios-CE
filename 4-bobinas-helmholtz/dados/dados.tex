@@ -1,0 +1,4 @@
+\pgfplotstableread[col sep=comma]{dados/regress.csv}\tabelaRegressoes
+\pgfplotstablegetelem{0}{m}\of{\tabelaRegressoes} \let\Slope\pgfplotsretval
+\pgfplotstablegetelem{1}{m}\of{\tabelaRegressoes} \let\StdDev\pgfplotsretval
+\pgfplotstablegetelem{2}{m}\of{\tabelaRegressoes} \let\Rsquare\pgfplotsretval
